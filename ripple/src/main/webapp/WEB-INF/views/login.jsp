@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="kr">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>RIPPLE - login</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="resources/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -13,23 +15,25 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
-    <link href="css/index_styles.css" rel="stylesheet" />
+    <link href="resources/css/index_styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <div class="container px-5">
-                <a style="font-size: 30px;" class="navbar-brand" href="index.html">RIPPLE</a>
-                <a class="navbar-brand" href="list.html">영화 목록</a>
-                <a class="navbar-brand" href="#">영화관 지도</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="join.html">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Log In</a></li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container px-5">
+            <a style="font-size: 30px;" class="navbar-brand" href="./index">RIPPLE</a>
+            <a class="navbar-brand" href="./list">영화 목록</a>
+            <a class="navbar-brand" href="#">영화관 지도</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./join">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login">Log In</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+ 	</nav>
         <form>
         <div class="row" style="margin: 150px auto 0 auto; width: 60vh;">
             
@@ -55,6 +59,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/index_scripts.js"></script>
+        <script src="resources/js/index_scripts.js"></script>
 </body>
 </html>
