@@ -94,9 +94,9 @@
                     </h2>
                     <hr>
                     <div class="facts">
-
+budget director vote_average  vote_count 추가하기
                         <span class="release">
-                            2022/08/10 (KR)
+                            2022/08/10 |
                         </span>
 
 
@@ -109,7 +109,7 @@
                         </span>
 
                         <span class="runtime">
-                            1h 45m
+                            | 1h 45m
                         </span>
                     </div>
 
@@ -121,13 +121,13 @@
                         <div class="consensus details">
                             
                         </div>
-                        <div class="text">회원점수</div>
+                        <div class="text">회원점수(voteNum)</div>
                     </li>
                     
                 </ul>
 
                 <div class="header_info">
-                    <span class="tagline" dir="auto">슈퍼 히어로가 위험에 빠지면 세상은 누가 구하개?</span><hr>
+                    <hr>
                     <h4 dir="auto">개요</h4>
                     <div class="overview" dir="auto">
                         <p>악당 렉스 루터의 계략으로 위험에 빠진 슈퍼맨을 비롯한 저스티스 리그의 슈퍼 히어로들을 구하기 위해 슈퍼독 크립토와 슈퍼 펫 친구들이 벌이는 파워 댕댕 모험을 그린 이야기</p>
