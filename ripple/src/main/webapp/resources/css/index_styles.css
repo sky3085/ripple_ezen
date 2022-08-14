@@ -6835,7 +6835,7 @@ textarea.form-control-lg {
 }
 
 .ms-auto {
-  margin-left: auto !important;
+  margin: auto 200px auto auto !important;
 }
 
 .p-0 {
