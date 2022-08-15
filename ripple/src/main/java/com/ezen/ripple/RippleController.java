@@ -1,7 +1,13 @@
 package com.ezen.ripple;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ripple.service.MemberService;
 
 
 /**
@@ -10,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RippleController {
 
+	@Autowired
+	private MemberService memberService;
 	
 	@RequestMapping(value = "/index")
 	public String index() {
@@ -36,6 +44,25 @@ public class RippleController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/loginAction")
+	public String loginAction(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String view = "";
+		String id =  request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+
+		int result = memberService.login(id, pwd);
+		
+		if(result>0) {
+			session.setAttribute("id", id);
+			view = "index";
+		}else {
+			request.setAttribute("msg", "로그인 실패");
+			view = "login";
+		}
+		
+		return view;
+	}
 	
 
 }

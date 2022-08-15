@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 별명 -->
+	<typeAliases>
+		<typeAlias type="ripple.bean.MovieDTO" alias="movieDTO"/>
+		<typeAlias type="ripple.bean.MemberDTO" alias="memberDTO"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/movie-mapping.xml" />
+		<mapper resource="mybatis/member-mapping.xml" />
+	</mappers>
+</configuration>
