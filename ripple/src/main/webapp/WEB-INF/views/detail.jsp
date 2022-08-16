@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -63,6 +64,9 @@
             text-align:center;
             float: right;
         }
+        span {
+        	font-size: 1.2em !important;
+        }
     </style>
 </head>
 
@@ -87,47 +91,48 @@
 
     <div class="row">
         <div class="col-lg-3 col-8" style="height: 65vh; margin: 130px auto 0; text-align: center;">
-            <img id="poster_path" src="resources/img/exam1.jpg" style="border-radius: 8px;" >
+            <img id="poster_path" src="${dto.poster_path }" style="border-radius: 8px; width: 100%; height: 100%; object-fit: contain;" >
         </div>
 
-        <div class="col-lg-4 col-8 row" style="height: 65vh; margin: 0 auto;">
+        <div class="col-lg-3 col-8 row" style="height: 65vh; margin: 0 auto;">
             <section class="" style="margin-top: 130px;">
                 <div class=""  style="text-align: center;">
                     <hr>
                     <h2>
-                        <span id="title">DC 리그 오브 슈퍼-펫(2022</span>
+                        <span id="title">${dto.title }</span>
                     </h2>
                     <hr>
                     <div>
                         <span id="release_date">
-                            2022/08/10 |
+                            ${dto.release_date } |
                         </span>
                         <span id="genres">
-                            <span>애니메이션</span>,&nbsp;
+                            <!-- <span>애니메이션</span>,&nbsp;
                             <span>액션</span>,&nbsp;
                             <span>가족</span>,&nbsp;
                             <span>SF</span>,&nbsp;
-                            <span>코미디</span>
+                            <span>코미디</span> -->
+                            ${dto.genres }
                         </span>
 
                         <span id="runtime">
-                            | 1h 45m
+                            | ${dto.runtime }분
                         </span>
                     </div>
                 </div>
                 <br>
                 <ol style="list-style: none">
                 	<li>
-                        <span id="director">감독 : Joseph Kosinski</span>
+                        <span id="director">감독 : ${dto.director }</span>
                     </li>
                     <li>
-                        <span id="budget">예산 : 1,200,000$</span>
+                        <span id="budget">예산 : ${dto.budget } $</span>
                     </li>
                     <li>
-                        <span id="vote_average">평점 : 4.8점</span>
+                        <span id="vote_average">평점 : ${dto.vote_score }점</span>
                     </li>
                     <li>
-                        <span id="vote_count">투표자 수 : 8000명</span>
+                        <span id="vote_count">투표자 수 : ${dto.vote_count }명</span>
                     </li>
                 </ol>
                 <div>
@@ -140,10 +145,10 @@
                 </div>
             </section>
         </div>
-        <div class="col-lg-5 col-8" style="margin: 130px auto 0; text-align: center;" style="overflow: hidden">
+        <div class="col-lg-3 col-8" style="margin: 130px auto 0; text-align: center;" style="overflow: hidden">
             <div style="width: 70%; height: 70%; margin: auto; text-align: center;">
             	<h3>성공 예측</h3>
-            	<img src="resources/img/per/70per.png" style="object-fit: contain; width: 100%; height: 100%;" alt="" style="overflow: hidden">
+            	<img src="resources/img/percent/per (84).png" style="object-fit: contain; width: 100%; height: 100%;" alt="" style="overflow: hidden">
         	</div>
         </div>
     </div>

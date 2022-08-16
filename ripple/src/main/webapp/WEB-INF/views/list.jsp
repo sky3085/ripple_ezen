@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,128 +70,62 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     
-                    <div class="col-10 col-sm-6 col-lg-3 mb-5">
+                    <c:forEach var="dto" items="${list }">
+                    <div class="col-10 col-sm-6 col-lg-3 mb-5" style="height: 500px">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Like</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="${dto.poster_path }" alt="이미지가 없습니다." style="width: 100%; height: 300px" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Movie Name</h5>
+                                    <h5 class="fw-bolder" style="overflow: hidden; height: 24px;">${dto.title }</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
+                                    	<c:forEach begin="0" end="${dto.vote_score }" step="1">
+                                        	<div class="bi-star-fill"></div>
+                                        </c:forEach>
                                     </div>
                                     <!-- Product price-->
-                                    <span>장르</span>
+                                    <span>${dto.genres }</span>
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./detail">View</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./detail?titleid=${dto.titleid }">View</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-10 col-sm-6 col-lg-3 mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Like</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Movie Name</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span>장르</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./detail">View</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-10 col-sm-6 col-lg-3 mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Like</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Movie Name</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span>장르</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./detail">View</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-10 col-sm-6 col-lg-3 mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Like</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Movie Name</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span>장르</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="./detail">View</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    </c:forEach> 
                 </div>
             </div>
+            
+            <table>
+            	<tr>
+         			<td colspan="5" align="center">
+         			<c:if test="${startPage > 10 }">
+         				<a class="paging" href="./list?pg=${startPage - 1 }">[이전]</a>
+         			</c:if> 
+         
+         			<c:forEach var="i" begin="${startPage }" end="${endPage}" step="1">
+         				<c:if test="${i == pg}">
+         					<a class="currentPaging">[${i}]</a>   
+         				</c:if>
+         	
+         				<c:if test="${i != pg}">
+         					<a class="paging" href="./list?pg=${i}">[${i}]</a>   
+         				</c:if>
+         			</c:forEach>        
+            
+		 			<c:if test="${endPage < totalP }">
+						<a class="paging" href="./list?pg=${endPage + 1 }">[다음]</a>
+		 			</c:if>
+         			</td>
+      			</tr> 
+   			</table>
+   
         </section>
 
         <!-- Bootstrap core JS-->

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import ripple.bean.MemberDTO;
 
-@Repository("memberDAO")
+@Repository("memberRepository")
 public class MemberRepositoryImpl implements MemberRepository {
 
 	@Autowired
@@ -33,8 +33,15 @@ public class MemberRepositoryImpl implements MemberRepository {
 
 	@Override
 	public int join(String id, String pwd, String email) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		map.put("email", email);
+		
+		result = sqlSession.insert("mybatis.memberMapper.join", map);
+		
+		return result;
 	}
 	
 }
