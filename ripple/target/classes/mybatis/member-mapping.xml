@@ -7,5 +7,7 @@
 		<![CDATA[select * from member where id=#{id} and pwd=#{pwd}]]>
 	</select>
 	
-	
+	<insert id="join" parameterType="memberDTO">
+		<![CDATA[insert into member values(seq_member.nextval,#{id},#{pwd},#{email})]]>
+	</insert>
 </mapper>

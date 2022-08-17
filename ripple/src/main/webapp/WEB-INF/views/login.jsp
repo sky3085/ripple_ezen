@@ -35,21 +35,21 @@
             </div>
         </div>
  	</nav>
-        <form>
+        <form action="./loginAction">
         <div class="row" style="margin: 150px auto 0 auto; width: 60vh;">
             
 
             <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
                 <div class="col-sm-10" style="padding-left: 20px;">
-                    <input type="text" class="form-control" id="staticEmail">
+                    <input type="text" class="form-control" id="staticEmail" name="id">
                 </div>
             </div>
 
             <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10" style="padding-left: 20px;">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="inputPassword" name="pwd">
                 </div>
             </div>
             <input class="btn btn-primary" type="submit" value="로그인">

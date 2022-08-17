@@ -1,6 +1,7 @@
 package ripple.bean;
 
 public class MovieDTO {
+	private String titleid;
 	private String title;
 	private String poster_path;
 	private String release_date;
@@ -9,16 +10,22 @@ public class MovieDTO {
 	private String director;
 	private String runtime;
 	private String overview;
-	private double vote_average;
+	private double vote_score;
 	private int vote_count;
 	
 	@Override
 	public String toString() {
 		return "MovieDTO [title=" + title + ", poster_path=" + poster_path + ", release_date=" + release_date
 				+ ", budget=" + budget + ", genres=" + genres + ", director=" + director + ", runtime=" + runtime
-				+ ", overview=" + overview + ", vote_average=" + vote_average + ", vote_count=" + vote_count + "]";
+				+ ", overview=" + overview + ", vote_score=" + vote_score + ", vote_count=" + vote_count + "]";
 	}
 	
+	public String getTitleid() {
+		return titleid;
+	}
+	public void setTitleid(String titleid) {
+		this.titleid = titleid;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -67,11 +74,11 @@ public class MovieDTO {
 	public void setOverview(String overview) {
 		this.overview = overview;
 	}
-	public double getVote_average() {
-		return vote_average;
+	public double getVote_score() {
+		return vote_score;
 	}
-	public void setVote_average(double vote_average) {
-		this.vote_average = vote_average;
+	public void setVote_score(double vote_score) {
+		this.vote_score = vote_score;
 	}
 	public int getVote_count() {
 		return vote_count;
