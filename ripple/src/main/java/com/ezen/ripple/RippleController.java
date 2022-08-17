@@ -10,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
+import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
 
@@ -26,18 +28,50 @@ public class RippleController {
 	@Autowired
 	private MovieService movieService;
 	
+	@Autowired
+	private CommentsService commentsService;
+	
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/commentAction")
+	public ModelAndView commentAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		CommentsDTO dto = new CommentsDTO();
+		HttpSession session = request.getSession();
+		
+		dto.setId((String)session.getAttribute("id"));
+		dto.setTitleid(Integer.parseInt(request.getParameter("titleid")));
+		dto.setContents(request.getParameter("contents"));
+		dto.setScore(Integer.parseInt(request.getParameter("score")));
+		dto.setLevel(Integer.parseInt(request.getParameter("level")));
+		dto.setOriginal_seq(Integer.parseInt(request.getParameter("original_seq")));
+		
+		int result = commentsService.commentsInsert(dto);
+		
+		modelAndView.addObject("titleid", dto.getTitleid());
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
+	}
+	
 	@RequestMapping(value = "/detail")
 	public ModelAndView detail(HttpServletRequest request) {
+		
 		String titleid = request.getParameter("titleid");
+		if(titleid == null) {
+			titleid = (String)request.getAttribute("titleid");
+		}
+		
 		MovieDTO dto = movieService.movieView(titleid);
+		List<CommentsDTO> commentsList = commentsService.commentsSelect(Integer.parseInt(titleid));
 		ModelAndView modelAndView = new ModelAndView();
 		
 		modelAndView.addObject("dto", dto);
+		modelAndView.addObject("commentsList", commentsList);
+		modelAndView.addObject("titleid", titleid);
 		modelAndView.setViewName("detail");
 		
 		return modelAndView;
@@ -63,8 +97,8 @@ public class RippleController {
 		int totalA = movieService.getTotalA();
 		int totalP = (totalA + 11) / 12;
 
-		int startPage = (pg - 1) / 10 * 10 + 1;
-		int endPage = startPage + 9;
+		int startPage = (pg - 1) / 5 * 5 + 1;
+		int endPage = startPage + 4;
 		if (endPage > totalP)
 			endPage = totalP;
 		
@@ -102,6 +136,14 @@ public class RippleController {
 		}
 		
 		return view;
+	}
+	
+	@RequestMapping(value = "/logout")
+	public String logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("id");
+		
+		return "index";
 	}
 	
 	@RequestMapping(value = "/joinAction")
