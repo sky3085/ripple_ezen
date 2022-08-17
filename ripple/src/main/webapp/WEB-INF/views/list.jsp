@@ -72,7 +72,7 @@
                     
                     <c:forEach var="dto" items="${list }">
                     <div class="col-10 col-sm-6 col-lg-3 mb-5" style="height: 500px">
-                        <div class="card h-100">
+                        <div class="card h-100" style="border: 1px solid rgba(227,227,227, 1); box-sizing: border-box; box-shadow: 0 5px 19px rgb(0 0 0 / 55%);">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Like</div>
                             <!-- Product image-->

@@ -27,7 +27,7 @@
         div.review{
             height: auto;
     		min-height: 80px;
-    		max-height: 200px;
+    		max-height: 150px;
             margin : 20px auto !important;
             background: #fff;
             border-radius: 8px;
@@ -39,15 +39,15 @@
             padding: 12px 20px;
             color: #000;
             border: 1px solid rgba(227,227,227, 1);
-            box-sizing: border-box;
-            box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    		box-sizing: border-box;
+    		box-shadow: 0 5px 19px rgb(0 0 0 / 40%);
             text-align:center;
         }
 
         div.review2{
             height: auto;
     		min-height: 80px;
-    		max-height: 200px;
+    		max-height: 150px;
             margin: 20px 0px 20px auto;
             background: #fff;
             border-radius: 8px;
@@ -59,8 +59,8 @@
             padding: 12px 20px;
             color: #000;
             border: 1px solid rgba(227,227,227, 1);
-            box-sizing: border-box;
-            box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    		box-sizing: border-box;
+    		box-shadow: 0 5px 19px rgb(0 0 0 / 40%);
             text-align:center;
             float: right;
         }
@@ -107,11 +107,6 @@
                             ${dto.release_date } |
                         </span>
                         <span id="genres">
-                            <!-- <span>애니메이션</span>,&nbsp;
-                            <span>액션</span>,&nbsp;
-                            <span>가족</span>,&nbsp;
-                            <span>SF</span>,&nbsp;
-                            <span>코미디</span> -->
                             ${dto.genres }
                         </span>
 
@@ -157,9 +152,21 @@
         <div class="row" style="width: 80vw; margin: 0 auto;">
             <form style="margin-bottom: 25px !important;">
                 <div class="row" style="height: 70px;">
-                    <div class="col-lg-10 col-9" style="padding : 0;">
-                        <input type="email" style="border-color: #408ad4; height: 100%; width: 97%" class="form-control" placeholder="댓글 입력"
-                            id="inputEmail3">
+                    <div class="col-lg-10 col-9 row" style="padding : 0; margin: 0">
+                        <input type="text" style="font-size: 1.4em; border-color: #408ad4; height: 100%; width: 60%" class="form-control" placeholder="댓글 입력" id="inputEmail3" name="content">
+                         <select style="width: 35%; margin: 0 auto" class="form-select" aria-label="Default select example" name="score">
+  							<option selected>점수를 선택하세요!</option>
+						  	<option value="1">One</option>
+						  	<option value="2">Two</option>
+						  	<option value="3">Three</option>
+						  	<option value="4">Four</option>
+						  	<option value="5">Five</option>
+						  	<option value="6">Six</option>
+						  	<option value="7">Seven</option>
+						  	<option value="8">Eight</option>
+						  	<option value="9">nine</option>
+						  	<option value="10">Ten</option>
+						</select>
                     </div>
                     <div class="col-lg-2 col-3" style="padding: 0">
                     	<input class="btn btn-primary col-lg-1 col-3" style="width: 100%; height: 100%" type="submit" value="Submit">
@@ -167,16 +174,15 @@
                 </div>
             </form>
             <div class="col-lg-12 col-12 review row">
-            	<div class="col-lg-1 col-md-2 col-2" style="overflow: hidden;">ID_TEST_01</div>
-                <div class="col-lg-7 col-md-6 col-6" style="overflow: hidden;">너무 너무 재미있어요.</div>
-                <div class="col-lg-1 col-md-2 col-2">*****</div>
-                <div class="col-lg-1 col-md-1 col-1">답글</div>
-                <div class="col-lg-1 col-md-1 col-1">신고</div>
+            	<div class="col-lg-1 col-md-2 col-5" style="overflow: hidden;">ID_TEST_01</div>
+                <div class="col-lg-7 col-md-6 col-7" style="overflow: hidden;">너무 너무 재미있어요.</div>
+                <div class="col-lg-1 col-md-2 col-3">10점</div>
+                <div class="col-lg-1 col-md-1 col-3"><button type="button" style="border: none; color: black; background-color: white; min-width: 60px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">답글</button></div>
+                <div class="col-lg-1 col-md-1 col-3">신고</div>
             </div>
             <div class="col-lg-10 col-10 review2 row">
-                <div class="col-lg-1 col-2" style="overflow: hidden;">ID_TEST_01</div>
-                <div class="col-lg-7 col-6" style="overflow: hidden;">너무 너무 재미있어요.ㄱㄴㄷㄻㄴㅇㄻㄴㅇㄹㄴㅇㅁㅈㅂㅎㅈㅇㄴ</div>
-                <div class="col-lg-1 col-2">*****</div>
+                <div class="col-lg-1 col-5" style="overflow: hidden;">ID_TEST_01</div>
+                <div class="col-lg-7 col-5" style="overflow: hidden; height: 100%;">너무 너무 재미있어요.ㄱㄴㄷㄻㄴㅇㄻㄴㅇㄹㄴㅇㅁㅈㅂㅎㅈㅇㄴ</div>
                 <div class="col-lg-2 col-2">신고</div>
             </div>
             <div class="col-lg-12 col-12 review"></div>
@@ -184,6 +190,31 @@
     
         </div>
     </div>
+    
+    
+    
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">답글 작성</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input type="text" style="font-size: 1.4em; border-color: #408ad4; height: 200px;" class="form-control" placeholder="댓글 입력" id="inputEmail3" name="content">
+                         
+			<input type="hidden" name="level" value="2">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
