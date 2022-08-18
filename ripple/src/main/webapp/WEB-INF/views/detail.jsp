@@ -138,7 +138,7 @@ span {
 			style="overflow: hidden">
 			<div
 				style="width: 70%; height: 70%; margin: auto; text-align: center;">
-				<h3>성공 예측</h3>
+				<h3>흥행 성공 예측</h3>yes or no
 				<img src="resources/img/percent/per (84).png"
 					style="object-fit: contain; width: 100%; height: 100%;" alt=""
 					style="overflow: hidden">

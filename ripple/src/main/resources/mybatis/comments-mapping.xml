@@ -8,6 +8,6 @@
 	</select>
 	
 	<insert id="commentsInsert" parameterType="commentsDTO">
-		<![CDATA[insert into comments values (seq_comments.nextval, #{id}, #{titleid}, #{contents}, #{score}, #{level}, #{original_seq})]]>
+		<![CDATA[insert into comments("seq", "id", "titleid", "contents", "score", "level", "original_seq") values (seq_comments.nextval, #{id}, #{titleid}, #{contents}, #{score}, #{level}, #{original_seq})]]>
 	</insert>
 </mapper>
