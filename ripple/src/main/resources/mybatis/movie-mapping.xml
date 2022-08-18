@@ -23,8 +23,6 @@
 		<![CDATA[select titleid, title, poster_path, release_date, budget, genres, director, runtime, overview, vote_score, vote_count from (select rownum rn, tt.* from 
 		(select * from MOVIELIST order by release_date desc) tt) where rn>=#{startNum} and rn<=#{endNum}]]>
 	</select>
-
-
 	
 </mapper>
 
