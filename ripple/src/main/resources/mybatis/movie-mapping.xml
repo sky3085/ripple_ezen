@@ -24,6 +24,9 @@
 		(select * from MOVIELIST order by release_date desc) tt) where rn>=#{startNum} and rn<=#{endNum}]]>
 	</select>
 	
+	<select id="moviepredict" parameterType="String" resultType="moviepreDTO">
+		select * from moviepre where title=#{titleid}
+	</select>
 </mapper>
 
 

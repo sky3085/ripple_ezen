@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ripple.bean.MovieDTO;
+import ripple.bean.MoviePreDTO;
 import ripple.repository.MovieRepository;
 
 @Service
@@ -61,5 +62,11 @@ public class MovieService {
 	
 	public int getTotalA() {
 		return movieRepository.getTotalA();
+	}
+	
+	public MoviePreDTO moviepredict(String titleid) {
+		MoviePreDTO dto = movieRepository.moviepredict(titleid);
+
+		return dto;
 	}
 }

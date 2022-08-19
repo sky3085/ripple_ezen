@@ -8,6 +8,7 @@
 		<typeAlias type="ripple.bean.MovieDTO" alias="movieDTO"/>
 		<typeAlias type="ripple.bean.MemberDTO" alias="memberDTO"/>
 		<typeAlias type="ripple.bean.CommentsDTO" alias="commentsDTO"/>
+		<typeAlias type="ripple.bean.MoviePreDTO" alias="moviepreDTO"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/movie-mapping.xml" />

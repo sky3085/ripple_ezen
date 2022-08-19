@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ripple.bean.MovieDTO;
+import ripple.bean.MoviePreDTO;
 
 @Repository("movieRepository")
 public class MovieRepositoryImpl implements MovieRepository {
@@ -40,4 +41,9 @@ public class MovieRepositoryImpl implements MovieRepository {
 		return result;
 	}
 
+	@Override
+	public MoviePreDTO moviepredict(String titleid) {
+		MoviePreDTO moviepreDTO = sqlSessionTemplate.selectOne("mybatis.movieMapper.moviepredict", titleid);
+		return moviepreDTO;
+	}
 }

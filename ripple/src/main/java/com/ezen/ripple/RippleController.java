@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
+import ripple.bean.MoviePreDTO;
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
@@ -66,9 +67,11 @@ public class RippleController {
 		}
 		
 		MovieDTO dto = movieService.movieView(titleid);
+		MoviePreDTO moviepreDTO = movieService.moviepredict(titleid);
 		List<CommentsDTO> commentsList = commentsService.commentsSelect(Integer.parseInt(titleid));
 		ModelAndView modelAndView = new ModelAndView();
-		
+		int score = (int)(100 * moviepreDTO.getPredict());
+		modelAndView.addObject("score", score);
 		modelAndView.addObject("dto", dto);
 		modelAndView.addObject("commentsList", commentsList);
 		modelAndView.addObject("titleid", titleid);
