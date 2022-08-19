@@ -88,6 +88,12 @@ span {
 
 		box.appendChild(newInput);
 	}
+	function accusation(tag) {
+		const seq = tag.dataset.seq;
+		const writer = tag.dataset.writer;
+		const titleid = tag.dataset.titleid;
+		location.href="./accusationAction?seq="+seq+"&writer="+writer+"&titleid="+titleid;
+	}
 </script>
 </head>
 
@@ -192,7 +198,12 @@ span {
 								class="btn btn-primary" data-bs-toggle="modal"
 								data-bs-target="#exampleModal" data-bs-whatever="@mdo">답글</button>
 						</div>
-						<div class="col-lg-1 col-md-1 col-3">신고</div>
+						<div class="col-lg-1 col-md-1 col-3">
+							<button type="button" onclick="accusation(this)"
+								data-seq="${dto.seq }" data-writer="${dto.id }" data-titleid="${titleid }"
+								style="border: none; color: black; background-color: white; min-width: 60px;"
+								class="btn btn-primary">신고</button>
+						</div>
 					</div>
 					<c:forEach var="dto2" items="${commentsList }">
 						<c:if test="${dto2.original_seq==dto.seq }">
@@ -200,32 +211,18 @@ span {
 								<div class="col-lg-1 col-5" style="overflow: hidden;">${dto2.id }</div>
 								<div class="col-lg-7 col-5"
 									style="overflow: hidden; height: 100%;">${dto2.contents }</div>
-								<div class="col-lg-2 col-2">신고</div>
+								<div class="col-lg-2 col-2">
+									<button type="button" onclick="accusation(this)"
+										data-seq="${dto2.seq }" data-writer="${dto2.id }" data-titleid="${titleid }"
+										style="border: none; color: black; background-color: white; min-width: 60px;"
+										class="btn btn-primary">신고</button>
+								</div>
 							</div>
 						</c:if>
 					</c:forEach>
 				</c:if>
 
 			</c:forEach>
-			<div class="col-lg-12 col-12 review row">
-				<div class="col-lg-1 col-md-2 col-5" style="overflow: hidden;">ID_TEST_01</div>
-				<div class="col-lg-7 col-md-6 col-7" style="overflow: hidden;">너무
-					너무 재미있어요.</div>
-				<div class="col-lg-1 col-md-2 col-3">10점</div>
-				<div class="col-lg-1 col-md-1 col-3">
-					<button type="button"
-						style="border: none; color: black; background-color: white; min-width: 60px;"
-						class="btn btn-primary" data-bs-toggle="modal"
-						data-bs-target="#exampleModal" data-bs-whatever="@mdo">답글</button>
-				</div>
-				<div class="col-lg-1 col-md-1 col-3">신고</div>
-			</div>
-			<div class="col-lg-10 col-10 review2 row">
-				<div class="col-lg-1 col-5" style="overflow: hidden;">ID_TEST_01</div>
-				<div class="col-lg-7 col-5" style="overflow: hidden; height: 100%;">너무
-					너무 재미있어요.ㄱㄴㄷㄻㄴㅇㄻㄴㅇㄹㄴㅇㅁㅈㅂㅎㅈㅇㄴ</div>
-				<div class="col-lg-2 col-2">신고</div>
-			</div>
 
 		</div>
 	</div>

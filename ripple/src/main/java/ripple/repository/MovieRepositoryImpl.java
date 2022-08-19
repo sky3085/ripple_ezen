@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ripple.bean.MovieDTO;
+import ripple.bean.NewScore;
 
 @Repository("movieRepository")
 public class MovieRepositoryImpl implements MovieRepository {
@@ -38,6 +39,20 @@ public class MovieRepositoryImpl implements MovieRepository {
 		int result = sqlSessionTemplate.selectOne("mybatis.movieMapper.getTotalA");
 		
 		return result;
+	}
+
+	@Override
+	public int voteCountUpdate(int titleid) {
+		return sqlSessionTemplate.update("mybatis.movieMapper.voteCountUpdate", titleid);
+	}
+
+	@Override
+	public int voteScoreUpdate(double newScore, int titleid) {
+		NewScore scoreUpdate = new NewScore();
+		scoreUpdate.setNewScore(newScore);
+		scoreUpdate.setTitleid(titleid);
+
+		return sqlSessionTemplate.update("mybatis.movieMapper.voteScoreUpdate", scoreUpdate);
 	}
 
 }

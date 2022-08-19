@@ -10,8 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
+import ripple.repository.AccusationRepository;
+import ripple.service.AccusationService;
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
@@ -31,9 +34,35 @@ public class RippleController {
 	@Autowired
 	private CommentsService commentsService;
 	
+	@Autowired
+	private AccusationService accusationService;
+	
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
+	}
+	
+	@RequestMapping(value = "/accusationAction")
+	public ModelAndView accusationAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
+		
+		String titleid = request.getParameter("titleid");
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		String writer = request.getParameter("writer");
+		String accuser = (String) session.getAttribute("id");
+		
+		AccusationDTO dto = new AccusationDTO();
+		dto.setSeq(seq);
+		dto.setWriter(writer);
+		dto.setAccuser(accuser);
+		
+		accusationService.commentsInsert(dto);
+		
+		modelAndView.addObject("titleid", titleid);
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/commentAction")
@@ -50,6 +79,17 @@ public class RippleController {
 		dto.setOriginal_seq(Integer.parseInt(request.getParameter("original_seq")));
 		
 		int result = commentsService.commentsInsert(dto);
+		
+		if(dto.getScore()!=-1) {//점수가 있다면
+			//먼저 titleid로 점수랑 참여자수 가져와서
+			MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
+			double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+			
+			//movieService.점수 업데이트
+			movieService.voteScoreUpdate(newScore, dto.getTitleid());
+			//movieService.투표참여자수 업데이트
+			movieService.voteCountUpdate(dto.getTitleid());
+		}
 		
 		modelAndView.addObject("titleid", dto.getTitleid());
 		modelAndView.setViewName("redirect:detail");

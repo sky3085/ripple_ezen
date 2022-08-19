@@ -8,10 +8,13 @@
 		<typeAlias type="ripple.bean.MovieDTO" alias="movieDTO"/>
 		<typeAlias type="ripple.bean.MemberDTO" alias="memberDTO"/>
 		<typeAlias type="ripple.bean.CommentsDTO" alias="commentsDTO"/>
+		<typeAlias type="ripple.bean.NewScore" alias="scoreUpdate"/>
+		<typeAlias type="ripple.bean.AccusationDTO" alias="accusationDTO"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/movie-mapping.xml" />
 		<mapper resource="mybatis/comments-mapping.xml" />
 		<mapper resource="mybatis/member-mapping.xml" />
+		<mapper resource="mybatis/accusation-mapping.xml" />
 	</mappers>
 </configuration>

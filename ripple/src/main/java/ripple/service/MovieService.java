@@ -62,4 +62,13 @@ public class MovieService {
 	public int getTotalA() {
 		return movieRepository.getTotalA();
 	}
+	
+	public int voteCountUpdate(int titleid) {
+		return movieRepository.voteCountUpdate(titleid);
+	}
+
+	public int voteScoreUpdate(double newScore, int titleid) {
+		return movieRepository.voteScoreUpdate(newScore, titleid);
+	}
+	
 }

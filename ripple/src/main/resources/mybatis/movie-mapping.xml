@@ -5,9 +5,14 @@
 <mapper namespace="mybatis.movieMapper">
 	
 	
-	<!-- <update id="view_hit" parameterType="int">
-		update board set hit = hit + 1 where seq=#{seq}
+	<update id="voteCountUpdate" parameterType="Integer">
+		update MOVIELIST set VOTE_COUNT = VOTE_COUNT + 1 where titleid=#{titleid}
 	</update>
+	<update id="voteScoreUpdate" parameterType="scoreUpdate">
+		update MOVIELIST set VOTE_SCORE = #{newScore} where titleid=#{titleid}
+	</update>
+	
+	<!-- 
 	<delete id="boardDelete" parameterType="int">
 		delete board where seq=#{seq}
 	</delete> -->
