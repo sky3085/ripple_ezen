@@ -10,12 +10,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
+<<<<<<< HEAD
 import ripple.bean.MoviePreDTO;
+=======
+import ripple.bean.UserLikeDTO;
+import ripple.repository.AccusationRepository;
+import ripple.service.AccusationService;
+>>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
+import ripple.service.UserLikeService;
 
 /**
  * Handles requests for the application home page.
@@ -32,9 +40,56 @@ public class RippleController {
 	@Autowired
 	private CommentsService commentsService;
 	
+	@Autowired
+	private AccusationService accusationService;
+	
+	@Autowired
+	private UserLikeService userLikeService;
+	
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
+	}
+	
+	@RequestMapping(value = "/userLikeAction")
+	public ModelAndView userLikeAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
+		int titleid = Integer.parseInt(request.getParameter("titleid"));
+		String userid = (String) session.getAttribute("id");
+		//좋야요! 테이블에 추가
+		UserLikeDTO dto = new UserLikeDTO();
+		dto.setTitleid(titleid);
+		dto.setUserid(userid);
+		userLikeService.userLikeInsert(dto);
+		
+		modelAndView.addObject("titleid", titleid);
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/accusationAction")
+	public ModelAndView accusationAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
+		
+		String titleid = request.getParameter("titleid");
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		String writer = request.getParameter("writer");
+		String accuser = (String) session.getAttribute("id");
+		
+		AccusationDTO dto = new AccusationDTO();
+		dto.setSeq(seq);
+		dto.setWriter(writer);
+		dto.setAccuser(accuser);
+		
+		accusationService.commentsInsert(dto);
+		
+		modelAndView.addObject("titleid", titleid);
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/commentAction")
@@ -51,6 +106,17 @@ public class RippleController {
 		dto.setOriginal_seq(Integer.parseInt(request.getParameter("original_seq")));
 		
 		int result = commentsService.commentsInsert(dto);
+		
+		if(dto.getScore()!=-1) {//점수가 있다면
+			//먼저 titleid로 점수랑 참여자수 가져와서
+			MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
+			double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+			
+			//movieService.점수 업데이트
+			movieService.voteScoreUpdate(newScore, dto.getTitleid());
+			//movieService.투표참여자수 업데이트
+			movieService.voteCountUpdate(dto.getTitleid());
+		}
 		
 		modelAndView.addObject("titleid", dto.getTitleid());
 		modelAndView.setViewName("redirect:detail");

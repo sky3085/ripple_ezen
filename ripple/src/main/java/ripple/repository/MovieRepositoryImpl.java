@@ -9,7 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ripple.bean.MovieDTO;
+<<<<<<< HEAD
 import ripple.bean.MoviePreDTO;
+=======
+import ripple.bean.NewScore;
+>>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
 
 @Repository("movieRepository")
 public class MovieRepositoryImpl implements MovieRepository {
@@ -42,8 +46,24 @@ public class MovieRepositoryImpl implements MovieRepository {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public MoviePreDTO moviepredict(String titleid) {
 		MoviePreDTO moviepreDTO = sqlSessionTemplate.selectOne("mybatis.movieMapper.moviepredict", titleid);
 		return moviepreDTO;
 	}
+=======
+	public int voteCountUpdate(int titleid) {
+		return sqlSessionTemplate.update("mybatis.movieMapper.voteCountUpdate", titleid);
+	}
+
+	@Override
+	public int voteScoreUpdate(double newScore, int titleid) {
+		NewScore scoreUpdate = new NewScore();
+		scoreUpdate.setNewScore(newScore);
+		scoreUpdate.setTitleid(titleid);
+
+		return sqlSessionTemplate.update("mybatis.movieMapper.voteScoreUpdate", scoreUpdate);
+	}
+
+>>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
 }
