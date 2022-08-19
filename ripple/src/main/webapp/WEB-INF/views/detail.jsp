@@ -149,11 +149,7 @@ span {
 			<div class="col-8 col-md-8"
 				style="width: 70%; height: 70%; margin: auto; text-align: center;">
 				<h3>흥행 성공 예측</h3>
-<<<<<<< HEAD
 				<img src="resources/img/percent/per (${score + 1}).png"
-=======
-				<img src="resources/img/percent/per (84).png"
->>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
 					style="object-fit: contain; width: 100%; height: 100%;" alt=""
 					style="overflow: hidden">
 			</div>

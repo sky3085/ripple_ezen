@@ -13,13 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
-<<<<<<< HEAD
 import ripple.bean.MoviePreDTO;
-=======
 import ripple.bean.UserLikeDTO;
 import ripple.repository.AccusationRepository;
 import ripple.service.AccusationService;
->>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;

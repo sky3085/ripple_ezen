@@ -63,14 +63,14 @@ public class MovieService {
 	public int getTotalA() {
 		return movieRepository.getTotalA();
 	}
-	
-<<<<<<< HEAD
+
+
 	public MoviePreDTO moviepredict(String titleid) {
 		MoviePreDTO dto = movieRepository.moviepredict(titleid);
 
 		return dto;
 	}
-=======
+
 	public int voteCountUpdate(int titleid) {
 		return movieRepository.voteCountUpdate(titleid);
 	}
@@ -78,6 +78,6 @@ public class MovieService {
 	public int voteScoreUpdate(double newScore, int titleid) {
 		return movieRepository.voteScoreUpdate(newScore, titleid);
 	}
-	
->>>>>>> f06a17d4d697bcbc967212fddfd5ff0de74dd661
+
+
 }
