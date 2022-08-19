@@ -8,6 +8,6 @@
 	</select>
 	
 	<insert id="accusationInsert" parameterType="accusationDTO">
-		<![CDATA[insert into accusation values (#{seq}, #{writer}, #{accuser})]]>
+		<![CDATA[insert into accusation values (seq_accusation.nextval, #{seq}, #{writer}, #{accuser})]]>
 	</insert>
 </mapper>

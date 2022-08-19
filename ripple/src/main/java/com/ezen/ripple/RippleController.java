@@ -13,11 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
+import ripple.bean.UserLikeDTO;
 import ripple.repository.AccusationRepository;
 import ripple.service.AccusationService;
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
+import ripple.service.UserLikeService;
 
 /**
  * Handles requests for the application home page.
@@ -37,9 +39,30 @@ public class RippleController {
 	@Autowired
 	private AccusationService accusationService;
 	
+	@Autowired
+	private UserLikeService userLikeService;
+	
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
+	}
+	
+	@RequestMapping(value = "/userLikeAction")
+	public ModelAndView userLikeAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
+		int titleid = Integer.parseInt(request.getParameter("titleid"));
+		String userid = (String) session.getAttribute("id");
+		//좋야요! 테이블에 추가
+		UserLikeDTO dto = new UserLikeDTO();
+		dto.setTitleid(titleid);
+		dto.setUserid(userid);
+		userLikeService.userLikeInsert(dto);
+		
+		modelAndView.addObject("titleid", titleid);
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/accusationAction")

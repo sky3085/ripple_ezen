@@ -94,6 +94,10 @@ span {
 		const titleid = tag.dataset.titleid;
 		location.href="./accusationAction?seq="+seq+"&writer="+writer+"&titleid="+titleid;
 	}
+	function userLike(tag2) {
+		const titleid = tag2.dataset.titleid;
+		location.href="./userLikeAction?titleid="+titleid;
+	}
 </script>
 </head>
 
@@ -139,15 +143,19 @@ span {
 				</div>
 			</section>
 		</div>
-		<div class="col-lg-3 col-8"
+		<div class="col-lg-3 col-8 row"
 			style="margin: 130px auto 0; text-align: center;"
 			style="overflow: hidden">
-			<div
+			<div class="col-8 col-md-8"
 				style="width: 70%; height: 70%; margin: auto; text-align: center;">
-				<h3>흥행 성공 예측</h3>yes or no
+				<h3>흥행 성공 예측</h3>
 				<img src="resources/img/percent/per (84).png"
 					style="object-fit: contain; width: 100%; height: 100%;" alt=""
 					style="overflow: hidden">
+			</div>
+			<div class="col-8 col-md-8" style="margin: 0 auto;">
+				<button type="button" onclick="userLike(this)"
+					data-titleid="${titleid }">좋아요!</button>
 			</div>
 		</div>
 	</div>
