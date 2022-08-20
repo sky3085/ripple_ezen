@@ -5,8 +5,16 @@
 <mapper namespace="mybatis.userLikeMapper">
 	
 	
-	<select id="userLikeSelect" parameterType="String" resultType="userLikeDTO">
+	<delete id="userLikeDelete" parameterType="userLikeDTO">
+		<![CDATA[delete userLike where userid=#{userid} and titleid=#{titleid}]]>
+	</delete>
+	
+	<select id="userLikeList" parameterType="String" resultType="userLikeDTO">
 		<![CDATA[select * from userLike where userid=#{userid}]]>
+	</select>
+	
+	<select id="userLikeMatch" parameterType="Integer" resultType="userLikeDTO">
+		<![CDATA[select * from userLike where titleid=#{titleid}]]>
 	</select>
 	
 	<insert id="userLikeInsert" parameterType="userLikeDTO">

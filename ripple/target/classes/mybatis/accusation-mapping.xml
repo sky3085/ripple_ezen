@@ -7,6 +7,10 @@
 		<![CDATA[select * from accusation]]>
 	</select>
 	
+	<select id="accusationSelectCK" resultType="accusationDTO" parameterType="accusationDTO">
+		<![CDATA[select * from accusation where seq=#{seq} and accuser=#{accuser}]]>
+	</select>
+	
 	<insert id="accusationInsert" parameterType="accusationDTO">
 		<![CDATA[insert into accusation values (seq_accusation.nextval, #{seq}, #{writer}, #{accuser})]]>
 	</insert>

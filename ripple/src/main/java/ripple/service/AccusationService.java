@@ -22,4 +22,8 @@ public class AccusationService {
 		return accusationRepository.commentsInsert(dto);
 	}
 	
+	public List<AccusationDTO> accusationSelectCK(AccusationDTO dto) {
+		return accusationRepository.accusationSelectCK(dto);
+	}
+	
 }

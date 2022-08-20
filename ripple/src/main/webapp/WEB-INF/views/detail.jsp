@@ -98,6 +98,10 @@ span {
 		const titleid = tag2.dataset.titleid;
 		location.href="./userLikeAction?titleid="+titleid;
 	}
+	function userLikeDelete(tag3) {
+		const titleid = tag3.dataset.titleid;
+		location.href="./userLikeDeleteAction?titleid="+titleid;
+	}
 </script>
 </head>
 
@@ -136,8 +140,7 @@ span {
 					<hr>
 					<h4>개요</h4>
 					<div>
-						<p id="overview">&nbsp;악당 렉스 루터의 계략으로 위험에 빠진 슈퍼맨을 비롯한 저스티스 리그의
-							슈퍼 히어로들을 구하기 위해 슈퍼독 크립토와 슈퍼 펫 친구들이 벌이는 파워 댕댕 모험을 그린 이야기</p>
+						<p id="overview" style="height: 240px; overflow: auto;">&nbsp;${dto.overview }</p>
 					</div>
 
 				</div>
@@ -154,8 +157,16 @@ span {
 					style="overflow: hidden">
 			</div>
 			<div class="col-8 col-md-8" style="margin: 0 auto;">
-				<button type="button" onclick="userLike(this)"
-					data-titleid="${titleid }">좋아요!</button>
+				<c:if test="${id != null }">
+					<c:if test="${likeTrue == true}">
+						<button type="button" onclick="userLikeDelete(this)"
+							data-titleid="${titleid }">좋아요!(취소)</button>
+					</c:if>
+					<c:if test="${likeTrue != true}">
+						<button type="button" onclick="userLike(this)"
+							data-titleid="${titleid }">좋아요!</button>
+					</c:if>
+				</c:if>
 			</div>
 		</div>
 	</div>
@@ -187,8 +198,14 @@ span {
 						</select>
 					</div>
 					<div class="col-lg-2 col-3" style="padding: 0">
-						<input class="btn btn-primary col-lg-1 col-3"
+						<c:if test="${id == null }">
+							<input disabled="disabled" class="btn btn-primary col-lg-1 col-3"
 							style="width: 100%; height: 100%" type="submit" value="Submit">
+						</c:if>
+						<c:if test="${id != null }">
+							<input class="btn btn-primary col-lg-1 col-3"
+							style="width: 100%; height: 100%" type="submit" value="Submit">
+						</c:if>
 					</div>
 				</div>
 			</form>
@@ -200,17 +217,31 @@ span {
 						<div class="col-lg-7 col-md-6 col-7" style="overflow: hidden;">${dto.contents }</div>
 						<div class="col-lg-1 col-md-2 col-3">${dto.score }점</div>
 						<div class="col-lg-1 col-md-1 col-3">
-							<button id="${dto.seq }" type="button"
-								onclick="doAction(this.id)"
-								style="border: none; color: black; background-color: white; min-width: 60px;"
-								class="btn btn-primary" data-bs-toggle="modal"
-								data-bs-target="#exampleModal" data-bs-whatever="@mdo">답글</button>
+							<c:if test="${id != null }">
+								<button id="${dto.seq }" type="button"
+									onclick="doAction(this.id)"
+									style="border: none; color: black; background-color: white; min-width: 60px;"
+									class="btn btn-primary" data-bs-toggle="modal"
+									data-bs-target="#exampleModal" data-bs-whatever="@mdo">답글</button>
+							</c:if>
+							<c:if test="${id == null }">
+								<button id="${dto.seq }" type="button" disabled="disabled"
+									style="border: none; color: black; background-color: white; min-width: 60px;"
+									class="btn btn-primary">답글</button>
+							</c:if>
 						</div>
 						<div class="col-lg-1 col-md-1 col-3">
-							<button type="button" onclick="accusation(this)"
-								data-seq="${dto.seq }" data-writer="${dto.id }" data-titleid="${titleid }"
-								style="border: none; color: black; background-color: white; min-width: 60px;"
-								class="btn btn-primary">신고</button>
+							<c:if test="${id != null }">
+								<button type="button" onclick="accusation(this)"
+									data-seq="${dto.seq }" data-writer="${dto.id }" data-titleid="${titleid }"
+									style="border: none; color: black; background-color: white; min-width: 60px;"
+									class="btn btn-primary">신고</button>
+							</c:if>
+							<c:if test="${id == null }">
+								<button type="button" onclick="accusation(this)" disabled="disabled"
+									style="border: none; color: black; background-color: white; min-width: 60px;"
+									class="btn btn-primary">신고</button>
+							</c:if>
 						</div>
 					</div>
 					<c:forEach var="dto2" items="${commentsList }">
@@ -220,10 +251,17 @@ span {
 								<div class="col-lg-7 col-5"
 									style="overflow: hidden; height: 100%;">${dto2.contents }</div>
 								<div class="col-lg-2 col-2">
-									<button type="button" onclick="accusation(this)"
-										data-seq="${dto2.seq }" data-writer="${dto2.id }" data-titleid="${titleid }"
-										style="border: none; color: black; background-color: white; min-width: 60px;"
-										class="btn btn-primary">신고</button>
+									<c:if test="${id != null }">
+										<button type="button" onclick="accusation(this)"
+											data-seq="${dto2.seq }" data-writer="${dto2.id }" data-titleid="${titleid }"
+											style="border: none; color: black; background-color: white; min-width: 60px;"
+											class="btn btn-primary">신고</button>
+									</c:if>
+									<c:if test="${id == null }">
+										<button type="button" onclick="accusation(this)" disabled="disabled"
+											style="border: none; color: black; background-color: white; min-width: 60px;"
+											class="btn btn-primary">신고</button>
+									</c:if>
 								</div>
 							</div>
 						</c:if>
