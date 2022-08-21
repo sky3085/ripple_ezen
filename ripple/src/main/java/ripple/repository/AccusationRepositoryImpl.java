@@ -23,6 +23,11 @@ public class AccusationRepositoryImpl implements AccusationRepository{
 	public int commentsInsert(AccusationDTO dto) {
 		return sqlSession.insert("mybatis.accusationMapper.accusationInsert", dto);
 	}
+
+	@Override
+	public List<AccusationDTO> accusationSelectCK(AccusationDTO dto) {
+		return sqlSession.selectList("mybatis.accusationMapper.accusationSelectCK", dto);
+	}
 	
 
 }

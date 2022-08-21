@@ -1,5 +1,6 @@
 package com.ezen.ripple;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,6 @@ import ripple.bean.CommentsDTO;
 import ripple.bean.MovieDTO;
 import ripple.bean.MoviePreDTO;
 import ripple.bean.UserLikeDTO;
-import ripple.repository.AccusationRepository;
 import ripple.service.AccusationService;
 import ripple.service.CommentsService;
 import ripple.service.MemberService;
@@ -66,6 +66,25 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/userLikeDeleteAction")
+	public ModelAndView userLikeDeleteAction(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
+		int titleid = Integer.parseInt(request.getParameter("titleid"));
+		String userid = (String) session.getAttribute("id");
+		//좋야요! 테이블에 추가
+		UserLikeDTO dto = new UserLikeDTO();
+		dto.setTitleid(titleid);
+		dto.setUserid(userid);
+		userLikeService.userLikeDelete(dto);
+		
+		modelAndView.addObject("titleid", titleid);
+		modelAndView.setViewName("redirect:detail");
+		
+		return modelAndView;
+	}
+	
+	
 	@RequestMapping(value = "/accusationAction")
 	public ModelAndView accusationAction(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
@@ -80,8 +99,10 @@ public class RippleController {
 		dto.setSeq(seq);
 		dto.setWriter(writer);
 		dto.setAccuser(accuser);
-		
-		accusationService.commentsInsert(dto);
+		//if accusationService.select 널이면 실행
+		if(accusationService.accusationSelectCK(dto).size()==0) {
+			accusationService.commentsInsert(dto);//기존에 없을때만 신고를 추가
+		}
 		
 		modelAndView.addObject("titleid", titleid);
 		modelAndView.setViewName("redirect:detail");
@@ -123,21 +144,30 @@ public class RippleController {
 	
 	@RequestMapping(value = "/detail")
 	public ModelAndView detail(HttpServletRequest request) {
-		
+		boolean likeTrue = false;
 		String titleid = request.getParameter("titleid");
 		if(titleid == null) {
 			titleid = (String)request.getAttribute("titleid");
 		}
-		
+		HttpSession session = request.getSession();
 		MovieDTO dto = movieService.movieView(titleid);
 		MoviePreDTO moviepreDTO = movieService.moviepredict(titleid);
 		List<CommentsDTO> commentsList = commentsService.commentsSelect(Integer.parseInt(titleid));
 		ModelAndView modelAndView = new ModelAndView();
 		int score = (int)(100 * moviepreDTO.getPredict());
+		
+		List<UserLikeDTO> userLikeList = userLikeService.userLikeMatch(Integer.parseInt(titleid));
+		for(UserLikeDTO userLikedto : userLikeList) {
+			if(userLikedto.getUserid().equals(session.getAttribute("id"))) {
+				likeTrue = true;
+			}
+		}
+		
 		modelAndView.addObject("score", score);
 		modelAndView.addObject("dto", dto);
 		modelAndView.addObject("commentsList", commentsList);
 		modelAndView.addObject("titleid", titleid);
+		modelAndView.addObject("likeTrue", likeTrue);
 		modelAndView.setViewName("detail");
 		
 		return modelAndView;
@@ -150,6 +180,14 @@ public class RippleController {
 	
 	@RequestMapping(value = "/list")
 	public ModelAndView list(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		List<UserLikeDTO> userLikeList = new ArrayList<UserLikeDTO>();
+		if(session.getAttribute("id")!=null) {
+			userLikeList = userLikeService.userLikeList((String)session.getAttribute("id"));
+		}else {
+			userLikeList = null;
+		}
+		
 		int pg = 1;
 		if (request.getParameter("pg") != null) {
 			pg = Integer.parseInt(request.getParameter("pg"));
@@ -174,6 +212,7 @@ public class RippleController {
 		modelAndView.addObject("totalP", totalP);
 		modelAndView.addObject("startPage", startPage);
 		modelAndView.addObject("endPage", endPage);
+		modelAndView.addObject("userLikeList", userLikeList);
 		modelAndView.setViewName("list");
 		
 		return modelAndView;

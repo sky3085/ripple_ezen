@@ -84,14 +84,17 @@ a {
 		<div class="container px-4 px-lg-5 mt-5">
 			<div
 				class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
 				<c:forEach var="dto" items="${list }">
 					<div class="col-10 col-sm-6 col-lg-3 mb-5" style="height: 500px">
 						<div class="card h-100"
 							style="border: 1px solid rgba(227, 227, 227, 1); box-sizing: border-box; box-shadow: 0 5px 19px rgb(0 0 0/ 55%);">
 							<!-- Sale badge-->
-							<div class="badge bg-dark text-white position-absolute"
-								style="top: 0.5rem; right: 0.5rem">Like</div>
+							<c:forEach var="userLikeDTO" items="${userLikeList }">
+								<c:if test="${userLikeDTO.titleid==dto.titleid }">
+									<div class="badge bg-dark text-white position-absolute"
+										style="top: 0.5rem; right: 0.5rem; width: 60px; height: 30px; font-size: 1em;">Like</div>
+								</c:if>
+							</c:forEach>
 							<!-- Product image-->
 							<img class="card-img-top" src="${dto.poster_path }"
 								alt="이미지가 없습니다." style="width: 100%; height: 300px" />
