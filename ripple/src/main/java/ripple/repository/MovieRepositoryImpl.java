@@ -34,6 +34,17 @@ public class MovieRepositoryImpl implements MovieRepository {
 		
 		return list;
 	}
+	
+	@Override
+	public List<MovieDTO> movieListBoxOffice(int startNum, int endNum) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		List<MovieDTO> list =sqlSessionTemplate.selectList("mybatis.movieMapper.movieListBoxOffice", map);
+		
+		return list;
+	}
 
 	@Override
 	public int getTotalA() {
@@ -61,5 +72,12 @@ public class MovieRepositoryImpl implements MovieRepository {
 
 		return sqlSessionTemplate.update("mybatis.movieMapper.voteScoreUpdate", scoreUpdate);
 	}
+
+	@Override
+	public List<MovieDTO> movieFind(String movieSearch) {
+		return sqlSessionTemplate.selectList("mybatis.movieMapper.movieFind", movieSearch);
+	}
+
+	
 
 }

@@ -44,6 +44,11 @@ a {
 	text-decoration: none;
 }
 </style>
+<script type="text/javascript">
+	function sortList(mytag) {
+		location.href="./list?sortMethod="+mytag.value;
+	}
+</script>
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
@@ -57,24 +62,26 @@ a {
 			</div>
 		</div>
 	</header>
-	<!-- Section-->
+	
 	<section class="py-5">
 		<div class="row">
-			<div class="col-xl-2 col-md-2 col-3" style="margin-left: 16vw;">
+			<div class="col-xl-2 col-md-2 col-6" style="margin-left: 16vw;">
 				<select style="border-color: #408ad4;" class="form-select"
-					aria-label="Default select example">
+					aria-label="Default select example" id="sortList" onchange="sortList(this)">
 					<option selected>정렬</option>
-					<option value="1">최신순</option>
-					<option value="2">흥행 예측순</option>
+					<option value="latest">최신순</option>
+					<option value="boxOffice">흥행 예측순</option>
 				</select>
 			</div>
-			<div class="col-xl-6 col-md-6 col-6" style="margin-left: 3vw;">
+			<div class="col-xl-6 col-md-6 col-11" style="margin-left: 10vw;">
 				<div class="input-group mb-3">
-					<input style="border-color: #408ad4;" type="text"
-						class="form-control" placeholder="영화 검색"
-						aria-label="Recipient's username" aria-describedby="button-addon2">
-					<button style="border-color: #408ad4;"
-						class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+					<form action="./list" style="width: 100%">
+						<input class="btn" style="border-color: #408ad4; width: 60%;" type="text" name="movieSearch"
+							class="form-control" placeholder="영화 검색"
+							aria-label="Recipient's username" aria-describedby="button-addon2">
+						<input style="border-color: #408ad4; margin-left: 10px; width: 90px; position: absolute;" 
+							class="btn btn-outline-secondary" type="submit" id="button-addon2" value="Search">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -88,33 +95,26 @@ a {
 					<div class="col-10 col-sm-6 col-lg-3 mb-5" style="height: 500px">
 						<div class="card h-100"
 							style="border: 1px solid rgba(227, 227, 227, 1); box-sizing: border-box; box-shadow: 0 5px 19px rgb(0 0 0/ 55%);">
-							<!-- Sale badge-->
 							<c:forEach var="userLikeDTO" items="${userLikeList }">
 								<c:if test="${userLikeDTO.titleid==dto.titleid }">
 									<div class="badge bg-dark text-white position-absolute"
 										style="top: 0.5rem; right: 0.5rem; width: 60px; height: 30px; font-size: 1em;">Like</div>
 								</c:if>
 							</c:forEach>
-							<!-- Product image-->
 							<img class="card-img-top" src="${dto.poster_path }"
 								alt="이미지가 없습니다." style="width: 100%; height: 300px" />
-							<!-- Product details-->
 							<div class="card-body p-4">
 								<div class="text-center">
-									<!-- Product name-->
 									<h5 class="fw-bolder" style="overflow: hidden; height: 24px;">${dto.title }</h5>
-									<!-- Product reviews-->
 									<div
 										class="d-flex justify-content-center small text-warning mb-2">
 										<c:forEach begin="0" end="${dto.vote_score }" step="1">
 											<div class="bi-star-fill"></div>
 										</c:forEach>
 									</div>
-									<!-- Product price-->
 									<span>${dto.genres }</span>
 								</div>
 							</div>
-							<!-- Product actions-->
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 								<div class="text-center">
 									<a class="btn btn-outline-dark mt-auto"
