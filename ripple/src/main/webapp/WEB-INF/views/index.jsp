@@ -28,6 +28,8 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="resources/css/list_styles.css" rel="stylesheet" />
 <link href="resources/css/index_styles.css" rel="stylesheet" />
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
@@ -36,8 +38,7 @@
 		<div class="masthead-content">
 			<div class="container px-5">
 				<h2 class="masthead-heading mb-0">리플</h2>
-				<br>
-				<br>
+				<br> <br>
 				<h3 class="masthead-subheading mb-0">영화 소개 및 성공 예측 서비스</h3>
 				<!-- <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a> -->
 			</div>
@@ -120,5 +121,19 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="resources/js/index_scripts.js"></script>
+
+	<script type="text/javascript">
+		var naver_id_login = new naver_id_login("xmmOYUPTyHVGBZKQsIgz", "http://localhost:8080/ripple/index");
+		// 네이버 사용자 프로필 조회
+		naver_id_login.get_naver_userprofile("naverSignInCallback()");
+		// 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+		function naverSignInCallback() {
+			alert(naver_id_login.getProfileData('email'));
+			if(naver_id_login.getProfileData('email')){
+				sessionStorage.setItem('id', naver_id_login.getProfileData('email'));
+				console.log(sessionStorage.getItem('id'));
+			}
+		}
+	</script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.ezen.ripple;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ripple.bean.AccusationDTO;
@@ -18,6 +20,7 @@ import ripple.bean.MoviePreDTO;
 import ripple.bean.UserLikeDTO;
 import ripple.service.AccusationService;
 import ripple.service.CommentsService;
+import ripple.service.KakaoAPI;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
 import ripple.service.UserLikeService;
@@ -30,21 +33,34 @@ public class RippleController {
 
 	@Autowired
 	private MemberService memberService;
-	
 	@Autowired
 	private MovieService movieService;
-	
 	@Autowired
 	private CommentsService commentsService;
-	
 	@Autowired
 	private AccusationService accusationService;
-	
 	@Autowired
 	private UserLikeService userLikeService;
+	@Autowired
+	private KakaoAPI kakao;
 	
 	@RequestMapping(value = "/index")
 	public String index() {
+		return "index";
+	}
+	
+	@RequestMapping(value = "/kakaoLogin")
+	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest request) {
+		String access_Token = kakao.getAccessToken(code);
+		HashMap<String, Object> userInfo = kakao.getUserInfo(access_Token);
+		HttpSession session = request.getSession();
+	    //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
+	    if (userInfo.get("email") != null) {
+	        session.setAttribute("id", userInfo.get("email"));
+	        session.setAttribute("access_Token", access_Token);
+	    }
+	    System.out.println(userInfo.get("email"));
+	    System.out.println(access_Token);
 		return "index";
 	}
 	
@@ -272,6 +288,10 @@ public class RippleController {
 	public String logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
+		if(session.getAttribute("access_Token")!=null) {
+			session.removeAttribute("access_Token");
+			System.out.println("카카오 로그아웃 성공");
+		}
 		
 		return "index";
 	}
