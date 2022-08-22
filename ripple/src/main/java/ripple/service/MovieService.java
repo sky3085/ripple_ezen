@@ -60,6 +60,34 @@ public class MovieService {
 		return list;
 	}
 	
+	public List<MovieDTO> movieListBoxOffice(int startNum, int endNum) {
+		List<MovieDTO> list = movieRepository.movieListBoxOffice(startNum, endNum);
+		
+		for(MovieDTO dto : list) {
+			String[] genre = dto.getGenres().substring(1, dto.getGenres().length()-1).split(",");
+			String genres = "";
+			
+			if(genre.length>2) {
+				for(int i = 0; i < 2; i++) {
+					String g = genre[i];
+					g = g.substring(g.indexOf("'")+1, g.length()-1);
+					genres = genres + "&nbsp;&nbsp;" + g;
+				}
+			}else {
+				for(String g : genre) {
+					g = g.substring(g.indexOf("'")+1, g.length()-1);
+					genres = genres + "&nbsp;&nbsp;" + g;
+				}
+			}
+			dto.setGenres(genres);
+			
+			int score = (int) dto.getVote_score();
+			dto.setVote_score(score);
+		}
+		
+		return list;
+	}
+	
 	public int getTotalA() {
 		return movieRepository.getTotalA();
 	}
@@ -69,6 +97,11 @@ public class MovieService {
 		MoviePreDTO dto = movieRepository.moviepredict(titleid);
 
 		return dto;
+	}
+	
+	public List<MovieDTO> movieFind(String movieSearch){
+		List<MovieDTO> list = movieRepository.movieFind(movieSearch);
+		return list;
 	}
 
 	public int voteCountUpdate(int titleid) {

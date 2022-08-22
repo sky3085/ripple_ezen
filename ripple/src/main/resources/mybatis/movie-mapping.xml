@@ -11,11 +11,6 @@
 	<update id="voteScoreUpdate" parameterType="scoreUpdate">
 		update MOVIELIST set VOTE_SCORE = #{newScore} where titleid=#{titleid}
 	</update>
-	
-	<!-- 
-	<delete id="boardDelete" parameterType="int">
-		delete board where seq=#{seq}
-	</delete> -->
 	<select id="movieView" parameterType="String" resultType="movieDTO">
 		select * from MOVIELIST where titleid=#{titleid}
 	</select>
@@ -29,8 +24,17 @@
 		(select * from MOVIELIST order by release_date desc) tt) where rn>=#{startNum} and rn<=#{endNum}]]>
 	</select>
 	
+	<select id="movieListBoxOffice" resultType="movieDTO" parameterType="java.util.Map">
+		<![CDATA[select titleid, title, poster_path, release_date, budget, genres, director, runtime, overview, vote_score, vote_count from (select rownum rn, tt.* from 
+		(select movielist.*, moviepre.predict from MOVIELIST movielist inner join MOVIEPRE moviepre on movielist.titleid = moviepre.title order by moviepre.predict desc) tt) where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	
 	<select id="moviepredict" parameterType="String" resultType="moviepreDTO">
 		select * from moviepre where title=#{titleid}
+	</select>
+	
+	<select id="movieFind" resultType="movieDTO" parameterType="String">
+		select * from movielist where title=#{movieSearch}
 	</select>
 </mapper>
 

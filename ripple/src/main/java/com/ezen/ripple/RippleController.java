@@ -182,38 +182,63 @@ public class RippleController {
 	public ModelAndView list(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<UserLikeDTO> userLikeList = new ArrayList<UserLikeDTO>();
+		String sortMethod = request.getParameter("sortMethod");
+		String movieSearch = request.getParameter("movieSearch");
+		ModelAndView modelAndView = new ModelAndView();
 		if(session.getAttribute("id")!=null) {
 			userLikeList = userLikeService.userLikeList((String)session.getAttribute("id"));
 		}else {
 			userLikeList = null;
 		}
 		
-		int pg = 1;
-		if (request.getParameter("pg") != null) {
-			pg = Integer.parseInt(request.getParameter("pg"));
+		if(movieSearch == null) {
+			int pg = 1;
+			if (request.getParameter("pg") != null) {
+				pg = Integer.parseInt(request.getParameter("pg"));
+			}
+			
+			int endNum = pg * 12;
+			int startNum = endNum - 11;
+			
+			List<MovieDTO> list = new ArrayList<MovieDTO>();
+			if(sortMethod==null || sortMethod.equals("latest")) {
+				list=movieService.movieList(startNum, endNum);
+			}else if(sortMethod.equals("boxOffice")) {
+				list=movieService.movieListBoxOffice(startNum, endNum);
+			}
+			
+			
+			int totalA = movieService.getTotalA();
+			int totalP = (totalA + 11) / 12;
+	
+			int startPage = (pg - 1) / 5 * 5 + 1;
+			int endPage = startPage + 4;
+			if (endPage > totalP)
+				endPage = totalP;
+			
+			
+			modelAndView.addObject("pg", pg);
+			modelAndView.addObject("list", list);
+			modelAndView.addObject("totalP", totalP);
+			modelAndView.addObject("startPage", startPage);
+			modelAndView.addObject("endPage", endPage);
+			modelAndView.addObject("userLikeList", userLikeList);
+			modelAndView.setViewName("list");
+		}else {
+			
+			int pg =1;
+			int totalP = 1;
+			int startPage = 1;
+			int endPage = 1;
+			List<MovieDTO> list =movieService.movieFind(movieSearch);
+			modelAndView.addObject("pg", pg);
+			modelAndView.addObject("list", list);
+			modelAndView.addObject("totalP", totalP);
+			modelAndView.addObject("startPage", startPage);
+			modelAndView.addObject("endPage", endPage);
+			modelAndView.addObject("userLikeList", userLikeList);
+			modelAndView.setViewName("list");
 		}
-		
-		int endNum = pg * 12;
-		int startNum = endNum - 11;
-
-		List<MovieDTO> list=movieService.movieList(startNum, endNum);
-		
-		int totalA = movieService.getTotalA();
-		int totalP = (totalA + 11) / 12;
-
-		int startPage = (pg - 1) / 5 * 5 + 1;
-		int endPage = startPage + 4;
-		if (endPage > totalP)
-			endPage = totalP;
-		
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("pg", pg);
-		modelAndView.addObject("list", list);
-		modelAndView.addObject("totalP", totalP);
-		modelAndView.addObject("startPage", startPage);
-		modelAndView.addObject("endPage", endPage);
-		modelAndView.addObject("userLikeList", userLikeList);
-		modelAndView.setViewName("list");
 		
 		return modelAndView;
 	}
