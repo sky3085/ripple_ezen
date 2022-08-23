@@ -27,10 +27,11 @@
 	crossorigin="anonymous">
 
 <link href="resources/css/index_styles.css" rel="stylesheet" />
+  
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
-	<form action="./loginAction">
+	<form action="./loginAction" style="width: 100vw;">
 		<div class="row" style="margin: 150px auto 0 auto; width: 60vh;">
 
 
@@ -40,7 +41,6 @@
 					<input type="text" class="form-control" id="staticEmail" name="id">
 				</div>
 			</div>
-
 			<div class="mb-3 row">
 				<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
 				<div class="col-sm-10" style="padding-left: 20px;">
@@ -48,11 +48,9 @@
 						name="pwd">
 				</div>
 			</div>
-			<input class="btn btn-primary" type="submit" value="로그인">
-			<button type="button" class="btn btn-outline-success"
-				style="margin-top: 15px;">네이버 로그인</button>
-			<button type="button" class="btn btn-outline-warning"
-				style="margin-top: 15px;">카카오 로그인</button>
+			<input style="width: 80%; margin: 0 auto" class="btn btn-primary" type="submit" value="로그인">
+			<!-- <div id="naver_id_login"></div> -->
+			<a style="text-align: center; margin-top: 20px" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=878e4bd2f72087b1245184738292a7bd&redirect_uri=http://localhost:8080/ripple/kakaoLogin"><img src="resources/img/kakao_login.png"></a>
 		</div>
 	</form>
 	<!-- Bootstrap core JS-->
@@ -60,5 +58,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="resources/js/index_scripts.js"></script>
+  	
 </body>
 </html>

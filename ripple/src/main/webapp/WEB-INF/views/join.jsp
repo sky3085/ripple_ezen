@@ -32,8 +32,8 @@
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
 
-	<form action="./joinAction">
-		<div class="row" style="margin: 150px auto 0 auto; width: 60vh;">
+	<form action="./joinAction" style="width: 100vw;">
+		<div class="row" style="margin: 150px auto 0 auto; max-width: 600px;">
 			<span style="text-align: center; font-size: 25px; margin-bottom: 15px;">회원 가입</span>
 
 			<div class="mb-3 row">
