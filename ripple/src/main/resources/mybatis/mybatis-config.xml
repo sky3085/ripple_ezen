@@ -19,5 +19,6 @@
 		<mapper resource="mybatis/member-mapping.xml" />
 		<mapper resource="mybatis/accusation-mapping.xml" />
 		<mapper resource="mybatis/userLike-mapping.xml" />
+		<mapper resource="mybatis/admin-mapping.xml" />
 	</mappers>
 </configuration>

@@ -4,10 +4,10 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.memberMapper">
 	<select id="login" resultType="memberDTO" parameterType="java.util.Map">
-		<![CDATA[select * from member where "id"=#{id} and "pwd"=#{pwd}]]>
+		<![CDATA[select * from member where id=#{id} and pwd=#{pwd}]]>
 	</select>
 	
 	<insert id="join" parameterType="memberDTO">
-		<![CDATA[insert into member("seq", "id", "pwd", "email") values(seq_member.nextval,#{id},#{pwd},#{email})]]>
+		<![CDATA[insert into member(seq, id, pwd, email) values(seq_member.nextval,#{id},#{pwd},#{email})]]>
 	</insert>
 </mapper>

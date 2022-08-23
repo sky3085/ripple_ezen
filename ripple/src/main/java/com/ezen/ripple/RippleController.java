@@ -49,6 +49,11 @@ public class RippleController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/map")
+	public String map() {
+		return "map";
+	}
+	
 	@RequestMapping(value = "/kakaoLogin")
 	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest request) {
 		String access_Token = kakao.getAccessToken(code);
@@ -59,8 +64,6 @@ public class RippleController {
 	        session.setAttribute("id", userInfo.get("email"));
 	        session.setAttribute("access_Token", access_Token);
 	    }
-	    System.out.println(userInfo.get("email"));
-	    System.out.println(access_Token);
 		return "index";
 	}
 	
@@ -290,7 +293,6 @@ public class RippleController {
 		session.removeAttribute("id");
 		if(session.getAttribute("access_Token")!=null) {
 			session.removeAttribute("access_Token");
-			System.out.println("카카오 로그아웃 성공");
 		}
 		
 		return "index";

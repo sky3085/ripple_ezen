@@ -4,7 +4,14 @@ public class MemberDTO {
 	private String id;
 	private String pwd;
 	private String email;
+	private String manager;
 	
+	public String getManager() {
+		return manager;
+	}
+	public void setManager(String manager) {
+		this.manager = manager;
+	}
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", pwd=" + pwd + ", email=" + email + "]";
