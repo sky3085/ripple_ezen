@@ -143,17 +143,23 @@ public class RippleController {
 		dto.setLevel(Integer.parseInt(request.getParameter("level")));
 		dto.setOriginal_seq(Integer.parseInt(request.getParameter("original_seq")));
 		
-		int result = commentsService.commentsInsert(dto);
+		//만약 처음 삽입이 아니라면? select로 id랑 titleid를 가져왔을대 길이가 1 이상이라면, 삽입 x
+		//만약 처음 삽입이라면? select로 id랑 titleid를 가져왔을때 밑에 코드 실행
+		List<CommentsDTO> commentsCheck = commentsService.commentsCheck(dto);
 		
-		if(dto.getScore()!=-1) {//점수가 있다면
-			//먼저 titleid로 점수랑 참여자수 가져와서
-			MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
-			double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+		if(commentsCheck.size()==0 || dto.getLevel()==2) {
+			int result = commentsService.commentsInsert(dto);
 			
-			//movieService.점수 업데이트
-			movieService.voteScoreUpdate(newScore, dto.getTitleid());
-			//movieService.투표참여자수 업데이트
-			movieService.voteCountUpdate(dto.getTitleid());
+			if(dto.getScore()!=-1) {//점수가 있다면
+				//먼저 titleid로 점수랑 참여자수 가져와서
+				MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
+				double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+				
+				//movieService.점수 업데이트
+				movieService.voteScoreUpdate(newScore, dto.getTitleid());
+				//movieService.투표참여자수 업데이트
+				movieService.voteCountUpdate(dto.getTitleid());
+			}
 		}
 		
 		modelAndView.addObject("titleid", dto.getTitleid());

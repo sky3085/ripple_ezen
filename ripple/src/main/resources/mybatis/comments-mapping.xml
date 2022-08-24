@@ -7,6 +7,10 @@
 		<![CDATA[select * from comments where "titleid"=#{titleid}]]>
 	</select>
 	
+	<select id="commentsCheck" resultType="commentsDTO" parameterType="commentsDTO">
+		<![CDATA[select * from comments where "titleid"=#{titleid} and "id"=#{id} and "level"=1]]>
+	</select>
+	
 	<insert id="commentsInsert" parameterType="commentsDTO">
 		<![CDATA[insert into comments("seq", "id", "titleid", "contents", "score", "level", "original_seq") values (seq_comments.nextval, #{id}, #{titleid}, #{contents}, #{score}, #{level}, #{original_seq})]]>
 	</insert>

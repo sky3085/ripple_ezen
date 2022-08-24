@@ -22,4 +22,8 @@ public class CommentsService {
 	public int commentsInsert(CommentsDTO dto) {
 		return commentsRepository.commentsInsert(dto);
 	}
+	
+	public List<CommentsDTO> commentsCheck(CommentsDTO dto) {
+		return commentsRepository.commentsCheck(dto);
+	}
 }
