@@ -1,0 +1,3061 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0327468344a8516db5c8b6d0346c8552 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    <h3 align="center" style="font-size:20px">영화관</h3>
+    
+            <div class="folium-map" id="map_0327468344a8516db5c8b6d0346c8552" ></div>
+        
+</body>
+<script>    
+    
+            var map_0327468344a8516db5c8b6d0346c8552 = L.map(
+                "map_0327468344a8516db5c8b6d0346c8552",
+                {
+                    center: [37.54980846829128, 126.9879152070663],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d58a371c3c9e2b7b51df93dd7546f475 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+            var marker_fec39d14631bee80978c00134ecdeeea = L.marker(
+                [37.665184347987626, 127.040964132491],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_d6c7e3694440f7b22454ba19be640ac5 = L.popup({"maxWidth": 200});
+
+        
+            var html_b1ddaabf08b39e7c47741c4fd0edc6c4 = $(`<div id="html_b1ddaabf08b39e7c47741c4fd0edc6c4" style="width: 100.0%; height: 100.0%;">서울특별시 도봉구 도봉로 684 4~5층 (방학동)</div>`)[0];
+            popup_d6c7e3694440f7b22454ba19be640ac5.setContent(html_b1ddaabf08b39e7c47741c4fd0edc6c4);
+        
+
+        marker_fec39d14631bee80978c00134ecdeeea.bindPopup(popup_d6c7e3694440f7b22454ba19be640ac5)
+        ;
+
+        
+    
+    
+            marker_fec39d14631bee80978c00134ecdeeea.bindTooltip(
+                `<div>
+                     CGV 방학
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0be90a9b33ff93573cdead6d9209b795 = L.marker(
+                [37.676558364512125, 127.05276090684325],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_fdc1f14fa7ca31bd28007dd70b461bf4 = L.popup({"maxWidth": 200});
+
+        
+            var html_f472f35b9ef11244c7b92e68e8c5c17c = $(`<div id="html_f472f35b9ef11244c7b92e68e8c5c17c" style="width: 100.0%; height: 100.0%;">서울특별시 노원구 동일로 1660 3층~9층 (상계동 롯데시네마 수락산)</div>`)[0];
+            popup_fdc1f14fa7ca31bd28007dd70b461bf4.setContent(html_f472f35b9ef11244c7b92e68e8c5c17c);
+        
+
+        marker_0be90a9b33ff93573cdead6d9209b795.bindPopup(popup_fdc1f14fa7ca31bd28007dd70b461bf4)
+        ;
+
+        
+    
+    
+            marker_0be90a9b33ff93573cdead6d9209b795.bindTooltip(
+                `<div>
+                     롯데시네마 노원수락산역
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29b8f64d0fdb530a81ccad7cb2076233 = L.marker(
+                [37.529373431839375, 126.87319365653178],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_748e0df0ebbc2ceb602bac26e5df148a = L.popup({"maxWidth": 200});
+
+        
+            var html_9f775182c52e8d06eeeed63d5b64530c = $(`<div id="html_9f775182c52e8d06eeeed63d5b64530c" style="width: 100.0%; height: 100.0%;">서울특별시 양천구 목동동로 309 (목동행복한세상백화점 7층)</div>`)[0];
+            popup_748e0df0ebbc2ceb602bac26e5df148a.setContent(html_9f775182c52e8d06eeeed63d5b64530c);
+        
+
+        marker_29b8f64d0fdb530a81ccad7cb2076233.bindPopup(popup_748e0df0ebbc2ceb602bac26e5df148a)
+        ;
+
+        
+    
+    
+            marker_29b8f64d0fdb530a81ccad7cb2076233.bindTooltip(
+                `<div>
+                     메가박스중앙 주 목동지점 COMFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7907f54c9026cfc017546cb436fb8f03 = L.marker(
+                [37.56999240326742, 126.89614036775133],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_739ca29d52de62db7e66ba87ec451597 = L.popup({"maxWidth": 200});
+
+        
+            var html_3f4e2f6d05614701208d71052ccac9e1 = $(`<div id="html_3f4e2f6d05614701208d71052ccac9e1" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 월드컵로 240 (성산동월드컵쇼핑몰내 1층)</div>`)[0];
+            popup_739ca29d52de62db7e66ba87ec451597.setContent(html_3f4e2f6d05614701208d71052ccac9e1);
+        
+
+        marker_7907f54c9026cfc017546cb436fb8f03.bindPopup(popup_739ca29d52de62db7e66ba87ec451597)
+        ;
+
+        
+    
+    
+            marker_7907f54c9026cfc017546cb436fb8f03.bindTooltip(
+                `<div>
+                     메가박스중앙 주 상암월드컵경기장지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_96e065b3a4c6acb84085e4752cf02f58 = L.marker(
+                [37.512521137011326, 127.0559292832903],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_5f41a7ee7af6dd8d7cdd2bc04798bd8d = L.popup({"maxWidth": 200});
+
+        
+            var html_dffd8a31511db40dfe3be9b93b4438fb = $(`<div id="html_dffd8a31511db40dfe3be9b93b4438fb" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 영동대로 513 (삼성동 코엑스)</div>`)[0];
+            popup_5f41a7ee7af6dd8d7cdd2bc04798bd8d.setContent(html_dffd8a31511db40dfe3be9b93b4438fb);
+        
+
+        marker_96e065b3a4c6acb84085e4752cf02f58.bindPopup(popup_5f41a7ee7af6dd8d7cdd2bc04798bd8d)
+        ;
+
+        
+    
+    
+            marker_96e065b3a4c6acb84085e4752cf02f58.bindTooltip(
+                `<div>
+                     코엑스 컴포트
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f9bf52ec7a38968f8a0807b9fd8a9bd = L.marker(
+                [37.63991860183286, 127.06571826409112],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_ec35b2dc77c823debbb6eeb3ee2004df = L.popup({"maxWidth": 200});
+
+        
+            var html_50a1fa4dfc918bef0c424cbfeb73e4ed = $(`<div id="html_50a1fa4dfc918bef0c424cbfeb73e4ed" style="width: 100.0%; height: 100.0%;">서울특별시 노원구 동일로204가길 12 (중계동 홈플러스)</div>`)[0];
+            popup_ec35b2dc77c823debbb6eeb3ee2004df.setContent(html_50a1fa4dfc918bef0c424cbfeb73e4ed);
+        
+
+        marker_9f9bf52ec7a38968f8a0807b9fd8a9bd.bindPopup(popup_ec35b2dc77c823debbb6eeb3ee2004df)
+        ;
+
+        
+    
+    
+            marker_9f9bf52ec7a38968f8a0807b9fd8a9bd.bindTooltip(
+                `<div>
+                     CGV 중계
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6fc1909e5a1c8a864141b9baca01e3bd = L.marker(
+                [37.65514412747116, 127.05818836673737],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_6efcb23d66dc746e26ca8a4c6c766bfd = L.popup({"maxWidth": 200});
+
+        
+            var html_edefbc7eec9486965d776af2750ff85a = $(`<div id="html_edefbc7eec9486965d776af2750ff85a" style="width: 100.0%; height: 100.0%;">서울특별시 노원구 동일로 1414 (상계동)</div>`)[0];
+            popup_6efcb23d66dc746e26ca8a4c6c766bfd.setContent(html_edefbc7eec9486965d776af2750ff85a);
+        
+
+        marker_6fc1909e5a1c8a864141b9baca01e3bd.bindPopup(popup_6efcb23d66dc746e26ca8a4c6c766bfd)
+        ;
+
+        
+    
+    
+            marker_6fc1909e5a1c8a864141b9baca01e3bd.bindTooltip(
+                `<div>
+                     롯데시네마 노원
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7151dd1362a9e5578669245e4c83305d = L.marker(
+                [37.48383563940914, 126.92728352870944],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_5ab4c975b6caf47ba641a3c623e7843d = L.popup({"maxWidth": 200});
+
+        
+            var html_a3b643e7aa91f072db644016a06a2eef = $(`<div id="html_a3b643e7aa91f072db644016a06a2eef" style="width: 100.0%; height: 100.0%;">서울특별시 관악구 신림로 330 (신림동14층)</div>`)[0];
+            popup_5ab4c975b6caf47ba641a3c623e7843d.setContent(html_a3b643e7aa91f072db644016a06a2eef);
+        
+
+        marker_7151dd1362a9e5578669245e4c83305d.bindPopup(popup_5ab4c975b6caf47ba641a3c623e7843d)
+        ;
+
+        
+    
+    
+            marker_7151dd1362a9e5578669245e4c83305d.bindTooltip(
+                `<div>
+                     롯데시네마 신림
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1df7e79104f896c0986639c785a7a9b6 = L.marker(
+                [37.56412845947357, 126.94162656965086],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_2d0305371f240f1dc61124c7b979778c = L.popup({"maxWidth": 200});
+
+        
+            var html_dedaf530a77a629e1f7c179b00207011 = $(`<div id="html_dedaf530a77a629e1f7c179b00207011" style="width: 100.0%; height: 100.0%;">서울특별시 서대문구 성산로 527 B1층 (대신동 하늬솔빌딩)</div>`)[0];
+            popup_2d0305371f240f1dc61124c7b979778c.setContent(html_dedaf530a77a629e1f7c179b00207011);
+        
+
+        marker_1df7e79104f896c0986639c785a7a9b6.bindPopup(popup_2d0305371f240f1dc61124c7b979778c)
+        ;
+
+        
+    
+    
+            marker_1df7e79104f896c0986639c785a7a9b6.bindTooltip(
+                `<div>
+                     필름포럼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71f7aec0620973490f47a76dff0b832d = L.marker(
+                [37.481025713831485, 126.94931727296684],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_57879a3cc4cfa5fa5940793e37a0be71 = L.popup({"maxWidth": 200});
+
+        
+            var html_8056f693812344f7f5ce371be088372b = $(`<div id="html_8056f693812344f7f5ce371be088372b" style="width: 100.0%; height: 100.0%;">서울특별시 관악구 남부순환로 1820 12층 (봉천동 에그엘로우)</div>`)[0];
+            popup_57879a3cc4cfa5fa5940793e37a0be71.setContent(html_8056f693812344f7f5ce371be088372b);
+        
+
+        marker_71f7aec0620973490f47a76dff0b832d.bindPopup(popup_57879a3cc4cfa5fa5940793e37a0be71)
+        ;
+
+        
+    
+    
+            marker_71f7aec0620973490f47a76dff0b832d.bindTooltip(
+                `<div>
+                     롯데시네마 서울대입구
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bf63f788352271ebeeff8c7b70ec2007 = L.marker(
+                [37.486268798479855, 126.90241674366845],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_76ea63d2a55147a13e6e190b7a617d77 = L.popup({"maxWidth": 200});
+
+        
+            var html_1f1ec692117d945431dbf9dce1616101 = $(`<div id="html_1f1ec692117d945431dbf9dce1616101" style="width: 100.0%; height: 100.0%;">서울특별시 동작구 시흥대로 606 지2층 (신대방동 동작 협성휴포레 시그니처)</div>`)[0];
+            popup_76ea63d2a55147a13e6e190b7a617d77.setContent(html_1f1ec692117d945431dbf9dce1616101);
+        
+
+        marker_bf63f788352271ebeeff8c7b70ec2007.bindPopup(popup_76ea63d2a55147a13e6e190b7a617d77)
+        ;
+
+        
+    
+    
+            marker_bf63f788352271ebeeff8c7b70ec2007.bindTooltip(
+                `<div>
+                     롯데시네마 신대방
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3289c6bfc5ed951a93459bdec42e8800 = L.marker(
+                [37.515923205497714, 126.90448248903456],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_47dbf7c80152593d410e99965c4a746e = L.popup({"maxWidth": 200});
+
+        
+            var html_a90fbb7140bc60df860ccf208ad41445 = $(`<div id="html_a90fbb7140bc60df860ccf208ad41445" style="width: 100.0%; height: 100.0%;">서울특별시 영등포구 경인로 846 A동 7~9층 (영등포동 롯데백화점 영등포점)</div>`)[0];
+            popup_47dbf7c80152593d410e99965c4a746e.setContent(html_a90fbb7140bc60df860ccf208ad41445);
+        
+
+        marker_3289c6bfc5ed951a93459bdec42e8800.bindPopup(popup_47dbf7c80152593d410e99965c4a746e)
+        ;
+
+        
+    
+    
+            marker_3289c6bfc5ed951a93459bdec42e8800.bindTooltip(
+                `<div>
+                     롯데시네마 영등포
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_68e470107bc047867384802f380b23db = L.marker(
+                [37.524978584310034, 126.9224082596647],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_f87d871757f7d439c47716cfde89b86e = L.popup({"maxWidth": 200});
+
+        
+            var html_d29fb25929c3ec27a4dd22781e0b1521 = $(`<div id="html_d29fb25929c3ec27a4dd22781e0b1521" style="width: 100.0%; height: 100.0%;">서울특별시 영등포구 국제금융로 10 B3층 (여의도동 IFC)</div>`)[0];
+            popup_f87d871757f7d439c47716cfde89b86e.setContent(html_d29fb25929c3ec27a4dd22781e0b1521);
+        
+
+        marker_68e470107bc047867384802f380b23db.bindPopup(popup_f87d871757f7d439c47716cfde89b86e)
+        ;
+
+        
+    
+    
+            marker_68e470107bc047867384802f380b23db.bindTooltip(
+                `<div>
+                     CGV여의도 5관 [CGV아트하우스]
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f26b9776eac12303c6e09083993fd092 = L.marker(
+                [37.61514307943335, 127.07311829273814],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_603b3f126a2130c30b397b6181bbcdda = L.popup({"maxWidth": 200});
+
+        
+            var html_f69bef1ffb23018104e3e9e5cf481a96 = $(`<div id="html_f69bef1ffb23018104e3e9e5cf481a96" style="width: 100.0%; height: 100.0%;">서울특별시 중랑구 동일로 951 (묵동)</div>`)[0];
+            popup_603b3f126a2130c30b397b6181bbcdda.setContent(html_f69bef1ffb23018104e3e9e5cf481a96);
+        
+
+        marker_f26b9776eac12303c6e09083993fd092.bindPopup(popup_603b3f126a2130c30b397b6181bbcdda)
+        ;
+
+        
+    
+    
+            marker_f26b9776eac12303c6e09083993fd092.bindTooltip(
+                `<div>
+                     롯데시네마 중랑관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f58d08c36265d3f78637f72d5190455c = L.marker(
+                [37.55719200037008, 126.92186843617394],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_da507127ede89f0ccce0bbd47d85918c = L.popup({"maxWidth": 200});
+
+        
+            var html_a56fd2a03da08e5e19969a5e59d9d91c = $(`<div id="html_a56fd2a03da08e5e19969a5e59d9d91c" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 176 동교동 스타피카소 8층 (동교동)</div>`)[0];
+            popup_da507127ede89f0ccce0bbd47d85918c.setContent(html_a56fd2a03da08e5e19969a5e59d9d91c);
+        
+
+        marker_f58d08c36265d3f78637f72d5190455c.bindPopup(popup_da507127ede89f0ccce0bbd47d85918c)
+        ;
+
+        
+    
+    
+            marker_f58d08c36265d3f78637f72d5190455c.bindTooltip(
+                `<div>
+                     독립영화전용관 인디스페이스
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d9241d5e09d895e0f7fac4a7f189842 = L.marker(
+                [37.57257497056964, 126.98491350706337],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_8cc76543d6cda49c7f394688d846586f = L.popup({"maxWidth": 200});
+
+        
+            var html_b133a854f76716d2ed8552def2b6f67f = $(`<div id="html_b133a854f76716d2ed8552def2b6f67f" style="width: 100.0%; height: 100.0%;">서울특별시 종로구 삼일대로 428 (낙원동)</div>`)[0];
+            popup_8cc76543d6cda49c7f394688d846586f.setContent(html_b133a854f76716d2ed8552def2b6f67f);
+        
+
+        marker_9d9241d5e09d895e0f7fac4a7f189842.bindPopup(popup_8cc76543d6cda49c7f394688d846586f)
+        ;
+
+        
+    
+    
+            marker_9d9241d5e09d895e0f7fac4a7f189842.bindTooltip(
+                `<div>
+                     허리우드클래식
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ee0c105ef1f85b49947f7d32bd3bfbd = L.marker(
+                [37.56972831890214, 126.96939790694438],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_5e489b8d8a462308a5ebb8608f6af22d = L.popup({"maxWidth": 200});
+
+        
+            var html_ec6bf054174df5f91fcef39d2c685338 = $(`<div id="html_ec6bf054174df5f91fcef39d2c685338" style="width: 100.0%; height: 100.0%;">서울특별시 종로구 새문안로 68 흥국생명빌딩 지하2층 (신문로1가)</div>`)[0];
+            popup_5e489b8d8a462308a5ebb8608f6af22d.setContent(html_ec6bf054174df5f91fcef39d2c685338);
+        
+
+        marker_6ee0c105ef1f85b49947f7d32bd3bfbd.bindPopup(popup_5e489b8d8a462308a5ebb8608f6af22d)
+        ;
+
+        
+    
+    
+            marker_6ee0c105ef1f85b49947f7d32bd3bfbd.bindTooltip(
+                `<div>
+                     씨네큐브광화문
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b3360ff8dc2d358e218d774f4a243f45 = L.marker(
+                [37.57208013250597, 126.96613198378323],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_c0994a60cac13f878bc67f1a861065e8 = L.popup({"maxWidth": 200});
+
+        
+            var html_4fd61d4a76756d5d8ed8746844ca8310 = $(`<div id="html_4fd61d4a76756d5d8ed8746844ca8310" style="width: 100.0%; height: 100.0%;">서울특별시 종로구 경희궁1가길 7 2층 (신문로2가 복합문화공간에무)</div>`)[0];
+            popup_c0994a60cac13f878bc67f1a861065e8.setContent(html_4fd61d4a76756d5d8ed8746844ca8310);
+        
+
+        marker_b3360ff8dc2d358e218d774f4a243f45.bindPopup(popup_c0994a60cac13f878bc67f1a861065e8)
+        ;
+
+        
+    
+    
+            marker_b3360ff8dc2d358e218d774f4a243f45.bindTooltip(
+                `<div>
+                     에무 시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_244c394211e99db840611ca63c85e72d = L.marker(
+                [37.583463985397344, 126.99695613884758],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_d234bdcf3ca2de243cbf24f0098d4d4a = L.popup({"maxWidth": 200});
+
+        
+            var html_7c58cf04fa364eea8e2d05b8c9efe26a = $(`<div id="html_7c58cf04fa364eea8e2d05b8c9efe26a" style="width: 100.0%; height: 100.0%;">서울특별시 종로구 대명길 28 (명륜2가지하3층)</div>`)[0];
+            popup_d234bdcf3ca2de243cbf24f0098d4d4a.setContent(html_7c58cf04fa364eea8e2d05b8c9efe26a);
+        
+
+        marker_244c394211e99db840611ca63c85e72d.bindPopup(popup_d234bdcf3ca2de243cbf24f0098d4d4a)
+        ;
+
+        
+    
+    
+            marker_244c394211e99db840611ca63c85e72d.bindTooltip(
+                `<div>
+                     CGV 대학로
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a512134086f0b6dd61c1a8a90007226 = L.marker(
+                [37.571036255789934, 126.98833890801997],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_c23cc6186437c5c3ebebec8b5fee0521 = L.popup({"maxWidth": 200});
+
+        
+            var html_e72346e108ff3dca83ac8384f46d498b = $(`<div id="html_e72346e108ff3dca83ac8384f46d498b" style="width: 100.0%; height: 100.0%;">서울특별시 종로구 돈화문로5가길 1 (돈의동지하2층)</div>`)[0];
+            popup_c23cc6186437c5c3ebebec8b5fee0521.setContent(html_e72346e108ff3dca83ac8384f46d498b);
+        
+
+        marker_6a512134086f0b6dd61c1a8a90007226.bindPopup(popup_c23cc6186437c5c3ebebec8b5fee0521)
+        ;
+
+        
+    
+    
+            marker_6a512134086f0b6dd61c1a8a90007226.bindTooltip(
+                `<div>
+                     CGV피카디리1958
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee9689e21f6cb50f118be6162f451ce1 = L.marker(
+                [37.56131951182663, 126.99261113456608],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_2eab15f25c8105b823fe6f443060ef2d = L.popup({"maxWidth": 200});
+
+        
+            var html_ee1b3860ac1a8e040083c9472a4f899d = $(`<div id="html_ee1b3860ac1a8e040083c9472a4f899d" style="width: 100.0%; height: 100.0%;">서울특별시 중구 퇴계로 212 (충무로4가)</div>`)[0];
+            popup_2eab15f25c8105b823fe6f443060ef2d.setContent(html_ee1b3860ac1a8e040083c9472a4f899d);
+        
+
+        marker_ee9689e21f6cb50f118be6162f451ce1.bindPopup(popup_2eab15f25c8105b823fe6f443060ef2d)
+        ;
+
+        
+    
+    
+            marker_ee9689e21f6cb50f118be6162f451ce1.bindTooltip(
+                `<div>
+                     대한극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c099180fe34baed05bde3ea490f6c2e = L.marker(
+                [37.564687553537894, 126.990340421157],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_e8c97610c1b1e39110c7f0f31cd2b845 = L.popup({"maxWidth": 200});
+
+        
+            var html_f16b0f88c825665e22cb08aaeafcf604 = $(`<div id="html_f16b0f88c825665e22cb08aaeafcf604" style="width: 100.0%; height: 100.0%;">서울특별시 중구 마른내로 47  (초동)</div>`)[0];
+            popup_e8c97610c1b1e39110c7f0f31cd2b845.setContent(html_f16b0f88c825665e22cb08aaeafcf604);
+        
+
+        marker_9c099180fe34baed05bde3ea490f6c2e.bindPopup(popup_e8c97610c1b1e39110c7f0f31cd2b845)
+        ;
+
+        
+    
+    
+            marker_9c099180fe34baed05bde3ea490f6c2e.bindTooltip(
+                `<div>
+                     명보
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75e7a4128a984474444ca5669d2c4839 = L.marker(
+                [37.567108797068215, 126.96579972554848],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_ad6de6e312213827803918e129a49735 = L.popup({"maxWidth": 200});
+
+        
+            var html_e8dce97dacaac0feb148ff2232bdc829 = $(`<div id="html_e8dce97dacaac0feb148ff2232bdc829" style="width: 100.0%; height: 100.0%;">서울특별시 중구 새문안로 22 (충정로1가 문화일보)</div>`)[0];
+            popup_ad6de6e312213827803918e129a49735.setContent(html_e8dce97dacaac0feb148ff2232bdc829);
+        
+
+        marker_75e7a4128a984474444ca5669d2c4839.bindPopup(popup_ad6de6e312213827803918e129a49735)
+        ;
+
+        
+    
+    
+            marker_75e7a4128a984474444ca5669d2c4839.bindTooltip(
+                `<div>
+                     청춘극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3384d0677d3f89e657744cee80cf71e8 = L.marker(
+                [37.56864344723963, 127.00484232182069],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_6f915151879c8939eebae90b3282eaa8 = L.popup({"maxWidth": 200});
+
+        
+            var html_4cf54bf11d89d71497f9172434271ce7 = $(`<div id="html_4cf54bf11d89d71497f9172434271ce7" style="width: 100.0%; height: 100.0%;">서울특별시 중구 장충단로13길 20 현대시티타워 10층 (을지로6가)</div>`)[0];
+            popup_6f915151879c8939eebae90b3282eaa8.setContent(html_4cf54bf11d89d71497f9172434271ce7);
+        
+
+        marker_3384d0677d3f89e657744cee80cf71e8.bindPopup(popup_6f915151879c8939eebae90b3282eaa8)
+        ;
+
+        
+    
+    
+            marker_3384d0677d3f89e657744cee80cf71e8.bindTooltip(
+                `<div>
+                     CGV 동대문
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8ea43be64df80e1d45f2e4bf8f65f47 = L.marker(
+                [37.56687321815724, 127.00439089841292],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_07549eb8c7d3fb4cc5eeb8ebd179ad64 = L.popup({"maxWidth": 200});
+
+        
+            var html_a5b440d4ff34b7abdcd56b9191ab89b4 = $(`<div id="html_a5b440d4ff34b7abdcd56b9191ab89b4" style="width: 100.0%; height: 100.0%;">서울특별시 중구 장충단로 247 (을지로6가굿모닝시티)</div>`)[0];
+            popup_07549eb8c7d3fb4cc5eeb8ebd179ad64.setContent(html_a5b440d4ff34b7abdcd56b9191ab89b4);
+        
+
+        marker_b8ea43be64df80e1d45f2e4bf8f65f47.bindPopup(popup_07549eb8c7d3fb4cc5eeb8ebd179ad64)
+        ;
+
+        
+    
+    
+            marker_b8ea43be64df80e1d45f2e4bf8f65f47.bindTooltip(
+                `<div>
+                     메가박스중앙 주 동대문점 COMFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75a03e354b15fcba087788105fd7c01f = L.marker(
+                [37.56132833388368, 126.98246282385563],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_4bf281e3d4e5b6e661249f9a0d543a03 = L.popup({"maxWidth": 200});
+
+        
+            var html_4e889a2049ecfd272e20358fab250ab5 = $(`<div id="html_4e889a2049ecfd272e20358fab250ab5" style="width: 100.0%; height: 100.0%;">서울특별시 중구 퇴계로 123  (충무로2가)</div>`)[0];
+            popup_4bf281e3d4e5b6e661249f9a0d543a03.setContent(html_4e889a2049ecfd272e20358fab250ab5);
+        
+
+        marker_75a03e354b15fcba087788105fd7c01f.bindPopup(popup_4bf281e3d4e5b6e661249f9a0d543a03)
+        ;
+
+        
+    
+    
+            marker_75a03e354b15fcba087788105fd7c01f.bindTooltip(
+                `<div>
+                     인사이드시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2a911416585326dec5fff5042bae645 = L.marker(
+                [37.56107275788023, 126.99246127640534],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_aeb4e369b5a38c97b4fa9a53d5d0a570 = L.popup({"maxWidth": 200});
+
+        
+            var html_f52e04f6a1254427857eacab212c2c15 = $(`<div id="html_f52e04f6a1254427857eacab212c2c15" style="width: 100.0%; height: 100.0%;">서울특별시 중구 퇴계로 212 (필동2가)</div>`)[0];
+            popup_aeb4e369b5a38c97b4fa9a53d5d0a570.setContent(html_f52e04f6a1254427857eacab212c2c15);
+        
+
+        marker_a2a911416585326dec5fff5042bae645.bindPopup(popup_aeb4e369b5a38c97b4fa9a53d5d0a570)
+        ;
+
+        
+    
+    
+            marker_a2a911416585326dec5fff5042bae645.bindTooltip(
+                `<div>
+                     대한극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_643b53d307db59a421115761b2abb74d = L.marker(
+                [37.558166096928126, 126.96669761782688],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_f8dffd2fd998341be8e944f01cb55c26 = L.popup({"maxWidth": 200});
+
+        
+            var html_25a7020acc399c091d25e5e225c4037f = $(`<div id="html_25a7020acc399c091d25e5e225c4037f" style="width: 100.0%; height: 100.0%;">서울특별시 중구 청파로 426 (봉래동2가서울역)</div>`)[0];
+            popup_f8dffd2fd998341be8e944f01cb55c26.setContent(html_25a7020acc399c091d25e5e225c4037f);
+        
+
+        marker_643b53d307db59a421115761b2abb74d.bindPopup(popup_f8dffd2fd998341be8e944f01cb55c26)
+        ;
+
+        
+    
+    
+            marker_643b53d307db59a421115761b2abb74d.bindTooltip(
+                `<div>
+                     KTX시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cbd2b753fbf9d7ca8f4f19c050fc1387 = L.marker(
+                [37.56817008714581, 126.96710211829249],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_b84a17416cc0b9d3c2843adf04371156 = L.popup({"maxWidth": 200});
+
+        
+            var html_c9534f6b6c1a2868d19f8e47e222598b = $(`<div id="html_c9534f6b6c1a2868d19f8e47e222598b" style="width: 100.0%; height: 100.0%;">서울특별시 중구 정동길 3 경향신문사 2층 (정동)</div>`)[0];
+            popup_b84a17416cc0b9d3c2843adf04371156.setContent(html_c9534f6b6c1a2868d19f8e47e222598b);
+        
+
+        marker_cbd2b753fbf9d7ca8f4f19c050fc1387.bindPopup(popup_b84a17416cc0b9d3c2843adf04371156)
+        ;
+
+        
+    
+    
+            marker_cbd2b753fbf9d7ca8f4f19c050fc1387.bindTooltip(
+                `<div>
+                     서울아트시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_82d2f5dd371846bfb5392f7f9041d1ce = L.marker(
+                [37.56341328305386, 126.98000051200617],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_98b41d506e6326de63a4fa3d22f1c8df = L.popup({"maxWidth": 200});
+
+        
+            var html_61cac20deee0b7e70546208d57722345 = $(`<div id="html_61cac20deee0b7e70546208d57722345" style="width: 100.0%; height: 100.0%;">서울특별시 중구 명동길 14 (명동2가아바타빌딩 8층)</div>`)[0];
+            popup_98b41d506e6326de63a4fa3d22f1c8df.setContent(html_61cac20deee0b7e70546208d57722345);
+        
+
+        marker_82d2f5dd371846bfb5392f7f9041d1ce.bindPopup(popup_98b41d506e6326de63a4fa3d22f1c8df)
+        ;
+
+        
+    
+    
+            marker_82d2f5dd371846bfb5392f7f9041d1ce.bindTooltip(
+                `<div>
+                     CGV 명동
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1660f4fcf3cccde5379d10a6225e8757 = L.marker(
+                [37.551543838244385, 126.99964862464452],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_d5cc2caa8553190f94c1b01893394936 = L.popup({"maxWidth": 200});
+
+        
+            var html_cea5c69d9e05af643a43cac0b9187287 = $(`<div id="html_cea5c69d9e05af643a43cac0b9187287" style="width: 100.0%; height: 100.0%;">서울특별시 중구 장충단로 72 (장충동2가)</div>`)[0];
+            popup_d5cc2caa8553190f94c1b01893394936.setContent(html_cea5c69d9e05af643a43cac0b9187287);
+        
+
+        marker_1660f4fcf3cccde5379d10a6225e8757.bindPopup(popup_d5cc2caa8553190f94c1b01893394936)
+        ;
+
+        
+    
+    
+            marker_1660f4fcf3cccde5379d10a6225e8757.bindTooltip(
+                `<div>
+                     씨너스 이오이 EOE4 남산자동차극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a344ebb1a5c2b086166eff12064be768 = L.marker(
+                [37.56125924855628, 126.98122745355516],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_39f08dc2d71a58b827560bf401b36708 = L.popup({"maxWidth": 200});
+
+        
+            var html_1f4097833e8bb0318f5bf7501c51900c = $(`<div id="html_1f4097833e8bb0318f5bf7501c51900c" style="width: 100.0%; height: 100.0%;">서울특별시 중구 명동8나길 15  (충무로1가캣츠빌딩)</div>`)[0];
+            popup_39f08dc2d71a58b827560bf401b36708.setContent(html_1f4097833e8bb0318f5bf7501c51900c);
+        
+
+        marker_a344ebb1a5c2b086166eff12064be768.bindPopup(popup_39f08dc2d71a58b827560bf401b36708)
+        ;
+
+        
+    
+    
+            marker_a344ebb1a5c2b086166eff12064be768.bindTooltip(
+                `<div>
+                     씨큐엔
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01f96ee8e601892eddc56835a8159f2c = L.marker(
+                [37.5641000796707, 126.9790351993633],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_0ba558e8d57b9a4cad3f19534c1f850a = L.popup({"maxWidth": 200});
+
+        
+            var html_9152d3618c958a3283a6e8c06702aaad = $(`<div id="html_9152d3618c958a3283a6e8c06702aaad" style="width: 100.0%; height: 100.0%;">서울특별시 중구 남대문로 73 6~7층 (남대문로2가 AVENUEL)</div>`)[0];
+            popup_0ba558e8d57b9a4cad3f19534c1f850a.setContent(html_9152d3618c958a3283a6e8c06702aaad);
+        
+
+        marker_01f96ee8e601892eddc56835a8159f2c.bindPopup(popup_0ba558e8d57b9a4cad3f19534c1f850a)
+        ;
+
+        
+    
+    
+            marker_01f96ee8e601892eddc56835a8159f2c.bindTooltip(
+                `<div>
+                     롯데시네마 에비뉴엘5
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d62c174c545868531fb8e9a628d499a8 = L.marker(
+                [37.56192584181376, 126.99222286993633],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_ddf759a27ebf72ecfffcc4337dd77e3c = L.popup({"maxWidth": 200});
+
+        
+            var html_47c6509aaa6929c9612b6262815ff23a = $(`<div id="html_47c6509aaa6929c9612b6262815ff23a" style="width: 100.0%; height: 100.0%;">서울특별시 중구 퇴계로 211-5  (충무로4가)</div>`)[0];
+            popup_ddf759a27ebf72ecfffcc4337dd77e3c.setContent(html_47c6509aaa6929c9612b6262815ff23a);
+        
+
+        marker_d62c174c545868531fb8e9a628d499a8.bindPopup(popup_ddf759a27ebf72ecfffcc4337dd77e3c)
+        ;
+
+        
+    
+    
+            marker_d62c174c545868531fb8e9a628d499a8.bindTooltip(
+                `<div>
+                     극동극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_95f9d3c29c27d6d723a898523c7fbf66 = L.marker(
+                [37.56458218343423, 126.98960256016537],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_30db4077295c409bb1fc148a165ae21c = L.popup({"maxWidth": 200});
+
+        
+            var html_983ab4fdcf538ee28b48508f9e0a2325 = $(`<div id="html_983ab4fdcf538ee28b48508f9e0a2325" style="width: 100.0%; height: 100.0%;">서울특별시 중구 마른내로 41  (초동초동빌딩3층)</div>`)[0];
+            popup_30db4077295c409bb1fc148a165ae21c.setContent(html_983ab4fdcf538ee28b48508f9e0a2325);
+        
+
+        marker_95f9d3c29c27d6d723a898523c7fbf66.bindPopup(popup_30db4077295c409bb1fc148a165ae21c)
+        ;
+
+        
+    
+    
+            marker_95f9d3c29c27d6d723a898523c7fbf66.bindTooltip(
+                `<div>
+                     시네아스트극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76bd85313a674aa47ca96129f567feb8 = L.marker(
+                [37.52955742609546, 126.96126654334233],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_154aebaee1fb1750e0419647a2898a20 = L.popup({"maxWidth": 200});
+
+        
+            var html_efcdfbefcb67375c5ff74b584833e307 = $(`<div id="html_efcdfbefcb67375c5ff74b584833e307" style="width: 100.0%; height: 100.0%;">서울특별시 용산구 한강대로23길 55 6층 (한강로3가 현대아이파크몰)</div>`)[0];
+            popup_154aebaee1fb1750e0419647a2898a20.setContent(html_efcdfbefcb67375c5ff74b584833e307);
+        
+
+        marker_76bd85313a674aa47ca96129f567feb8.bindPopup(popup_154aebaee1fb1750e0419647a2898a20)
+        ;
+
+        
+    
+    
+            marker_76bd85313a674aa47ca96129f567feb8.bindTooltip(
+                `<div>
+                     씨지브이 용산아이파크몰
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66b6019ac5dadf166ae5a4a87b5c03bc = L.marker(
+                [37.53160631975509, 126.96242271624692],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_c0b3f55a1bd7d95daf0b810845ab0800 = L.popup({"maxWidth": 200});
+
+        
+            var html_c4c88f5f5f25f2ccc3416874e5cc7b8b = $(`<div id="html_c4c88f5f5f25f2ccc3416874e5cc7b8b" style="width: 100.0%; height: 100.0%;">서울특별시 용산구 한강대로23길 55 6층 (한강로3가 현대아이파크몰)</div>`)[0];
+            popup_c0b3f55a1bd7d95daf0b810845ab0800.setContent(html_c4c88f5f5f25f2ccc3416874e5cc7b8b);
+        
+
+        marker_66b6019ac5dadf166ae5a4a87b5c03bc.bindPopup(popup_c0b3f55a1bd7d95daf0b810845ab0800)
+        ;
+
+        
+    
+    
+            marker_66b6019ac5dadf166ae5a4a87b5c03bc.bindTooltip(
+                `<div>
+                     씨지브이 용산아이파크몰
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66c20fac1c8bd17a3bb4597ec7a37e5b = L.marker(
+                [37.532814469423805, 126.95683746953844],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_87676a7e820aed6748525d0ed510ec97 = L.popup({"maxWidth": 200});
+
+        
+            var html_ed8b5272a2df6d80fd7e7c417cb9eecc = $(`<div id="html_ed8b5272a2df6d80fd7e7c417cb9eecc" style="width: 100.0%; height: 100.0%;">서울특별시 용산구 청파로 74 4~5층 (한강로3가)</div>`)[0];
+            popup_87676a7e820aed6748525d0ed510ec97.setContent(html_ed8b5272a2df6d80fd7e7c417cb9eecc);
+        
+
+        marker_66c20fac1c8bd17a3bb4597ec7a37e5b.bindPopup(popup_87676a7e820aed6748525d0ed510ec97)
+        ;
+
+        
+    
+    
+            marker_66c20fac1c8bd17a3bb4597ec7a37e5b.bindTooltip(
+                `<div>
+                     롯데시네마 용산
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f5b786dec9782a48628fae8d717ea76 = L.marker(
+                [37.541869948327225, 127.04206530324498],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_9644f6505ea16cb3193050e8bc1e71dc = L.popup({"maxWidth": 200});
+
+        
+            var html_94f078e5b6af7ebf175cd9a85805f373 = $(`<div id="html_94f078e5b6af7ebf175cd9a85805f373" style="width: 100.0%; height: 100.0%;">서울특별시 성동구 왕십리로 50 메가박스 스퀘어 3층 (성수동1가)</div>`)[0];
+            popup_9644f6505ea16cb3193050e8bc1e71dc.setContent(html_94f078e5b6af7ebf175cd9a85805f373);
+        
+
+        marker_0f5b786dec9782a48628fae8d717ea76.bindPopup(popup_9644f6505ea16cb3193050e8bc1e71dc)
+        ;
+
+        
+    
+    
+            marker_0f5b786dec9782a48628fae8d717ea76.bindTooltip(
+                `<div>
+                     메가박스중앙 주 성수지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8d42c32284c08a213c9282b76b767af5 = L.marker(
+                [37.56128897122646, 127.03549178736719],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_b711ee247d03c92fd6bb3db18fb56146 = L.popup({"maxWidth": 200});
+
+        
+            var html_8957dc035acd9dfa1bb67ad27099cf55 = $(`<div id="html_8957dc035acd9dfa1bb67ad27099cf55" style="width: 100.0%; height: 100.0%;">서울특별시 성동구 왕십리광장로 17 왕십리민자역사 5층 (행당동)</div>`)[0];
+            popup_b711ee247d03c92fd6bb3db18fb56146.setContent(html_8957dc035acd9dfa1bb67ad27099cf55);
+        
+
+        marker_8d42c32284c08a213c9282b76b767af5.bindPopup(popup_b711ee247d03c92fd6bb3db18fb56146)
+        ;
+
+        
+    
+    
+            marker_8d42c32284c08a213c9282b76b767af5.bindTooltip(
+                `<div>
+                     CGV 왕십리
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8755fd284e08566c6a8e0b34dc652ce4 = L.marker(
+                [37.53780313525985, 127.06974203287463],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_67ede7fe36e8edffd2518b4a1b9282c6 = L.popup({"maxWidth": 200});
+
+        
+            var html_4587c7077509cc13bf93136b8214fd6e = $(`<div id="html_4587c7077509cc13bf93136b8214fd6e" style="width: 100.0%; height: 100.0%;">서울특별시 광진구 아차산로 272 더샵스타시티 (자양동)</div>`)[0];
+            popup_67ede7fe36e8edffd2518b4a1b9282c6.setContent(html_4587c7077509cc13bf93136b8214fd6e);
+        
+
+        marker_8755fd284e08566c6a8e0b34dc652ce4.bindPopup(popup_67ede7fe36e8edffd2518b4a1b9282c6)
+        ;
+
+        
+    
+    
+            marker_8755fd284e08566c6a8e0b34dc652ce4.bindTooltip(
+                `<div>
+                     롯데시네마 건대입구관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_790c4817ec71217ea16d1e36b14e625f = L.marker(
+                [37.53978778359873, 127.0640442948067],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_a1672b362fff4237b3b7efa7b7483446 = L.popup({"maxWidth": 200});
+
+        
+            var html_e88fc7c2b01d82c8885a1ff4f3c2efce = $(`<div id="html_e88fc7c2b01d82c8885a1ff4f3c2efce" style="width: 100.0%; height: 100.0%;">서울특별시 광진구 아차산로30길 26 몰오브케이 3층 (자양동)</div>`)[0];
+            popup_a1672b362fff4237b3b7efa7b7483446.setContent(html_e88fc7c2b01d82c8885a1ff4f3c2efce);
+        
+
+        marker_790c4817ec71217ea16d1e36b14e625f.bindPopup(popup_a1672b362fff4237b3b7efa7b7483446)
+        ;
+
+        
+    
+    
+            marker_790c4817ec71217ea16d1e36b14e625f.bindTooltip(
+                `<div>
+                     CGV 건대입구
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_94e82fa6876f8f893d7f312d97e39379 = L.marker(
+                [37.53569970282164, 127.09287476235619],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_7191ddd91ef7952065e7cb937057d486 = L.popup({"maxWidth": 200});
+
+        
+            var html_8e542c21b7043749471c3dc51fc4febc = $(`<div id="html_8e542c21b7043749471c3dc51fc4febc" style="width: 100.0%; height: 100.0%;">서울특별시 광진구 광나루로56길 85 10층 (구의동 테크노마트)</div>`)[0];
+            popup_7191ddd91ef7952065e7cb937057d486.setContent(html_8e542c21b7043749471c3dc51fc4febc);
+        
+
+        marker_94e82fa6876f8f893d7f312d97e39379.bindPopup(popup_7191ddd91ef7952065e7cb937057d486)
+        ;
+
+        
+    
+    
+            marker_94e82fa6876f8f893d7f312d97e39379.bindTooltip(
+                `<div>
+                     CGV강변11
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_287afd206ba2b85f32754fcbf708fa2b = L.marker(
+                [37.55578984783446, 127.07544816424772],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_c058e1882c0073a441ca14b7aa3fe8c4 = L.popup({"maxWidth": 200});
+
+        
+            var html_7c07749ec125dcb3f28dee280d19cc8f = $(`<div id="html_7c07749ec125dcb3f28dee280d19cc8f" style="width: 100.0%; height: 100.0%;">서울특별시 광진구 능동로 289 (군자동)</div>`)[0];
+            popup_c058e1882c0073a441ca14b7aa3fe8c4.setContent(html_7c07749ec125dcb3f28dee280d19cc8f);
+        
+
+        marker_287afd206ba2b85f32754fcbf708fa2b.bindPopup(popup_c058e1882c0073a441ca14b7aa3fe8c4)
+        ;
+
+        
+    
+    
+            marker_287afd206ba2b85f32754fcbf708fa2b.bindTooltip(
+                `<div>
+                     메가박스 군자9
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e0244bdd7eb1ab55aeec069804f819b4 = L.marker(
+                [37.57192621558759, 127.0694991041825],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_8249987072b1d89793be05039257ba3a = L.popup({"maxWidth": 200});
+
+        
+            var html_de6d9f3f6ca1d06063013f857b8948f7 = $(`<div id="html_de6d9f3f6ca1d06063013f857b8948f7" style="width: 100.0%; height: 100.0%;">서울특별시 동대문구 답십리로 288 11층 (장안동 바우하우스)</div>`)[0];
+            popup_8249987072b1d89793be05039257ba3a.setContent(html_de6d9f3f6ca1d06063013f857b8948f7);
+        
+
+        marker_e0244bdd7eb1ab55aeec069804f819b4.bindPopup(popup_8249987072b1d89793be05039257ba3a)
+        ;
+
+        
+    
+    
+            marker_e0244bdd7eb1ab55aeec069804f819b4.bindTooltip(
+                `<div>
+                     롯데시네마 장안
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e6727e5c803d00508fa4d3c61803094 = L.marker(
+                [37.58097729495557, 127.04410236002586],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_4841b79384ac1522df853f76f83ace79 = L.popup({"maxWidth": 200});
+
+        
+            var html_45774ee7f03f5c3d8611ffa3065e31e6 = $(`<div id="html_45774ee7f03f5c3d8611ffa3065e31e6" style="width: 100.0%; height: 100.0%;">서울특별시 동대문구 왕산로 214 8층9층 (전농동 청량리민자역사)</div>`)[0];
+            popup_4841b79384ac1522df853f76f83ace79.setContent(html_45774ee7f03f5c3d8611ffa3065e31e6);
+        
+
+        marker_2e6727e5c803d00508fa4d3c61803094.bindPopup(popup_4841b79384ac1522df853f76f83ace79)
+        ;
+
+        
+    
+    
+            marker_2e6727e5c803d00508fa4d3c61803094.bindTooltip(
+                `<div>
+                     롯데시네마청량리
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a8323e61ee8d5552b69871f573264434 = L.marker(
+                [37.597440417503456, 127.08935133648194],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_47d86aed62e1a93d4f1d0a26cdc573ca = L.popup({"maxWidth": 200});
+
+        
+            var html_67da9fb0c9176aed57b2294f92af09d8 = $(`<div id="html_67da9fb0c9176aed57b2294f92af09d8" style="width: 100.0%; height: 100.0%;">서울특별시 중랑구 상봉로 131 지하12층 (상봉동 상봉듀오트리스주상복합)</div>`)[0];
+            popup_47d86aed62e1a93d4f1d0a26cdc573ca.setContent(html_67da9fb0c9176aed57b2294f92af09d8);
+        
+
+        marker_a8323e61ee8d5552b69871f573264434.bindPopup(popup_47d86aed62e1a93d4f1d0a26cdc573ca)
+        ;
+
+        
+    
+    
+            marker_a8323e61ee8d5552b69871f573264434.bindTooltip(
+                `<div>
+                     CGV 상봉
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_422a03a9f36dd8e62e01dea81b141feb = L.marker(
+                [37.593232748862604, 127.07179128657468],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_895b6ce5337355a7f25897f8c04db0f4 = L.popup({"maxWidth": 200});
+
+        
+            var html_76325d336af0398b4afa95024125cdfb = $(`<div id="html_76325d336af0398b4afa95024125cdfb" style="width: 100.0%; height: 100.0%;">서울특별시 중랑구 망우로30길 3 (상봉동)</div>`)[0];
+            popup_895b6ce5337355a7f25897f8c04db0f4.setContent(html_76325d336af0398b4afa95024125cdfb);
+        
+
+        marker_422a03a9f36dd8e62e01dea81b141feb.bindPopup(popup_895b6ce5337355a7f25897f8c04db0f4)
+        ;
+
+        
+    
+    
+            marker_422a03a9f36dd8e62e01dea81b141feb.bindTooltip(
+                `<div>
+                     메가박스중앙 주 상봉지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a2841d9d2a6d45b2f65035b7c8b7557 = L.marker(
+                [37.599918431493556, 127.01101225773102],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_fdfd822b91fe8203187d8740ce49a511 = L.popup({"maxWidth": 200});
+
+        
+            var html_5e312b8d45eab11ed23a5607fe831f27 = $(`<div id="html_5e312b8d45eab11ed23a5607fe831f27" style="width: 100.0%; height: 100.0%;">서울특별시 성북구 아리랑로 82 (돈암동)</div>`)[0];
+            popup_fdfd822b91fe8203187d8740ce49a511.setContent(html_5e312b8d45eab11ed23a5607fe831f27);
+        
+
+        marker_4a2841d9d2a6d45b2f65035b7c8b7557.bindPopup(popup_fdfd822b91fe8203187d8740ce49a511)
+        ;
+
+        
+    
+    
+            marker_4a2841d9d2a6d45b2f65035b7c8b7557.bindTooltip(
+                `<div>
+                     아리랑시네센터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6202845ef7093d5abcf0fd2af49a7efe = L.marker(
+                [37.59260509731219, 127.01428654773156],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_48b62806824bba0fbbe3da955e6fa714 = L.popup({"maxWidth": 200});
+
+        
+            var html_8482afc93403a53268d0991ac7f0183a = $(`<div id="html_8482afc93403a53268d0991ac7f0183a" style="width: 100.0%; height: 100.0%;">서울특별시 성북구 동소문로 106 11층 (동선동1가)</div>`)[0];
+            popup_48b62806824bba0fbbe3da955e6fa714.setContent(html_8482afc93403a53268d0991ac7f0183a);
+        
+
+        marker_6202845ef7093d5abcf0fd2af49a7efe.bindPopup(popup_48b62806824bba0fbbe3da955e6fa714)
+        ;
+
+        
+    
+    
+            marker_6202845ef7093d5abcf0fd2af49a7efe.bindTooltip(
+                `<div>
+                     CGV 성신여대입구
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a1c6b118d86fe9ef33c742124632683 = L.marker(
+                [37.63569201942927, 127.02092712354879],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_276d17422a44963d8abe82831658d3ae = L.popup({"maxWidth": 200});
+
+        
+            var html_7ac520bf40afa6c28fba908d7ecca9e0 = $(`<div id="html_7ac520bf40afa6c28fba908d7ecca9e0" style="width: 100.0%; height: 100.0%;">서울특별시 강북구 도봉로 308 (번동)</div>`)[0];
+            popup_276d17422a44963d8abe82831658d3ae.setContent(html_7ac520bf40afa6c28fba908d7ecca9e0);
+        
+
+        marker_0a1c6b118d86fe9ef33c742124632683.bindPopup(popup_276d17422a44963d8abe82831658d3ae)
+        ;
+
+        
+    
+    
+            marker_0a1c6b118d86fe9ef33c742124632683.bindTooltip(
+                `<div>
+                     롯데시네마 수유관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6c6175dff6145151d3b2c6359fafee6 = L.marker(
+                [37.61205659371599, 127.02782528416616],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_e2baa4709235223c9a268f30c9ced08f = L.popup({"maxWidth": 200});
+
+        
+            var html_b918635df98359d79520a73f360365ea = $(`<div id="html_b918635df98359d79520a73f360365ea" style="width: 100.0%; height: 100.0%;">서울특별시 강북구 도봉로 34 9층 (미아동 트레지오빌딩)</div>`)[0];
+            popup_e2baa4709235223c9a268f30c9ced08f.setContent(html_b918635df98359d79520a73f360365ea);
+        
+
+        marker_c6c6175dff6145151d3b2c6359fafee6.bindPopup(popup_e2baa4709235223c9a268f30c9ced08f)
+        ;
+
+        
+    
+    
+            marker_c6c6175dff6145151d3b2c6359fafee6.bindTooltip(
+                `<div>
+                     씨지브이 미아점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_619f83e24bc60b0357e03ca9093d3c59 = L.marker(
+                [37.64239105606238, 127.02696233772917],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_9139570c17f9ee391be87f0f3c342ff1 = L.popup({"maxWidth": 200});
+
+        
+            var html_ea2dedf3977d71a4283e4a2c3aef5e45 = $(`<div id="html_ea2dedf3977d71a4283e4a2c3aef5e45" style="width: 100.0%; height: 100.0%;">서울특별시 강북구 도봉로 399 4층 (수유동)</div>`)[0];
+            popup_9139570c17f9ee391be87f0f3c342ff1.setContent(html_ea2dedf3977d71a4283e4a2c3aef5e45);
+        
+
+        marker_619f83e24bc60b0357e03ca9093d3c59.bindPopup(popup_9139570c17f9ee391be87f0f3c342ff1)
+        ;
+
+        
+    
+    
+            marker_619f83e24bc60b0357e03ca9093d3c59.bindTooltip(
+                `<div>
+                     CGV 수유
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ddc4a795ac5f67722cec1d3cc27c175 = L.marker(
+                [37.654599393288194, 127.03588127045914],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_ee92cb5a48b818c2fe16ffbbfa30d2c4 = L.popup({"maxWidth": 200});
+
+        
+            var html_76f96a2aa9fd413661ee368f6da0a5c3 = $(`<div id="html_76f96a2aa9fd413661ee368f6da0a5c3" style="width: 100.0%; height: 100.0%;">서울특별시 도봉구 도봉로 558 (창동)</div>`)[0];
+            popup_ee92cb5a48b818c2fe16ffbbfa30d2c4.setContent(html_76f96a2aa9fd413661ee368f6da0a5c3);
+        
+
+        marker_0ddc4a795ac5f67722cec1d3cc27c175.bindPopup(popup_ee92cb5a48b818c2fe16ffbbfa30d2c4)
+        ;
+
+        
+    
+    
+            marker_0ddc4a795ac5f67722cec1d3cc27c175.bindTooltip(
+                `<div>
+                     메가박스 창동
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_996bcd7864d77b90b7ff5c51dee03ed5 = L.marker(
+                [37.63882671623933, 127.06186442920179],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_3230c548702d0bb5f862e89fa4612512 = L.popup({"maxWidth": 200});
+
+        
+            var html_46a204b8d65ef53e1796de834d465a98 = $(`<div id="html_46a204b8d65ef53e1796de834d465a98" style="width: 100.0%; height: 100.0%;">서울특별시 노원구 섬밭로 258 (중계동)</div>`)[0];
+            popup_3230c548702d0bb5f862e89fa4612512.setContent(html_46a204b8d65ef53e1796de834d465a98);
+        
+
+        marker_996bcd7864d77b90b7ff5c51dee03ed5.bindPopup(popup_3230c548702d0bb5f862e89fa4612512)
+        ;
+
+        
+    
+    
+            marker_996bcd7864d77b90b7ff5c51dee03ed5.bindTooltip(
+                `<div>
+                     CGV 하계
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc1a29c93eb7467a3315c0fde584401a = L.marker(
+                [37.65415995389807, 127.05854953305926],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_518566fd5e8b276dcd3085e1d48b5be0 = L.popup({"maxWidth": 200});
+
+        
+            var html_43e57205782baf5c1ee306db51a972ae = $(`<div id="html_43e57205782baf5c1ee306db51a972ae" style="width: 100.0%; height: 100.0%;">서울특별시 노원구 노해로 480 (상계동 조광빌딩)</div>`)[0];
+            popup_518566fd5e8b276dcd3085e1d48b5be0.setContent(html_43e57205782baf5c1ee306db51a972ae);
+        
+
+        marker_cc1a29c93eb7467a3315c0fde584401a.bindPopup(popup_518566fd5e8b276dcd3085e1d48b5be0)
+        ;
+
+        
+    
+    
+            marker_cc1a29c93eb7467a3315c0fde584401a.bindTooltip(
+                `<div>
+                     더숲 아트시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9561e5802200c0dc7ae2911495bac65e = L.marker(
+                [37.60391602711206, 126.92547351966628],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_69a701b623f46400549f26e2f7721f71 = L.popup({"maxWidth": 200});
+
+        
+            var html_029a59e9ad2bacc4bba4660d7e18762a = $(`<div id="html_029a59e9ad2bacc4bba4660d7e18762a" style="width: 100.0%; height: 100.0%;">서울특별시 은평구 녹번로 16  (녹번동)</div>`)[0];
+            popup_69a701b623f46400549f26e2f7721f71.setContent(html_029a59e9ad2bacc4bba4660d7e18762a);
+        
+
+        marker_9561e5802200c0dc7ae2911495bac65e.bindPopup(popup_69a701b623f46400549f26e2f7721f71)
+        ;
+
+        
+    
+    
+            marker_9561e5802200c0dc7ae2911495bac65e.bindTooltip(
+                `<div>
+                     이동상영관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31c833e2e799fd015fa6d366cb1a097d = L.marker(
+                [37.60972137406473, 126.92611364779033],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_aa0d624225c36f841a234ddd8b7e60c9 = L.popup({"maxWidth": 200});
+
+        
+            var html_f201c6a83ebf9144db6c62e35ead80f8 = $(`<div id="html_f201c6a83ebf9144db6c62e35ead80f8" style="width: 100.0%; height: 100.0%;">서울특별시 은평구 불광로 20 13층 (대조동 팜스퀘어)</div>`)[0];
+            popup_aa0d624225c36f841a234ddd8b7e60c9.setContent(html_f201c6a83ebf9144db6c62e35ead80f8);
+        
+
+        marker_31c833e2e799fd015fa6d366cb1a097d.bindPopup(popup_aa0d624225c36f841a234ddd8b7e60c9)
+        ;
+
+        
+    
+    
+            marker_31c833e2e799fd015fa6d366cb1a097d.bindTooltip(
+                `<div>
+                     CGV불광
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98a9e8cd08a1bf82b97f6f4dce23b84d = L.marker(
+                [37.639155642652504, 126.91630649550598],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_563529b9ffd5651a79c5f8931bd17ad4 = L.popup({"maxWidth": 200});
+
+        
+            var html_79901c5dd3b4322f4c2210b6030a8412 = $(`<div id="html_79901c5dd3b4322f4c2210b6030a8412" style="width: 100.0%; height: 100.0%;">서울특별시 은평구 통일로 1050 (진관동)</div>`)[0];
+            popup_563529b9ffd5651a79c5f8931bd17ad4.setContent(html_79901c5dd3b4322f4c2210b6030a8412);
+        
+
+        marker_98a9e8cd08a1bf82b97f6f4dce23b84d.bindPopup(popup_563529b9ffd5651a79c5f8931bd17ad4)
+        ;
+
+        
+    
+    
+            marker_98a9e8cd08a1bf82b97f6f4dce23b84d.bindTooltip(
+                `<div>
+                     롯데시네마 은평
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60f7d4593109d2c12bc0f67651ff0207 = L.marker(
+                [37.55979470008765, 126.93902740895078],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_51bc7e19d291959f5ca6a0b14fb17be7 = L.popup({"maxWidth": 200});
+
+        
+            var html_50070ad9b4693131749f5357829d106f = $(`<div id="html_50070ad9b4693131749f5357829d106f" style="width: 100.0%; height: 100.0%;">서울특별시 서대문구 신촌역로 30 (신촌동)</div>`)[0];
+            popup_51bc7e19d291959f5ca6a0b14fb17be7.setContent(html_50070ad9b4693131749f5357829d106f);
+        
+
+        marker_60f7d4593109d2c12bc0f67651ff0207.bindPopup(popup_51bc7e19d291959f5ca6a0b14fb17be7)
+        ;
+
+        
+    
+    
+            marker_60f7d4593109d2c12bc0f67651ff0207.bindTooltip(
+                `<div>
+                     메가박스중앙 주신촌지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ba434251085409ee238705832f29060 = L.marker(
+                [37.562561037248926, 126.94456334867799],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_277812e7e5e7ca06c47a92dd7c755d37 = L.popup({"maxWidth": 200});
+
+        
+            var html_a4a2d6a7b811074668cd28bd8a314c92 = $(`<div id="html_a4a2d6a7b811074668cd28bd8a314c92" style="width: 100.0%; height: 100.0%;">서울특별시 서대문구 이화여대길 52 (대현동이화캠퍼스복합단지 지하 45층)</div>`)[0];
+            popup_277812e7e5e7ca06c47a92dd7c755d37.setContent(html_a4a2d6a7b811074668cd28bd8a314c92);
+        
+
+        marker_8ba434251085409ee238705832f29060.bindPopup(popup_277812e7e5e7ca06c47a92dd7c755d37)
+        ;
+
+        
+    
+    
+            marker_8ba434251085409ee238705832f29060.bindTooltip(
+                `<div>
+                     아트하우스 모모-이화?KB 시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fed5cf68719a01957f8933f585cc30ef = L.marker(
+                [37.55656199175952, 126.93734239445912],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_376ddacd877f28bb80952ee1483a0e3a = L.popup({"maxWidth": 200});
+
+        
+            var html_ab149053067ab499e2f70d172bbd6497 = $(`<div id="html_ab149053067ab499e2f70d172bbd6497" style="width: 100.0%; height: 100.0%;">서울특별시 서대문구 신촌로 129 지하2~3층 (창천동 아트레온)</div>`)[0];
+            popup_376ddacd877f28bb80952ee1483a0e3a.setContent(html_ab149053067ab499e2f70d172bbd6497);
+        
+
+        marker_fed5cf68719a01957f8933f585cc30ef.bindPopup(popup_376ddacd877f28bb80952ee1483a0e3a)
+        ;
+
+        
+    
+    
+            marker_fed5cf68719a01957f8933f585cc30ef.bindTooltip(
+                `<div>
+                     CGV신촌아트레온
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_810c9aba3d2fe63ed5c7b6b89b775a2e = L.marker(
+                [37.565165187683064, 126.92804372805229],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_24b43ede6114f2f00a68e4a143aa4493 = L.popup({"maxWidth": 200});
+
+        
+            var html_7176629cebeaf6e5be8bf838218ea6a6 = $(`<div id="html_7176629cebeaf6e5be8bf838218ea6a6" style="width: 100.0%; height: 100.0%;">서울특별시 서대문구 연희로8길 18 지하1층동 (연희동)</div>`)[0];
+            popup_24b43ede6114f2f00a68e4a143aa4493.setContent(html_7176629cebeaf6e5be8bf838218ea6a6);
+        
+
+        marker_810c9aba3d2fe63ed5c7b6b89b775a2e.bindPopup(popup_24b43ede6114f2f00a68e4a143aa4493)
+        ;
+
+        
+    
+    
+            marker_810c9aba3d2fe63ed5c7b6b89b775a2e.bindTooltip(
+                `<div>
+                     라이카시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61b25281cf4b9a22cd9eafe584f9fbde = L.marker(
+                [37.55606656265711, 126.91920327096547],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_aab6bec227d7869772051eb0934bcfaa = L.popup({"maxWidth": 200});
+
+        
+            var html_37e696ae4b9c9af3edb807140f4b77f4 = $(`<div id="html_37e696ae4b9c9af3edb807140f4b77f4" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 147 아일렉스 7층 (동교동)</div>`)[0];
+            popup_aab6bec227d7869772051eb0934bcfaa.setContent(html_37e696ae4b9c9af3edb807140f4b77f4);
+        
+
+        marker_61b25281cf4b9a22cd9eafe584f9fbde.bindPopup(popup_aab6bec227d7869772051eb0934bcfaa)
+        ;
+
+        
+    
+    
+            marker_61b25281cf4b9a22cd9eafe584f9fbde.bindTooltip(
+                `<div>
+                     메가박스중앙 주 홍대지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_51b64e9376b0ad5d15f5728fb2e8d9cf = L.marker(
+                [37.55100139031001, 126.9181435978397],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_a039f9dc2807429382d04eec61681056 = L.popup({"maxWidth": 200});
+
+        
+            var html_55962918ab2bce23d0803e029ab3272d = $(`<div id="html_55962918ab2bce23d0803e029ab3272d" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 어울마당로 65 상상마당빌딩 지하3층 4층 (서교동)</div>`)[0];
+            popup_a039f9dc2807429382d04eec61681056.setContent(html_55962918ab2bce23d0803e029ab3272d);
+        
+
+        marker_51b64e9376b0ad5d15f5728fb2e8d9cf.bindPopup(popup_a039f9dc2807429382d04eec61681056)
+        ;
+
+        
+    
+    
+            marker_51b64e9376b0ad5d15f5728fb2e8d9cf.bindTooltip(
+                `<div>
+                     KT&G 상상마당 cinema
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_463793d03f80f928f1ea10b1e151f8a0 = L.marker(
+                [37.55642631985367, 126.91986835635113],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_98b933860e5b7e04adcb812951f43113 = L.popup({"maxWidth": 200});
+
+        
+            var html_7c0ab45290364de6872feaa72818d5d4 = $(`<div id="html_7c0ab45290364de6872feaa72818d5d4" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 153 (동교동)</div>`)[0];
+            popup_98b933860e5b7e04adcb812951f43113.setContent(html_7c0ab45290364de6872feaa72818d5d4);
+        
+
+        marker_463793d03f80f928f1ea10b1e151f8a0.bindPopup(popup_98b933860e5b7e04adcb812951f43113)
+        ;
+
+        
+    
+    
+            marker_463793d03f80f928f1ea10b1e151f8a0.bindTooltip(
+                `<div>
+                     CGV홍대
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0acfc9a0abdf4c96f2fff6301a1c3ff3 = L.marker(
+                [37.55732960410298, 126.92241813806913],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_10106b7b563c5d4f7d5f0550215334ab = L.popup({"maxWidth": 200});
+
+        
+            var html_f9cb7ad680019942fba9c04a25fbea3b = $(`<div id="html_f9cb7ad680019942fba9c04a25fbea3b" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 176 (동교동)</div>`)[0];
+            popup_10106b7b563c5d4f7d5f0550215334ab.setContent(html_f9cb7ad680019942fba9c04a25fbea3b);
+        
+
+        marker_0acfc9a0abdf4c96f2fff6301a1c3ff3.bindPopup(popup_10106b7b563c5d4f7d5f0550215334ab)
+        ;
+
+        
+    
+    
+            marker_0acfc9a0abdf4c96f2fff6301a1c3ff3.bindTooltip(
+                `<div>
+                     롯데시네마 홍대입구관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c249da31bc411f811f4b6cb09c023606 = L.marker(
+                [37.55093476054122, 126.91089226711584],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_34abd995b9bf56c1607ae3a4a83db3f7 = L.popup({"maxWidth": 200});
+
+        
+            var html_cfd16658412ef372823c2d0e23d51b9f = $(`<div id="html_cfd16658412ef372823c2d0e23d51b9f" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 45 2층 (서교동 메세나폴리스)</div>`)[0];
+            popup_34abd995b9bf56c1607ae3a4a83db3f7.setContent(html_cfd16658412ef372823c2d0e23d51b9f);
+        
+
+        marker_c249da31bc411f811f4b6cb09c023606.bindPopup(popup_34abd995b9bf56c1607ae3a4a83db3f7)
+        ;
+
+        
+    
+    
+            marker_c249da31bc411f811f4b6cb09c023606.bindTooltip(
+                `<div>
+                     롯데시네마 합정
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3fcdb7408746f7f8bcdc7816e61f26d = L.marker(
+                [37.55793327640731, 126.92295909107189],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_4eb4a551dd4d66ba88402baef7f33e8c = L.popup({"maxWidth": 200});
+
+        
+            var html_894096c7b342d66dedaca54129345e56 = $(`<div id="html_894096c7b342d66dedaca54129345e56" style="width: 100.0%; height: 100.0%;">서울특별시 마포구 양화로 186 LC TOWER 7~10층 (동교동)</div>`)[0];
+            popup_4eb4a551dd4d66ba88402baef7f33e8c.setContent(html_894096c7b342d66dedaca54129345e56);
+        
+
+        marker_e3fcdb7408746f7f8bcdc7816e61f26d.bindPopup(popup_4eb4a551dd4d66ba88402baef7f33e8c)
+        ;
+
+        
+    
+    
+            marker_e3fcdb7408746f7f8bcdc7816e61f26d.bindTooltip(
+                `<div>
+                     CGV연남
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_67404f2d1d2c460fd8cd5b97ed7c1436 = L.marker(
+                [37.52685433788699, 126.87214469362013],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_0bcaa43da449ff65636eb83bebe42a03 = L.popup({"maxWidth": 200});
+
+        
+            var html_69e1f310ba4e313a3ffbf8ad511493ec = $(`<div id="html_69e1f310ba4e313a3ffbf8ad511493ec" style="width: 100.0%; height: 100.0%;">서울특별시 양천구 목동동로 257 (목동현대백화점 지하2층)</div>`)[0];
+            popup_0bcaa43da449ff65636eb83bebe42a03.setContent(html_69e1f310ba4e313a3ffbf8ad511493ec);
+        
+
+        marker_67404f2d1d2c460fd8cd5b97ed7c1436.bindPopup(popup_0bcaa43da449ff65636eb83bebe42a03)
+        ;
+
+        
+    
+    
+            marker_67404f2d1d2c460fd8cd5b97ed7c1436.bindTooltip(
+                `<div>
+                     CGV 목동8
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc8eb9f21c0e13a20aebdbaf4b972e6d = L.marker(
+                [37.55786755039116, 126.85315616166226],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_4caa36ce9640dcaccc2d139fc3a71034 = L.popup({"maxWidth": 200});
+
+        
+            var html_510a29f2156a82d6d2a0afe26c3f6983 = $(`<div id="html_510a29f2156a82d6d2a0afe26c3f6983" style="width: 100.0%; height: 100.0%;">서울특별시 강서구 공항대로45길 63 3~9층 (등촌동)</div>`)[0];
+            popup_4caa36ce9640dcaccc2d139fc3a71034.setContent(html_510a29f2156a82d6d2a0afe26c3f6983);
+        
+
+        marker_bc8eb9f21c0e13a20aebdbaf4b972e6d.bindPopup(popup_4caa36ce9640dcaccc2d139fc3a71034)
+        ;
+
+        
+    
+    
+            marker_bc8eb9f21c0e13a20aebdbaf4b972e6d.bindTooltip(
+                `<div>
+                     CGV 등촌
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_003c3fe0b8e479bca4cfa2eff4e6e806 = L.marker(
+                [37.55925959806771, 126.83226171135036],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_1c13baaf21f268c95a9c4fb02b73ad46 = L.popup({"maxWidth": 200});
+
+        
+            var html_c179734ca0430dd06fa028a60f39f230 = $(`<div id="html_c179734ca0430dd06fa028a60f39f230" style="width: 100.0%; height: 100.0%;">서울특별시 강서구 공항대로 247 4층 (마곡동 퀸즈파크나인)</div>`)[0];
+            popup_1c13baaf21f268c95a9c4fb02b73ad46.setContent(html_c179734ca0430dd06fa028a60f39f230);
+        
+
+        marker_003c3fe0b8e479bca4cfa2eff4e6e806.bindPopup(popup_1c13baaf21f268c95a9c4fb02b73ad46)
+        ;
+
+        
+    
+    
+            marker_003c3fe0b8e479bca4cfa2eff4e6e806.bindTooltip(
+                `<div>
+                     메가박스중앙 주 마곡지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b340967980c2b4156b9fbaac3677790 = L.marker(
+                [37.565059576801474, 126.80010176408638],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_d30452ad0feb496d72ed3099f7a416a2 = L.popup({"maxWidth": 200});
+
+        
+            var html_221dc1caf39fa73d972e03076c105c69 = $(`<div id="html_221dc1caf39fa73d972e03076c105c69" style="width: 100.0%; height: 100.0%;">서울특별시 강서구 하늘길 38 (방화동 스카이파크)</div>`)[0];
+            popup_d30452ad0feb496d72ed3099f7a416a2.setContent(html_221dc1caf39fa73d972e03076c105c69);
+        
+
+        marker_4b340967980c2b4156b9fbaac3677790.bindPopup(popup_d30452ad0feb496d72ed3099f7a416a2)
+        ;
+
+        
+    
+    
+            marker_4b340967980c2b4156b9fbaac3677790.bindTooltip(
+                `<div>
+                     롯데시네마 김포공항
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a380764d45396b9765b50a05a53edeb0 = L.marker(
+                [37.54058792918171, 126.8346786400695],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_82e342e4ad45d07186f25e66e2da9654 = L.popup({"maxWidth": 200});
+
+        
+            var html_35e37414a8e433b5cf4c87c8384fc20c = $(`<div id="html_35e37414a8e433b5cf4c87c8384fc20c" style="width: 100.0%; height: 100.0%;">서울특별시 강서구 화곡로 142 401501호 (화곡동 메가박스(주)화곡점)</div>`)[0];
+            popup_82e342e4ad45d07186f25e66e2da9654.setContent(html_35e37414a8e433b5cf4c87c8384fc20c);
+        
+
+        marker_a380764d45396b9765b50a05a53edeb0.bindPopup(popup_82e342e4ad45d07186f25e66e2da9654)
+        ;
+
+        
+    
+    
+            marker_a380764d45396b9765b50a05a53edeb0.bindTooltip(
+                `<div>
+                     메가박스중앙 주 화곡지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4676aae2bee025a43df04411b284ddae = L.marker(
+                [37.561610871742545, 126.85037727375695],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_bd53612ee3e80cf7b18aee5d1f2d7d3e = L.popup({"maxWidth": 200});
+
+        
+            var html_2586617798e6cb3637638d4d0af2eaac = $(`<div id="html_2586617798e6cb3637638d4d0af2eaac" style="width: 100.0%; height: 100.0%;">서울특별시 강서구 양천로 476 456층 (등촌동)</div>`)[0];
+            popup_bd53612ee3e80cf7b18aee5d1f2d7d3e.setContent(html_2586617798e6cb3637638d4d0af2eaac);
+        
+
+        marker_4676aae2bee025a43df04411b284ddae.bindPopup(popup_bd53612ee3e80cf7b18aee5d1f2d7d3e)
+        ;
+
+        
+    
+    
+            marker_4676aae2bee025a43df04411b284ddae.bindTooltip(
+                `<div>
+                     롯데시네마 가양
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3fdc0fa8d43055ee46d9b5df6b1d0cdf = L.marker(
+                [37.50697387704599, 126.88742908395564],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_25584116ae9b7d362d34efa10b656d76 = L.popup({"maxWidth": 200});
+
+        
+            var html_9b99782a8a4c4fc915a51c3c2f98925a = $(`<div id="html_9b99782a8a4c4fc915a51c3c2f98925a" style="width: 100.0%; height: 100.0%;">서울특별시 구로구 새말로 97 12층 (구로동 테크노마트 신도림점)</div>`)[0];
+            popup_25584116ae9b7d362d34efa10b656d76.setContent(html_9b99782a8a4c4fc915a51c3c2f98925a);
+        
+
+        marker_3fdc0fa8d43055ee46d9b5df6b1d0cdf.bindPopup(popup_25584116ae9b7d362d34efa10b656d76)
+        ;
+
+        
+    
+    
+            marker_3fdc0fa8d43055ee46d9b5df6b1d0cdf.bindTooltip(
+                `<div>
+                     CINE Q 신도림점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1625a5ff3e4957b2921e5db07d39aae1 = L.marker(
+                [37.5011765059269, 126.87994924558915],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_2080a435d65839bad730349e3e2a2dcb = L.popup({"maxWidth": 200});
+
+        
+            var html_bf94bdeecbff8b519f1b5adcb17c410d = $(`<div id="html_bf94bdeecbff8b519f1b5adcb17c410d" style="width: 100.0%; height: 100.0%;">서울특별시 구로구 구로중앙로 152 (구로동 애경백화점 6층)</div>`)[0];
+            popup_2080a435d65839bad730349e3e2a2dcb.setContent(html_bf94bdeecbff8b519f1b5adcb17c410d);
+        
+
+        marker_1625a5ff3e4957b2921e5db07d39aae1.bindPopup(popup_2080a435d65839bad730349e3e2a2dcb)
+        ;
+
+        
+    
+    
+            marker_1625a5ff3e4957b2921e5db07d39aae1.bindTooltip(
+                `<div>
+                     CGV구로10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e58eedf1a2ae867fd27f44098606fd70 = L.marker(
+                [37.487453420419975, 127.04424137940413],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_2be56ae5910219d7d7a709d878d07be3 = L.popup({"maxWidth": 200});
+
+        
+            var html_7cde21116bc6f6708a891f4a970ce33f = $(`<div id="html_7cde21116bc6f6708a891f4a970ce33f" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 남부순환로 2753 (도곡동)</div>`)[0];
+            popup_2be56ae5910219d7d7a709d878d07be3.setContent(html_7cde21116bc6f6708a891f4a970ce33f);
+        
+
+        marker_e58eedf1a2ae867fd27f44098606fd70.bindPopup(popup_2be56ae5910219d7d7a709d878d07be3)
+        ;
+
+        
+    
+    
+            marker_e58eedf1a2ae867fd27f44098606fd70.bindTooltip(
+                `<div>
+                     롯데시네마 도곡
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_345385f3e6332d8a8e30703d1cdf4f26 = L.marker(
+                [37.50858480716948, 126.88600750573393],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_9eab5833971cd8e9f70c5b202cf37278 = L.popup({"maxWidth": 200});
+
+        
+            var html_cd844a9edb9f648a6fcbe97dcdaf3e21 = $(`<div id="html_cd844a9edb9f648a6fcbe97dcdaf3e21" style="width: 100.0%; height: 100.0%;">서울특별시 구로구 경인로 662 (신도림동 디큐브시티 제타워동 7~8층 일부)</div>`)[0];
+            popup_9eab5833971cd8e9f70c5b202cf37278.setContent(html_cd844a9edb9f648a6fcbe97dcdaf3e21);
+        
+
+        marker_345385f3e6332d8a8e30703d1cdf4f26.bindPopup(popup_9eab5833971cd8e9f70c5b202cf37278)
+        ;
+
+        
+    
+    
+            marker_345385f3e6332d8a8e30703d1cdf4f26.bindTooltip(
+                `<div>
+                     롯데컬처웍스 주롯데시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8577234e0ac1c6c79b9113591c30531b = L.marker(
+                [37.469407395653214, 126.894562625684],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_3705de7596507d4845c8ece2bc632282 = L.popup({"maxWidth": 200});
+
+        
+            var html_e6223f27a6e4ed66cd0adc1b60203d78 = $(`<div id="html_e6223f27a6e4ed66cd0adc1b60203d78" style="width: 100.0%; height: 100.0%;">서울특별시 금천구 시흥대로 399 (독산동)</div>`)[0];
+            popup_3705de7596507d4845c8ece2bc632282.setContent(html_e6223f27a6e4ed66cd0adc1b60203d78);
+        
+
+        marker_8577234e0ac1c6c79b9113591c30531b.bindPopup(popup_3705de7596507d4845c8ece2bc632282)
+        ;
+
+        
+    
+    
+            marker_8577234e0ac1c6c79b9113591c30531b.bindTooltip(
+                `<div>
+                     롯데시네마 독산
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7787acdeacafc0fad6a0c56f90e8a626 = L.marker(
+                [37.47758212249128, 126.8861944340273],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_66385b48c798b214b7f18724a76840b8 = L.popup({"maxWidth": 200});
+
+        
+            var html_cdcf8b9a1f5cdf0406bd84db629d9dd2 = $(`<div id="html_cdcf8b9a1f5cdf0406bd84db629d9dd2" style="width: 100.0%; height: 100.0%;">서울특별시 금천구 디지털로10길 9 현대시티아울렛 가산점 (가산동)</div>`)[0];
+            popup_66385b48c798b214b7f18724a76840b8.setContent(html_cdcf8b9a1f5cdf0406bd84db629d9dd2);
+        
+
+        marker_7787acdeacafc0fad6a0c56f90e8a626.bindPopup(popup_66385b48c798b214b7f18724a76840b8)
+        ;
+
+        
+    
+    
+            marker_7787acdeacafc0fad6a0c56f90e8a626.bindTooltip(
+                `<div>
+                     롯데시네마 가산디지털
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cbfedeae1603d09e4799aca851ae02c1 = L.marker(
+                [37.517075435258, 126.9004509054287],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_39d79045a1f800c17d92af9c11f06367 = L.popup({"maxWidth": 200});
+
+        
+            var html_9b897d359cbc4033a979550a30fb643d = $(`<div id="html_9b897d359cbc4033a979550a30fb643d" style="width: 100.0%; height: 100.0%;">서울특별시 영등포구 영중로 15 4층 (영등포동4가 타임스퀘어)</div>`)[0];
+            popup_39d79045a1f800c17d92af9c11f06367.setContent(html_9b897d359cbc4033a979550a30fb643d);
+        
+
+        marker_cbfedeae1603d09e4799aca851ae02c1.bindPopup(popup_39d79045a1f800c17d92af9c11f06367)
+        ;
+
+        
+    
+    
+            marker_cbfedeae1603d09e4799aca851ae02c1.bindTooltip(
+                `<div>
+                     CGV 영등포
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_817015f54b37cf24004f351300fe32a8 = L.marker(
+                [37.48476097170855, 126.97863049478474],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_53d2db077c8e23946d30c91f2cd18371 = L.popup({"maxWidth": 200});
+
+        
+            var html_0a5b7e8173b3ef0f6daf506a7e445ced = $(`<div id="html_0a5b7e8173b3ef0f6daf506a7e445ced" style="width: 100.0%; height: 100.0%;">서울특별시 동작구 동작대로 89 (사당동골든씨네마 7층)</div>`)[0];
+            popup_53d2db077c8e23946d30c91f2cd18371.setContent(html_0a5b7e8173b3ef0f6daf506a7e445ced);
+        
+
+        marker_817015f54b37cf24004f351300fe32a8.bindPopup(popup_53d2db077c8e23946d30c91f2cd18371)
+        ;
+
+        
+    
+    
+            marker_817015f54b37cf24004f351300fe32a8.bindTooltip(
+                `<div>
+                     메가박스 주 이수지점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d056f855d5ca485817d34bbb2ac29e7c = L.marker(
+                [37.48561004591002, 126.84785413291245],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_b61b032d8adba9ec9bf80910152d464e = L.popup({"maxWidth": 200});
+
+        
+            var html_fc373a2c88c39fe13944b6a49bf18754 = $(`<div id="html_fc373a2c88c39fe13944b6a49bf18754" style="width: 100.0%; height: 100.0%;">서울특별시 구로구 개봉로3길 109  (개봉동)</div>`)[0];
+            popup_b61b032d8adba9ec9bf80910152d464e.setContent(html_fc373a2c88c39fe13944b6a49bf18754);
+        
+
+        marker_d056f855d5ca485817d34bbb2ac29e7c.bindPopup(popup_b61b032d8adba9ec9bf80910152d464e)
+        ;
+
+        
+    
+    
+            marker_d056f855d5ca485817d34bbb2ac29e7c.bindTooltip(
+                `<div>
+                     떼아뜨르 이동영화
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ff72c4f4642ffeaacfb2f1ca58aa4384 = L.marker(
+                [37.4890874876711, 127.02328761905767],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_531585eb08ebb97dc4d12d0fbb12d2e1 = L.popup({"maxWidth": 200});
+
+        
+            var html_93fa9bc704f1878e7afaac2ad7451e53 = $(`<div id="html_93fa9bc704f1878e7afaac2ad7451e53" style="width: 100.0%; height: 100.0%;">서울특별시 서초구 효령로 391 B2층 (서초동 서초그랑자이)</div>`)[0];
+            popup_531585eb08ebb97dc4d12d0fbb12d2e1.setContent(html_93fa9bc704f1878e7afaac2ad7451e53);
+        
+
+        marker_ff72c4f4642ffeaacfb2f1ca58aa4384.bindPopup(popup_531585eb08ebb97dc4d12d0fbb12d2e1)
+        ;
+
+        
+    
+    
+            marker_ff72c4f4642ffeaacfb2f1ca58aa4384.bindTooltip(
+                `<div>
+                     CGV Salon 서초
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b33df277b271321d1bd33ee97a14f338 = L.marker(
+                [37.5043640841491, 127.00073092406278],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_057b28c4335b15f309f4664cc002b611 = L.popup({"maxWidth": 200});
+
+        
+            var html_92d3ba9e5bc1626ce91e05b8c27ad0b3 = $(`<div id="html_92d3ba9e5bc1626ce91e05b8c27ad0b3" style="width: 100.0%; height: 100.0%;">서울특별시 서초구 신반포로 176 (반포동센트럴시티 지하1층)</div>`)[0];
+            popup_057b28c4335b15f309f4664cc002b611.setContent(html_92d3ba9e5bc1626ce91e05b8c27ad0b3);
+        
+
+        marker_b33df277b271321d1bd33ee97a14f338.bindPopup(popup_057b28c4335b15f309f4664cc002b611)
+        ;
+
+        
+    
+    
+            marker_b33df277b271321d1bd33ee97a14f338.bindTooltip(
+                `<div>
+                     메가박스중앙 주 센트럴 더부티크 103호
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_853808632699177a7e1be3008804ea79 = L.marker(
+                [37.49794406790067, 127.02364719491743],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_b6e794b41bf573b8672831ef9f7fa96e = L.popup({"maxWidth": 200});
+
+        
+            var html_85b4dfc1788ac41770618d9b7287eca6 = $(`<div id="html_85b4dfc1788ac41770618d9b7287eca6" style="width: 100.0%; height: 100.0%;">서울특별시 서초구 서초대로77길 3 (서초동)</div>`)[0];
+            popup_b6e794b41bf573b8672831ef9f7fa96e.setContent(html_85b4dfc1788ac41770618d9b7287eca6);
+        
+
+        marker_853808632699177a7e1be3008804ea79.bindPopup(popup_b6e794b41bf573b8672831ef9f7fa96e)
+        ;
+
+        
+    
+    
+            marker_853808632699177a7e1be3008804ea79.bindTooltip(
+                `<div>
+                     메가박스중앙 주 강남
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d60c524c6649045fac3724e108a1bfe = L.marker(
+                [37.52853075996781, 127.1222582756785],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_d214820b550a5c42b53c40686ca12aec = L.popup({"maxWidth": 200});
+
+        
+            var html_efca73dade1b37da38cffca030ae677c = $(`<div id="html_efca73dade1b37da38cffca030ae677c" style="width: 100.0%; height: 100.0%;">서울특별시 강동구 성내로 48 (성내동)</div>`)[0];
+            popup_d214820b550a5c42b53c40686ca12aec.setContent(html_efca73dade1b37da38cffca030ae677c);
+        
+
+        marker_9d60c524c6649045fac3724e108a1bfe.bindPopup(popup_d214820b550a5c42b53c40686ca12aec)
+        ;
+
+        
+    
+    
+            marker_9d60c524c6649045fac3724e108a1bfe.bindTooltip(
+                `<div>
+                     메가박스 강동9
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09ea7b6392e9024fef5ed449b9588f13 = L.marker(
+                [37.516257745410655, 127.01772924346885],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_baa36df2722fcb7bd032a0e53b74a31d = L.popup({"maxWidth": 200});
+
+        
+            var html_4878a931388891c52c89848113e5b6f5 = $(`<div id="html_4878a931388891c52c89848113e5b6f5" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 108  (논현동)</div>`)[0];
+            popup_baa36df2722fcb7bd032a0e53b74a31d.setContent(html_4878a931388891c52c89848113e5b6f5);
+        
+
+        marker_09ea7b6392e9024fef5ed449b9588f13.bindPopup(popup_baa36df2722fcb7bd032a0e53b74a31d)
+        ;
+
+        
+    
+    
+            marker_09ea7b6392e9024fef5ed449b9588f13.bindTooltip(
+                `<div>
+                     클래식시네마스페이스 주
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_37beed01bff612af077de1b225b31db9 = L.marker(
+                [37.50165238163983, 127.02348491011116],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_f47ee81437b80b0dad07fb3e99392597 = L.popup({"maxWidth": 200});
+
+        
+            var html_76ab7ec93e0df52c99bc72ac66484e3e = $(`<div id="html_76ab7ec93e0df52c99bc72ac66484e3e" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 강남대로 438 (역삼동스타플렉스 6층)</div>`)[0];
+            popup_f47ee81437b80b0dad07fb3e99392597.setContent(html_76ab7ec93e0df52c99bc72ac66484e3e);
+        
+
+        marker_37beed01bff612af077de1b225b31db9.bindPopup(popup_f47ee81437b80b0dad07fb3e99392597)
+        ;
+
+        
+    
+    
+            marker_37beed01bff612af077de1b225b31db9.bindTooltip(
+                `<div>
+                     CGV 강남
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9cb757976186aabd21db0026bf4053e4 = L.marker(
+                [37.52458294568624, 127.02593763589181],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_624936ec65ee5dfa0e6afcdcc5fdd116 = L.popup({"maxWidth": 200});
+
+        
+            var html_3f556c8967d306baddb8e35941f2e014 = $(`<div id="html_3f556c8967d306baddb8e35941f2e014" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 논현로 848 (신사동)</div>`)[0];
+            popup_624936ec65ee5dfa0e6afcdcc5fdd116.setContent(html_3f556c8967d306baddb8e35941f2e014);
+        
+
+        marker_9cb757976186aabd21db0026bf4053e4.bindPopup(popup_624936ec65ee5dfa0e6afcdcc5fdd116)
+        ;
+
+        
+    
+    
+            marker_9cb757976186aabd21db0026bf4053e4.bindTooltip(
+                `<div>
+                     CGV압구정
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15e2329a5e89331f75a8c1dbcc26d635 = L.marker(
+                [37.52434257640329, 127.02652110857943],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_fdaab43f4c9543e566d05cb04ce255d6 = L.popup({"maxWidth": 200});
+
+        
+            var html_688099c121a1ca504b31016d4b359dfc = $(`<div id="html_688099c121a1ca504b31016d4b359dfc" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 압구정로30길 45 (신사동)</div>`)[0];
+            popup_fdaab43f4c9543e566d05cb04ce255d6.setContent(html_688099c121a1ca504b31016d4b359dfc);
+        
+
+        marker_15e2329a5e89331f75a8c1dbcc26d635.bindPopup(popup_fdaab43f4c9543e566d05cb04ce255d6)
+        ;
+
+        
+    
+    
+            marker_15e2329a5e89331f75a8c1dbcc26d635.bindTooltip(
+                `<div>
+                     씨네 드 쉐프
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d3b8490ff58f80b3be73ca4982466fc = L.marker(
+                [37.51653907233241, 127.01866894006808],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_7f62f5da682c0f7b921e6ad2662e358c = L.popup({"maxWidth": 200});
+
+        
+            var html_f535e6d3e3bbb8afd529491a89b5614e = $(`<div id="html_f535e6d3e3bbb8afd529491a89b5614e" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 116 (논현동외2필지)</div>`)[0];
+            popup_7f62f5da682c0f7b921e6ad2662e358c.setContent(html_f535e6d3e3bbb8afd529491a89b5614e);
+        
+
+        marker_2d3b8490ff58f80b3be73ca4982466fc.bindPopup(popup_7f62f5da682c0f7b921e6ad2662e358c)
+        ;
+
+        
+    
+    
+            marker_2d3b8490ff58f80b3be73ca4982466fc.bindTooltip(
+                `<div>
+                     롯데시네마 브로드웨이
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0b882b22d983a677c4a70847403bb68 = L.marker(
+                [37.52300602011776, 127.01912888953407],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_38ede579d2df63cc9b2daa26bf655b46 = L.popup({"maxWidth": 200});
+
+        
+            var html_e112b12862406d4b9acb17a16b926f35 = $(`<div id="html_e112b12862406d4b9acb17a16b926f35" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 압구정로10길 9 지하2층 (신사동)</div>`)[0];
+            popup_38ede579d2df63cc9b2daa26bf655b46.setContent(html_e112b12862406d4b9acb17a16b926f35);
+        
+
+        marker_f0b882b22d983a677c4a70847403bb68.bindPopup(popup_38ede579d2df63cc9b2daa26bf655b46)
+        ;
+
+        
+    
+    
+            marker_f0b882b22d983a677c4a70847403bb68.bindTooltip(
+                `<div>
+                     이봄씨어터
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16f0620ba2064df96e212c1fb2e30177 = L.marker(
+                [37.521015792575554, 127.0326173697211],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_9436b420d823ff21db8ecfb95938901c = L.popup({"maxWidth": 200});
+
+        
+            var html_65fe33b77464921037932e9c59b18da6 = $(`<div id="html_65fe33b77464921037932e9c59b18da6" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 언주로150길 14  (논현동)</div>`)[0];
+            popup_9436b420d823ff21db8ecfb95938901c.setContent(html_65fe33b77464921037932e9c59b18da6);
+        
+
+        marker_16f0620ba2064df96e212c1fb2e30177.bindPopup(popup_9436b420d823ff21db8ecfb95938901c)
+        ;
+
+        
+    
+    
+            marker_16f0620ba2064df96e212c1fb2e30177.bindTooltip(
+                `<div>
+                     씨네예술관
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52b53c2e470763d853d209c3dcd31695 = L.marker(
+                [37.51700747491242, 127.01966704609613],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_cd4999584b76ed89a10e2846d1b40706 = L.popup({"maxWidth": 200});
+
+        
+            var html_239a2835a49c93389253b14ec71f346b = $(`<div id="html_239a2835a49c93389253b14ec71f346b" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 128  (논현동)</div>`)[0];
+            popup_cd4999584b76ed89a10e2846d1b40706.setContent(html_239a2835a49c93389253b14ec71f346b);
+        
+
+        marker_52b53c2e470763d853d209c3dcd31695.bindPopup(popup_cd4999584b76ed89a10e2846d1b40706)
+        ;
+
+        
+    
+    
+            marker_52b53c2e470763d853d209c3dcd31695.bindTooltip(
+                `<div>
+                     씨네마강남
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2151df728c7c1b3d66c09c864a373a6 = L.marker(
+                [37.521578163853555, 127.03256590623329],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_7319893f6f5cf69c43f8e6661623007e = L.popup({"maxWidth": 200});
+
+        
+            var html_7bb9e08810aad48852a1a8c3f47d6b98 = $(`<div id="html_7bb9e08810aad48852a1a8c3f47d6b98" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 310  (논현동)</div>`)[0];
+            popup_7319893f6f5cf69c43f8e6661623007e.setContent(html_7bb9e08810aad48852a1a8c3f47d6b98);
+        
+
+        marker_f2151df728c7c1b3d66c09c864a373a6.bindPopup(popup_7319893f6f5cf69c43f8e6661623007e)
+        ;
+
+        
+    
+    
+            marker_f2151df728c7c1b3d66c09c864a373a6.bindTooltip(
+                `<div>
+                     씨네하우스
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13dfe4c07471a8a1311e6e5d89961369 = L.marker(
+                [37.50032541177043, 127.02432996630306],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_4eb19a7b2b121659099dd5b55e014478 = L.popup({"maxWidth": 200});
+
+        
+            var html_87a5460d9efe7a417375cb29acbe388f = $(`<div id="html_87a5460d9efe7a417375cb29acbe388f" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 강남대로 422 (역삼동)</div>`)[0];
+            popup_4eb19a7b2b121659099dd5b55e014478.setContent(html_87a5460d9efe7a417375cb29acbe388f);
+        
+
+        marker_13dfe4c07471a8a1311e6e5d89961369.bindPopup(popup_4eb19a7b2b121659099dd5b55e014478)
+        ;
+
+        
+    
+    
+            marker_13dfe4c07471a8a1311e6e5d89961369.bindTooltip(
+                `<div>
+                     메가박스 씨티
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e544ced307945cb0f66b886bb815f014 = L.marker(
+                [37.518171440783476, 127.02233517960985],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_bad92020772cbfc53873cc6e6d40fcb3 = L.popup({"maxWidth": 200});
+
+        
+            var html_472db6fe4285e604de34b61fa5a76cd2 = $(`<div id="html_472db6fe4285e604de34b61fa5a76cd2" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 152 2~3층 (논현동 영동빌딩)</div>`)[0];
+            popup_bad92020772cbfc53873cc6e6d40fcb3.setContent(html_472db6fe4285e604de34b61fa5a76cd2);
+        
+
+        marker_e544ced307945cb0f66b886bb815f014.bindPopup(popup_bad92020772cbfc53873cc6e6d40fcb3)
+        ;
+
+        
+    
+    
+            marker_e544ced307945cb0f66b886bb815f014.bindTooltip(
+                `<div>
+                     코엑스 컴포트
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3e16d95cfcdfa98d1e6da665f9c95629 = L.marker(
+                [37.51413030426923, 127.0262909840786],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_67cd3f133dd4bb63ed8a68d69c688ec9 = L.popup({"maxWidth": 200});
+
+        
+            var html_ed8b8ac040154b9b709d77a0bee318b0 = $(`<div id="html_ed8b8ac040154b9b709d77a0bee318b0" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 학동로 171  (논현동)</div>`)[0];
+            popup_67cd3f133dd4bb63ed8a68d69c688ec9.setContent(html_ed8b8ac040154b9b709d77a0bee318b0);
+        
+
+        marker_3e16d95cfcdfa98d1e6da665f9c95629.bindPopup(popup_67cd3f133dd4bb63ed8a68d69c688ec9)
+        ;
+
+        
+    
+    
+            marker_3e16d95cfcdfa98d1e6da665f9c95629.bindTooltip(
+                `<div>
+                     주케이엠티브이
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed433e5a62a0d70072c8f3e35ee419d0 = L.marker(
+                [37.51155793199961, 127.02096912338082],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_13c3599a138da4cb4c586e39021c2bd8 = L.popup({"maxWidth": 200});
+
+        
+            var html_4eae00d0876b40bb15573f801e820971 = $(`<div id="html_4eae00d0876b40bb15573f801e820971" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 학동로 118  (논현동)</div>`)[0];
+            popup_13c3599a138da4cb4c586e39021c2bd8.setContent(html_4eae00d0876b40bb15573f801e820971);
+        
+
+        marker_ed433e5a62a0d70072c8f3e35ee419d0.bindPopup(popup_13c3599a138da4cb4c586e39021c2bd8)
+        ;
+
+        
+    
+    
+            marker_ed433e5a62a0d70072c8f3e35ee419d0.bindTooltip(
+                `<div>
+                     강남비디오소극장
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_86af3480797707fa5fd12a8578a08cc6 = L.marker(
+                [37.50037515538327, 127.02402565843336],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_860cd2cca912a37e29b687b5fae4012a = L.popup({"maxWidth": 200});
+
+        
+            var html_971a8bf7e82d6c8ccb5dda53a76ac8e4 = $(`<div id="html_971a8bf7e82d6c8ccb5dda53a76ac8e4" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 강남대로 422 (역삼동)</div>`)[0];
+            popup_860cd2cca912a37e29b687b5fae4012a.setContent(html_971a8bf7e82d6c8ccb5dda53a76ac8e4);
+        
+
+        marker_86af3480797707fa5fd12a8578a08cc6.bindPopup(popup_860cd2cca912a37e29b687b5fae4012a)
+        ;
+
+        
+    
+    
+            marker_86af3480797707fa5fd12a8578a08cc6.bindTooltip(
+                `<div>
+                     메가박스 씨티
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_94eaeb2840b6712a1c4f46a623afe02c = L.marker(
+                [37.518128857836956, 127.02284530546571],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_e563a3d549a717a55db7df0f70091f18 = L.popup({"maxWidth": 200});
+
+        
+            var html_486e52b37bce73f67811863417923bcf = $(`<div id="html_486e52b37bce73f67811863417923bcf" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 156 2~3층 (논현동 중앙엠앤비사옥)</div>`)[0];
+            popup_e563a3d549a717a55db7df0f70091f18.setContent(html_486e52b37bce73f67811863417923bcf);
+        
+
+        marker_94eaeb2840b6712a1c4f46a623afe02c.bindPopup(popup_e563a3d549a717a55db7df0f70091f18)
+        ;
+
+        
+    
+    
+            marker_94eaeb2840b6712a1c4f46a623afe02c.bindTooltip(
+                `<div>
+                     코엑스 컴포트
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6633665bdd93f6feb92eb7d6b4b94ecf = L.marker(
+                [37.51644641884062, 127.01904807235954],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_83cc4288064c7aec20879c352d464b1e = L.popup({"maxWidth": 200});
+
+        
+            var html_31b85eea9d5fe1f2d0be31401351586c = $(`<div id="html_31b85eea9d5fe1f2d0be31401351586c" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로8길 8 (논현동2층)</div>`)[0];
+            popup_83cc4288064c7aec20879c352d464b1e.setContent(html_31b85eea9d5fe1f2d0be31401351586c);
+        
+
+        marker_6633665bdd93f6feb92eb7d6b4b94ecf.bindPopup(popup_83cc4288064c7aec20879c352d464b1e)
+        ;
+
+        
+    
+    
+            marker_6633665bdd93f6feb92eb7d6b4b94ecf.bindTooltip(
+                `<div>
+                     롯데시네마 브로드웨이
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3a343595e5c4c70345404eb4ad375c2 = L.marker(
+                [37.52289525499228, 127.03415901585714],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_84e211b2fd2ef321e66fc318f3344ada = L.popup({"maxWidth": 200});
+
+        
+            var html_95ccc68650b4f2f87aa691b7f832fe36 = $(`<div id="html_95ccc68650b4f2f87aa691b7f832fe36" style="width: 100.0%; height: 100.0%;">서울특별시 강남구 도산대로 323 (신사동)</div>`)[0];
+            popup_84e211b2fd2ef321e66fc318f3344ada.setContent(html_95ccc68650b4f2f87aa691b7f832fe36);
+        
+
+        marker_e3a343595e5c4c70345404eb4ad375c2.bindPopup(popup_84e211b2fd2ef321e66fc318f3344ada)
+        ;
+
+        
+    
+    
+            marker_e3a343595e5c4c70345404eb4ad375c2.bindTooltip(
+                `<div>
+                     CGV 청담씨네시티 CINEMA SWEETBOX PREMIUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_280f25e8154ffa384a4cb57083e0b8c3 = L.marker(
+                [37.48036614293084, 127.12286427219074],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_bda2befe06dad3f4758b3b8de4c275ff = L.popup({"maxWidth": 200});
+
+        
+            var html_da2f3262ee26a89e764978177cb0b625 = $(`<div id="html_da2f3262ee26a89e764978177cb0b625" style="width: 100.0%; height: 100.0%;">서울특별시 송파구 충민로 66 (문정동 가든파이브라이프영관 10층)</div>`)[0];
+            popup_bda2befe06dad3f4758b3b8de4c275ff.setContent(html_da2f3262ee26a89e764978177cb0b625);
+        
+
+        marker_280f25e8154ffa384a4cb57083e0b8c3.bindPopup(popup_bda2befe06dad3f4758b3b8de4c275ff)
+        ;
+
+        
+    
+    
+            marker_280f25e8154ffa384a4cb57083e0b8c3.bindTooltip(
+                `<div>
+                     CGV 송파
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_708d755e0388fa53cc342613bed2872c = L.marker(
+                [37.51310115736578, 127.10054319254533],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_cf2c5cc9c551129272c8a382cd64347e = L.popup({"maxWidth": 200});
+
+        
+            var html_0c5021af86aa5fc0c90ccdd3589e7eb1 = $(`<div id="html_0c5021af86aa5fc0c90ccdd3589e7eb1" style="width: 100.0%; height: 100.0%;">서울특별시 송파구 올림픽로 300 엔터테인먼트동 5~11층 (신천동 롯데월드몰)</div>`)[0];
+            popup_cf2c5cc9c551129272c8a382cd64347e.setContent(html_0c5021af86aa5fc0c90ccdd3589e7eb1);
+        
+
+        marker_708d755e0388fa53cc342613bed2872c.bindPopup(popup_cf2c5cc9c551129272c8a382cd64347e)
+        ;
+
+        
+    
+    
+            marker_708d755e0388fa53cc342613bed2872c.bindTooltip(
+                `<div>
+                     롯데시네마 월드타워
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_45dec23d53c5dce084261d0d5cd8df06 = L.marker(
+                [37.477648658587796, 127.12210616263066],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_fdb4e57de84dfe4bffc523872895a4f5 = L.popup({"maxWidth": 200});
+
+        
+            var html_172d6991fbe6c53c42222253828b969b = $(`<div id="html_172d6991fbe6c53c42222253828b969b" style="width: 100.0%; height: 100.0%;">서울특별시 송파구 충민로 66 10층 (문정동 가든파이브라이프)</div>`)[0];
+            popup_fdb4e57de84dfe4bffc523872895a4f5.setContent(html_172d6991fbe6c53c42222253828b969b);
+        
+
+        marker_45dec23d53c5dce084261d0d5cd8df06.bindPopup(popup_fdb4e57de84dfe4bffc523872895a4f5)
+        ;
+
+        
+    
+    
+            marker_45dec23d53c5dce084261d0d5cd8df06.bindTooltip(
+                `<div>
+                     CGV 송파
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_47dd45738c45fccb145123440abe2fe8 = L.marker(
+                [37.48060473499756, 127.120776211014],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_1e18896cf37dd00d07ddcd74a8400810 = L.popup({"maxWidth": 200});
+
+        
+            var html_0960ee7605e0701b0a33ddb53b1ea670 = $(`<div id="html_0960ee7605e0701b0a33ddb53b1ea670" style="width: 100.0%; height: 100.0%;">서울특별시 송파구 송파대로 111 204동 비162호 (문정동 파크하비오)</div>`)[0];
+            popup_1e18896cf37dd00d07ddcd74a8400810.setContent(html_0960ee7605e0701b0a33ddb53b1ea670);
+        
+
+        marker_47dd45738c45fccb145123440abe2fe8.bindPopup(popup_1e18896cf37dd00d07ddcd74a8400810)
+        ;
+
+        
+    
+    
+            marker_47dd45738c45fccb145123440abe2fe8.bindTooltip(
+                `<div>
+                     메가박스 송파파크하비오점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9dc7b0c88c113324d0d45d41c972db06 = L.marker(
+                [37.53662042875322, 127.12244725163124],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_1ecb93590f45435cf70d19bc4b18779f = L.popup({"maxWidth": 200});
+
+        
+            var html_47b5896ac9e0ff71746cba44a1d49905 = $(`<div id="html_47b5896ac9e0ff71746cba44a1d49905" style="width: 100.0%; height: 100.0%;">서울특별시 강동구 천호옛길 85 (성내동)</div>`)[0];
+            popup_1ecb93590f45435cf70d19bc4b18779f.setContent(html_47b5896ac9e0ff71746cba44a1d49905);
+        
+
+        marker_9dc7b0c88c113324d0d45d41c972db06.bindPopup(popup_1ecb93590f45435cf70d19bc4b18779f)
+        ;
+
+        
+    
+    
+            marker_9dc7b0c88c113324d0d45d41c972db06.bindTooltip(
+                `<div>
+                     롯데시네마
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1bf06c553738df9aae19fc3336e938d7 = L.marker(
+                [37.54571781003946, 127.13936069137564],
+                {}
+            ).addTo(map_0327468344a8516db5c8b6d0346c8552);
+        
+    
+        var popup_6fe30cc5a02885398993457a4d753280 = L.popup({"maxWidth": 200});
+
+        
+            var html_e18a927abf4a0caca18d5c9e0ef880f4 = $(`<div id="html_e18a927abf4a0caca18d5c9e0ef880f4" style="width: 100.0%; height: 100.0%;">서울특별시 강동구 양재대로 1571 4층 (천호동)</div>`)[0];
+            popup_6fe30cc5a02885398993457a4d753280.setContent(html_e18a927abf4a0caca18d5c9e0ef880f4);
+        
+
+        marker_1bf06c553738df9aae19fc3336e938d7.bindPopup(popup_6fe30cc5a02885398993457a4d753280)
+        ;
+
+        
+    
+    
+            marker_1bf06c553738df9aae19fc3336e938d7.bindTooltip(
+                `<div>
+                     CGV 천호
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

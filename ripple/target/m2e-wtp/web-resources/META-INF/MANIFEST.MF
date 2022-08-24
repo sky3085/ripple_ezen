@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: lunaw
 Build-Jdk: 11.0.15
+=======
+Built-By: ezen
+Build-Jdk: 11.0.12
+>>>>>>> 4ccaa261e17d5d21052f01a34c85d240210e272d
 Created-By: Maven Integration for Eclipse
 

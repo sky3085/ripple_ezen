@@ -24,6 +24,11 @@ public class CommentsRepositoryImpl implements CommentsRepository {
 		int result = sqlSession.insert("mybatis.commentsMapper.commentsInsert", dto);
 		return result;
 	}
+
+	@Override
+	public List<CommentsDTO> commentsCheck(CommentsDTO dto) {
+		return sqlSession.selectList("mybatis.commentsMapper.commentsCheck", dto);
+	}
 	
 	
 	

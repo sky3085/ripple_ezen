@@ -16,19 +16,14 @@ public class MemberRepositoryImpl implements MemberRepository {
 	private SqlSessionTemplate sqlSession;
 	
 	@Override
-	public int login(String id, String pwd) {
-		int result = 0;
+	public MemberDTO login(String id, String pwd) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pwd", pwd);
 		
 		MemberDTO dto = sqlSession.selectOne("mybatis.memberMapper.login", map);
 		
-		if(dto.getId() != null) {
-			result = 1;
-		}
-		
-		return result;
+		return dto;
 	}
 
 	@Override

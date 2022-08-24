@@ -140,7 +140,7 @@ span {
 					<hr>
 					<h4>개요</h4>
 					<div>
-						<p id="overview" style="height: 240px; overflow: auto;">&nbsp;${dto.overview }</p>
+						<p id="overview" style="height: 190px; overflow: auto;">&nbsp;${dto.overview }</p>
 					</div>
 
 				</div>
@@ -159,11 +159,11 @@ span {
 			<div class="col-8 col-md-8" style="margin: 0 auto;">
 				<c:if test="${id != null }">
 					<c:if test="${likeTrue == true}">
-						<button type="button" onclick="userLikeDelete(this)"
+						<button type="button" class="btn btn-primary" style="margin-top: 25px;" onclick="userLikeDelete(this)"
 							data-titleid="${titleid }">좋아요!(취소)</button>
 					</c:if>
 					<c:if test="${likeTrue != true}">
-						<button type="button" onclick="userLike(this)"
+						<button type="button" class="btn btn-primary" style="margin-top: 25px;" onclick="userLike(this)"
 							data-titleid="${titleid }">좋아요!</button>
 					</c:if>
 				</c:if>
@@ -247,10 +247,10 @@ span {
 					<c:forEach var="dto2" items="${commentsList }">
 						<c:if test="${dto2.original_seq==dto.seq }">
 							<div class="col-lg-10 col-10 review2 row">
-								<div class="col-lg-1 col-5" style="overflow: hidden;">${dto2.id }</div>
+								<div class="col-lg-1 col-4" style="overflow: hidden;">${dto2.id }</div>
 								<div class="col-lg-7 col-5"
-									style="overflow: hidden; height: 100%;">${dto2.contents }</div>
-								<div class="col-lg-2 col-2">
+									style="overflow: hidden;">${dto2.contents }</div>
+								<div class="col-lg-2 col-3">
 									<c:if test="${id != null }">
 										<button type="button" onclick="accusation(this)"
 											data-seq="${dto2.seq }" data-writer="${dto2.id }" data-titleid="${titleid }"

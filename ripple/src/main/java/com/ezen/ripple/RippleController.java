@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
+import ripple.bean.MemberDTO;
 import ripple.bean.MovieDTO;
 import ripple.bean.MoviePreDTO;
 import ripple.bean.UserLikeDTO;
@@ -52,6 +53,11 @@ public class RippleController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/map")
+	public String map() {
+		return "map";
+	}
+	
 	@RequestMapping(value = "/kakaoLogin")
 	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest request) {
 		String access_Token = kakao.getAccessToken(code);
@@ -62,8 +68,6 @@ public class RippleController {
 	        session.setAttribute("id", userInfo.get("email"));
 	        session.setAttribute("access_Token", access_Token);
 	    }
-	    System.out.println(userInfo.get("email"));
-	    System.out.println(access_Token);
 		return "index";
 	}
 	
@@ -142,17 +146,23 @@ public class RippleController {
 		dto.setLevel(Integer.parseInt(request.getParameter("level")));
 		dto.setOriginal_seq(Integer.parseInt(request.getParameter("original_seq")));
 		
-		int result = commentsService.commentsInsert(dto);
+		//만약 처음 삽입이 아니라면? select로 id랑 titleid를 가져왔을대 길이가 1 이상이라면, 삽입 x
+		//만약 처음 삽입이라면? select로 id랑 titleid를 가져왔을때 밑에 코드 실행
+		List<CommentsDTO> commentsCheck = commentsService.commentsCheck(dto);
 		
-		if(dto.getScore()!=-1) {//점수가 있다면
-			//먼저 titleid로 점수랑 참여자수 가져와서
-			MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
-			double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+		if(commentsCheck.size()==0 || dto.getLevel()==2) {
+			int result = commentsService.commentsInsert(dto);
 			
-			//movieService.점수 업데이트
-			movieService.voteScoreUpdate(newScore, dto.getTitleid());
-			//movieService.투표참여자수 업데이트
-			movieService.voteCountUpdate(dto.getTitleid());
+			if(dto.getScore()!=-1) {//점수가 있다면
+				//먼저 titleid로 점수랑 참여자수 가져와서
+				MovieDTO movieDTO = movieService.movieView(request.getParameter("titleid"));
+				double newScore = (movieDTO.getVote_score()*movieDTO.getVote_count()+dto.getScore())/(movieDTO.getVote_count()+1);
+				
+				//movieService.점수 업데이트
+				movieService.voteScoreUpdate(newScore, dto.getTitleid());
+				//movieService.투표참여자수 업데이트
+				movieService.voteCountUpdate(dto.getTitleid());
+			}
 		}
 		
 		modelAndView.addObject("titleid", dto.getTitleid());
@@ -274,10 +284,15 @@ public class RippleController {
 		String id =  request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-		int result = memberService.login(id, pwd);
+		MemberDTO dto = memberService.login(id, pwd);
 		
-		if(result>0) {
+		if(dto.getId() != null) {
 			session.setAttribute("id", id);
+			if(dto.getManager().equals("1")) {
+				session.setAttribute("manager", 1);
+			}else {
+				session.setAttribute("manager", 0);
+			}
 			view = "index";
 		}else {
 			request.setAttribute("msg", "로그인 실패");
@@ -293,7 +308,6 @@ public class RippleController {
 		session.removeAttribute("id");
 		if(session.getAttribute("access_Token")!=null) {
 			session.removeAttribute("access_Token");
-			System.out.println("카카오 로그아웃 성공");
 		}
 		
 		return "index";
