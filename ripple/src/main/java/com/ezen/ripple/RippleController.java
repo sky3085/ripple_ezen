@@ -23,6 +23,7 @@ import ripple.service.CommentsService;
 import ripple.service.KakaoAPI;
 import ripple.service.MemberService;
 import ripple.service.MovieService;
+import ripple.service.MypageService;
 import ripple.service.UserLikeService;
 
 /**
@@ -43,6 +44,8 @@ public class RippleController {
 	private UserLikeService userLikeService;
 	@Autowired
 	private KakaoAPI kakao;
+	@Autowired
+	private MypageService mypageService;
 	
 	@RequestMapping(value = "/index")
 	public String index() {
@@ -313,5 +316,41 @@ public class RippleController {
 		return view;
 	}
 	
+	@RequestMapping(value = "/mypage")
+	public ModelAndView mypage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		
+		int pg = 1;
+		if (request.getParameter("pg") != null) {
+			pg = Integer.parseInt(request.getParameter("pg"));
+		}
+		
+		int endNum = pg * 12;
+		int startNum = endNum - 11;
+		
+		List<MovieDTO> mypageList = new ArrayList<MovieDTO>();
+		mypageList = mypageService.mypageList(Integer.toString(startNum),
+				Integer.toString(endNum), id);
+		
+		int totalA = mypageService.getTotalA(id);
+		int totalP = (totalA + 11) / 12;
 
+		int startPage = (pg - 1) / 5 * 5 + 1;
+		int endPage = startPage + 4;
+		if (endPage > totalP)
+			endPage = totalP;
+		
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("id", id);
+		modelAndView.addObject("pg", pg);
+		modelAndView.addObject("mypageList", mypageList);
+		modelAndView.addObject("totalP", totalP);
+		modelAndView.addObject("startPage", startPage);
+		modelAndView.addObject("endPage", endPage);
+		modelAndView.setViewName("mypage");
+		
+		return modelAndView;
+	}
 }

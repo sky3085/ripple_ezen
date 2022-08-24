@@ -17,7 +17,7 @@
                     <li class="nav-item"><a class="nav-link" href="./login">Log In</a></li>
                     </c:if>
                     <c:if test="${id!=null }">
-                    <li class="nav-item"><a class="nav-link" href="#">My Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./mypage">My Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="./logout">Log out</a></li>
                     </c:if>
                 </ul>

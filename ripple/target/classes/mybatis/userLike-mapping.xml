@@ -20,8 +20,6 @@
 	<insert id="userLikeInsert" parameterType="userLikeDTO">
 		<![CDATA[insert into userLike values(seq_userLike.nextval,#{titleid},#{userid})]]>
 	</insert>
-	
-	
 </mapper>
 
 
