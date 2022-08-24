@@ -98,11 +98,11 @@ font-family: 'Noto Sans KR', sans-serif;}
 }
 </style>
 
-
+<link href="../resources/css/nav_style.css" rel="stylesheet">
 </head>
 <body>
-
-	<header>
+	<jsp:include page="./nav.jsp" />
+	<!-- <header>
 		<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="adminMain.jsp">Ripple</a>
@@ -137,7 +137,7 @@ font-family: 'Noto Sans KR', sans-serif;}
     </div>
   </div>
 </nav>
-	</header>
+	</header> -->
 
 	<div class="container-fluid">
 		<div class="row">
@@ -193,7 +193,7 @@ font-family: 'Noto Sans KR', sans-serif;}
 					<h2 class="h2">Admin</h2>
 
 
-					<div class="btn-toolbar mb-2 mb-md-0">
+					<!-- <div class="btn-toolbar mb-2 mb-md-0">
 						<div class="btn-group me-2">
 						
 							<button type="button" class="btn btn-sm btn-outline-secondary">
@@ -205,7 +205,7 @@ font-family: 'Noto Sans KR', sans-serif;}
 							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
 						</div>
 					
-					</div>
+					</div> -->
 
 
 

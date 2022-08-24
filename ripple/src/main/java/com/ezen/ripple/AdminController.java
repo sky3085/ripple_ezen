@@ -54,7 +54,7 @@ public class AdminController {
 		modelAndView.addObject("startPage", startPage);
 		modelAndView.addObject("endPage", endPage);
 
-		modelAndView.setViewName("adminMain.jsp");
+		modelAndView.setViewName("admin/adminMain");
 
 		return modelAndView;
 	}
@@ -73,7 +73,7 @@ public class AdminController {
 		modelAndView.addObject("pg",pg);
 		modelAndView.addObject("result",result);
 		
-		modelAndView.setViewName("replyDelete.jsp");
+		modelAndView.setViewName("admin/replyDelete");
 		
 		return modelAndView;
 		

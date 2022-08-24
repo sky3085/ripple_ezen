@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ripple.bean.AccusationDTO;
 import ripple.bean.CommentsDTO;
+import ripple.bean.MemberDTO;
 import ripple.bean.MovieDTO;
 import ripple.bean.MoviePreDTO;
 import ripple.bean.UserLikeDTO;
@@ -274,10 +275,15 @@ public class RippleController {
 		String id =  request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-		int result = memberService.login(id, pwd);
+		MemberDTO dto = memberService.login(id, pwd);
 		
-		if(result>0) {
+		if(dto.getId() != null) {
 			session.setAttribute("id", id);
+			if(dto.getManager().equals("1")) {
+				session.setAttribute("manager", 1);
+			}else {
+				session.setAttribute("manager", 0);
+			}
 			view = "index";
 		}else {
 			request.setAttribute("msg", "로그인 실패");

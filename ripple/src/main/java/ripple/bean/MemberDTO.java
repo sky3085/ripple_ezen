@@ -1,11 +1,18 @@
 package ripple.bean;
 
 public class MemberDTO {
+	private int seq;
 	private String id;
 	private String pwd;
 	private String email;
 	private String manager;
 	
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
 	public String getManager() {
 		return manager;
 	}
