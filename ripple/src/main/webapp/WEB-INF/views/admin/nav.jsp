@@ -18,7 +18,7 @@
                     </c:if>
                     <c:if test="${id!=null }">
                     	<c:if test="${manager == 1 }">
-                    		<li class="nav-item"><a class="nav-link" href="../admin/adminMemberList.do">Admin Page</a></li>
+                    		<li class="nav-item"><a class="nav-link" href="./adminMap.do">Admin Page</a></li>
                     	</c:if>
                     	<c:if test="${manager == 0 }">
 							<li class="nav-item"><a class="nav-link" href="#">My Page</a></li>                    	

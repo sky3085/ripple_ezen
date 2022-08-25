@@ -1,198 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-main ul {
-	padding: 10px;
-	
-}
-
-main li {
-	display: inline-block;
-	margin: 20px;
-}
-
-.1st_page_movie {
-	margin-bottom: 10px;
-	border: 1px solid black;
-	border-radius:2px;
-	font-size:1.0rem;
-}
-
-.material-icons {
-	vertiacl-align: top;
-}
-
-</Style>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 </head>
 <body>
-	
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 mt-5">
+			<div
+				class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-	<div class="1st_page_movie border border-dark" align="center">
-	<div>
-	<h5>흥행 예측</h5>
-	</div>
-		<ul class="1st_line_movie">
-			<li>
-				<div class="1st_movie">
-					<img
-						src="https://tvstore-phinf.pstatic.net/20220725_49/1658724876671vTDS6_JPEG/TopGunMaverick_KR_800x1200.jpg?type=f102_138"
-						width="102" height="138" alt="탑건: 매버릭" class=""> <span
-						class="material-icons"> thumb_up </span>
-				</div> <p> 탑건: 매버릭</p>
-			
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20220607_129/16545872892918GA4h_JPEG/movie_image.jpg?type=f102_138"> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <p>헤어질 결심 </p>
+				<c:forEach var="dto" items="${list }">
+					<div class="col-10 col-sm-6 col-lg-3 mb-5" style="height: 500px">
+						<div class="card h-100 aligns-items-center justify-content-center"
+							style="border: 1px solid rgba(227, 227, 227, 1); box-sizing: border-box; box-shadow: 0 5px 19px rgb(0 0 0/ 55%);">
+							<c:if test="${dto.predict > 0.52 }">
+								<div class="bg-success" style="width: 100%; height: 30px"></div>
+							</c:if>
+							<c:if test="${dto.predict <= 0.52 }">
+								<div class="bg-warning" style="width: 100%; height: 30px"></div>
+							</c:if>
+							<!-- Product image-->
+							<c:if test="${dto.poster_path == null }">
+								<h3 class="text-center">${dto.title }</h3>
+							</c:if>
+							<c:if test="${dto.poster_path != null }">
+								<img class="card-img-top" src="${dto.poster_path }"
+									alt="이미지가 없습니다." style="width: 100%; height: 300px" />
+							</c:if>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://tvstore-phinf.pstatic.net/20220816_228/1660612844593aPllf_JPEG/ECBD9CEB9DBCECA5ACED8FACEC8AA4ED84B0_EC8898ECA09528IMAX.jpg?type=f102_138"> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 범죄도시2 </strong>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://tvstore-phinf.pstatic.net/20211104_290/163600861893625n5r_JPEG/DUNE_PVOD_V_DD_KA_TT_2000x3000_300dpi_KR.jpg?type=f102_138"
-						width="102" height="138" alt="탑건: 매버릭" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 듄 </strong>
-		</ul>
+		<div class="row" style="width: 100%; text-align: center;">
+			<div class="col-12 col-md-12">
+				<c:if test="${startPage > 5 }">
+					<a class="paging"
+						href="adminRank.do?req=adminRank&pg=${startPage - 1 }">[이전] </a>
+				</c:if>
 
-		<ul class="2nd_line_movie">
-			<li>
-				<div class="1st_movie">
-					<img
-						src="https://movie-phinf.pstatic.net/20170118_143/1484714583493K148x_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="공조" class=""> <span
-						class="material-icons"> thumb_up </span>
-				</div> <strong data-v-6211435f=""> <!----> 공조
-			</strong>
+				<c:forEach var="i" begin="${startPage }" end="${endPage}" step="1">
+					<c:if test="${i == pg}">
+						<a class="currentPaging">[${i}] </a>
+					</c:if>
 
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20180710_211/1531198746645nsdKN_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="마녀" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 마녀 </strong>
+					<c:if test="${i != pg}">
+						<a class="paging" href="adminRank.do?req=adminRank&pg=${i}">[${i}]
+						</a>
+					</c:if>
+				</c:forEach>
 
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20151012_285/1444614874682ClEkX_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="검은 사제들"class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 검은 사제들 </strong>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20111223_57/13245799126671QMbI_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="타짜" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_up </span>
-				</div> <!----> <!---->타짜 </strong>
-		</ul>
+				<c:if test="${endPage < totalP }">
+					<a class="paging"
+						href="adminRank.do?req=adminRank&pg=${endPage + 1 }">[다음]</a>
+				</c:if>
+			</div>
+		</div>
 
-		<ul class="3nd_line_movie">
-			<li>
-				<div class="1st_movie">
-					<img
-						src="https://tvstore-phinf.pstatic.net/20210924_117/1632482001890eQJDE_PNG/ONPOSTER_2..png?type=f102_138"
-						width="102" height="138" alt="더 스파이" class=""> <span
-						class="material-icons"> thumb_up </span>
-				</div> <strong data-v-6211435f=""> <!----> 더 스파이
-			</strong>
-
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20190329_232/1553849027701K0DBy_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="어스" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_up </span>
-				</div> <!----> <!---->어스 </strong>
-
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20170512_76/1494564316131VmHQY_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="겟 아웃" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 겟 아웃 </strong>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20171222_257/15139181561647cwWN_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="다운사이징" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 다운사이징 </strong>
-		</ul>
-
-		<ul class="4th_line_movie">
-			<li>
-				<div class="1st_movie">
-					<img
-						src="https://movie-phinf.pstatic.net/20150317_278/14265665566096Mg1U_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="인서전트" class=""> <span
-						class="material-icons"> thumb_up </span>
-				</div> <strong data-v-6211435f=""> <!----> 인서전트
-			</strong>
-
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20130228_105/1362026575599uE2wA_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="파파로티" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_up </span>
-				</div> <!----> <!----> 파파로티 </strong>
-
-			</li>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20111223_60/1324604464389CGfk2_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="밀크" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 밀크 </strong>
-			<li>
-				<div class="1st_movie">
-					<img data-v-6211435f=""
-						src="https://movie-phinf.pstatic.net/20111222_59/1324526421847uL49g_JPEG/movie_image.jpg?type=f102_138"
-						width="102" height="138" alt="디파티드" class=""> <strong
-						data-v-6211435f=""> <span class="material-icons">
-							thumb_down_off_alt </span>
-				</div> <!----> <!----> 디파티드 </strong>
-		</ul>
-
-	</div>
-	</div>
-
-
-
+	</section>
 </body>
 </html>

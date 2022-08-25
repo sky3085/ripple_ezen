@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ripple.bean.MemberDTO;
+import ripple.bean.PremovieDTO;
 
 @Repository("adminRepository")
 public class AdminRepositoryImpl implements AdminRepository {
@@ -42,5 +43,18 @@ public class AdminRepositoryImpl implements AdminRepository {
 	@Override
 	public int totalAccusation() {
 		return sqlSession.selectOne("mybatis.adminMapper.totalAccusation");
+	}
+
+	@Override
+	public List<PremovieDTO> movieList(int startNum, int endNum) {
+		Map<String,Integer> map= new HashMap<String,Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		return sqlSession.selectList("mybatis.adminMapper.movieList", map);
+	}
+
+	@Override
+	public int totalA() {
+		return sqlSession.selectOne("mybatis.adminMapper.totalA");
 	}
 }

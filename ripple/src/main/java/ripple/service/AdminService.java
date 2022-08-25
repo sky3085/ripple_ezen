@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ripple.bean.MemberDTO;
+import ripple.bean.PremovieDTO;
 import ripple.repository.AdminRepository;
 
 @Service
@@ -30,5 +31,13 @@ public class AdminService {
 
 	public int totalAccusation() {
 		return adminRepository.totalAccusation();
+	}
+	
+	public List<PremovieDTO> movieList(int startNum, int endNum) {
+		return adminRepository.movieList(startNum, endNum);
+	}
+	
+	public int totalA() {
+		return adminRepository.totalA();
 	}
 }

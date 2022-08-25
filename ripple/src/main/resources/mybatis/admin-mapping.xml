@@ -30,6 +30,15 @@
 		comments where accusation.seq = comments."seq"
 	</select>
 
+	<select id="movieList" resultType="premovieDTO" parameterType="java.util.Map">
+		<![CDATA[
+			select* from (select rownum rn, tt.*from 
+			(select * from premovie) tt) where rn>=#{startNum} and rn<=#{endNum}
+		]]>
+	</select>
+	<select id="totalA" resultType="int">
+		select count(*) as cnt from premovie
+	</select>
 	<!-- 회원 삭제 기능 : 따로 X -->
 	<delete id="delete" parameterType="String">
 	</delete>

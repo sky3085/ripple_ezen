@@ -102,42 +102,6 @@ font-family: 'Noto Sans KR', sans-serif;}
 </head>
 <body>
 	<jsp:include page="./nav.jsp" />
-	<!-- <header>
-		<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="adminMain.jsp">Ripple</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../admin/adminMemberList.do?req=adminMember">member</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/adminReply.do?req=adminReply">reply</a>
-        </li>
-        
-         <li class="nav-item">
-          <a class="nav-link disabled">reports</a>
-        </li>
-        
-         <li class="nav-item">
-          <a class="nav-link" href="../admin/adminMain?req=adminRank">예측</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/adminMain?req=adminMovie">영화관</a>
-        </li>
-       
-      </ul>
-    
-        <button class="btn btn-outline-success" type="submit">LOGOUT</button>
-      
-    </div>
-  </div>
-</nav>
-	</header> -->
 
 	<div class="container-fluid">
 		<div class="row">
@@ -169,7 +133,7 @@ font-family: 'Noto Sans KR', sans-serif;}
 					</h6>
 					<ul class="nav flex-column mb-2">
 						<li class="nav-item"><a class="nav-link"
-							href="../admin/adminMain?req=adminRank"> <span
+							href="../admin/adminRank.do?req=adminRank"> <span
 								data-feather="file-text" class="align-text-bottom"></span> 흥행 예측
 						</a></li>
 						<li class="nav-item"><a class="nav-link"

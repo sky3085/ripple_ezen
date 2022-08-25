@@ -6,7 +6,7 @@
 	<!-- 별명 -->
 	<typeAliases>
 		<typeAlias type="ripple.bean.MovieDTO" alias="movieDTO"/>
-		<typeAlias type="ripple.bean.MemberDTO" alias="memberDTO"/>
+		<typeAlias type="ripple.bean.MemberDTO" alias="memberDTO"/><!-- adminDTO -->
 		<typeAlias type="ripple.bean.CommentsDTO" alias="commentsDTO"/>
 		<typeAlias type="ripple.bean.MoviePreDTO" alias="moviepreDTO"/>
 		<typeAlias type="ripple.bean.NewScore" alias="scoreUpdate"/>
@@ -14,6 +14,7 @@
 		<typeAlias type="ripple.bean.AccusationListDTO" alias="accusationListDTO"/>
 		<typeAlias type="ripple.bean.UserLikeDTO" alias="userLikeDTO"/>
 		<typeAlias type="ripple.bean.DeleteDTO" alias="deleteDTO"/>
+		<typeAlias type="ripple.bean.PremovieDTO" alias="premovieDTO" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/movie-mapping.xml" />
@@ -21,11 +22,8 @@
 		<mapper resource="mybatis/member-mapping.xml" />
 		<mapper resource="mybatis/accusation-mapping.xml" />
 		<mapper resource="mybatis/userLike-mapping.xml" />
-<<<<<<< HEAD
 		<mapper resource="mybatis/mypage-mapping.xml" />
-=======
 		<mapper resource="mybatis/admin-mapping.xml" />
 		<mapper resource="mybatis/delete-mapping.xml" />
->>>>>>> 4ccaa261e17d5d21052f01a34c85d240210e272d
 	</mappers>
 </configuration>

@@ -17,16 +17,12 @@
                     <li class="nav-item"><a class="nav-link" href="./login">Log In</a></li>
                     </c:if>
                     <c:if test="${id!=null }">
-<<<<<<< HEAD
-                    <li class="nav-item"><a class="nav-link" href="./mypage">My Page</a></li>
-=======
                     	<c:if test="${manager == 1 }">
-                    		<li class="nav-item"><a class="nav-link" href="./admin/adminMemberList.do">Admin Page</a></li>
+                    		<li class="nav-item"><a class="nav-link" href="./admin/adminMap.do">Admin Page</a></li>
                     	</c:if>
                     	<c:if test="${manager == 0 }">
-							<li class="nav-item"><a class="nav-link" href="#">My Page</a></li>                    	
+							<li class="nav-item"><a class="nav-link" href="./mypage">My Page</a></li>                    	
                     	</c:if>
->>>>>>> 4ccaa261e17d5d21052f01a34c85d240210e272d
                     <li class="nav-item"><a class="nav-link" href="./logout">Log out</a></li>
                     </c:if>
                 </ul>

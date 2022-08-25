@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ripple.bean.AccusationListDTO;
 import ripple.bean.MemberDTO;
+import ripple.bean.PremovieDTO;
 import ripple.service.AdminService;
 import ripple.service.DeleteService;
 
@@ -59,8 +60,17 @@ public class AdminController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/admin/adminMain")
+	public ModelAndView adminMain(HttpServletRequest request) {
+		
+		ModelAndView modelAndView= new ModelAndView();
+		modelAndView.setViewName("admin/adminMain");
+		
+		return modelAndView;
+	}
+	
 	@RequestMapping(value="/admin/replyDelete.do")
-	private ModelAndView replyDelete(HttpServletRequest request) {
+	public ModelAndView replyDelete(HttpServletRequest request) {
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = 1;
 		if (request.getParameter("pg") != null) {
@@ -98,11 +108,8 @@ public class AdminController {
 		return modelAndView;
 	}
 	
-	
-	
 	@RequestMapping(value="/admin/adminMemberList.do")
 	public ModelAndView adminList(HttpServletRequest request) {
-	
 		int pg=1;
 		if(request.getParameter("pg") != null) {
 			pg= Integer.parseInt(request.getParameter("pg"));
@@ -121,9 +128,7 @@ public class AdminController {
 		int endPage =startPage + 2;
 		if (endPage >  totalP)
 			endPage = totalP;
-		
-		
-		
+
 		ModelAndView modelAndView= new ModelAndView();
 
 		modelAndView.addObject("pg", pg);
@@ -133,6 +138,39 @@ public class AdminController {
 		modelAndView.addObject("startPage", startPage);
 		modelAndView.addObject("endPage", endPage);
 		
+		modelAndView.setViewName("admin/adminMain");
+		
+		return modelAndView;
+	}
+	
+	// movieListstart
+	@RequestMapping(value="/admin/adminRank.do")
+	public ModelAndView adminRank(HttpServletRequest request) {
+		int pg=1;
+		if(request.getParameter("pg") != null) {
+			pg= Integer.parseInt(request.getParameter("pg"));
+		}
+		int endNum = pg*16;
+		int startNum = endNum - 15;
+		
+		List<PremovieDTO> list=adminService.movieList(startNum, endNum);
+		//페이징
+		int totalA = adminService.totalA(); //총 영화수
+		
+		int totalP= (totalA + 15) / 16; // 총 페이지
+		
+		int startPage= (pg-1) / 5 * 5 + 1;
+		int endPage =startPage + 4;
+		if (endPage >  totalP) endPage = totalP;
+
+		ModelAndView modelAndView= new ModelAndView();
+
+		modelAndView.addObject("pg", pg);
+		modelAndView.addObject("list", list);
+		modelAndView.addObject("totalA",totalA);
+		modelAndView.addObject("totalP", totalP);
+		modelAndView.addObject("startPage", startPage);
+		modelAndView.addObject("endPage", endPage);
 		
 		modelAndView.setViewName("admin/adminMain");
 		

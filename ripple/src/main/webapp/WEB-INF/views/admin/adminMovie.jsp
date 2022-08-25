@@ -14,8 +14,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-<link rel="import" href="Seoul_Screen.html">
-<link rel="import" href="Seoul_Seat.html">
 
 <style>
 body {
@@ -38,15 +36,14 @@ font-family: 'Noto Sans KR', sans-serif;}
 	<script>
 		var header = document.getElementById("header");
 
-		header.innerHTML = '<object type="text/html" height="500" width="500" data="Seoul_Seat.html"></object>';
+		header.innerHTML = '<object type="text/html" height="500" width="500" data="../resources/html/Seoul_Seat.html"></object>';
 
 		var header2 = document.getElementById("header2");
-		header2.innerHTML = '<object type="text/html" height="500" width="500" data="Seoul_Screen.html"></object>';
+		header2.innerHTML = '<object type="text/html" height="500" width="500" data="../resources/html/Seoul_Screen.html"></object>';
 	</script>
 
 
 
-	<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-  
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
 </body>
 </html>

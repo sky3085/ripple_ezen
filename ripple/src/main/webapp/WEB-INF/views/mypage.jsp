@@ -28,8 +28,11 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="resources/css/list_styles.css" rel="stylesheet" />
 <link href="resources/css/index_styles.css" rel="stylesheet" />
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
@@ -37,7 +40,7 @@
 	<header class="masthead text-center text-white" style="height: 20vh">
 		<div class="masthead-content">
 			<div class="container px-5">
-				<h3 class="masthead-subheading mb-0">${id }님 영화리스트</h3>
+				<h3 class="masthead-subheading mb-0">${id }님영화리스트</h3>
 			</div>
 		</div>
 	</header>
@@ -107,7 +110,8 @@
 
 
 	<!-- Bootstrap core JS-->
-	<script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
