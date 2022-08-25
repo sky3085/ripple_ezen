@@ -1,17 +1,18 @@
 package ripple.bean;
 
+//영화 상세정보를 볼 수 있는 DTO
 public class MovieDTO {
-	private String titleid;
-	private String title;
-	private String poster_path;
-	private String release_date;
-	private String budget;
-	private String genres;
-	private String director;
-	private String runtime;
-	private String overview;
-	private double vote_score;
-	private int vote_count;
+	private String titleid;//영화 고유 번호
+	private String title;//영화 제목
+	private String poster_path;//영화 포스터 경로
+	private String release_date;//개봉일
+	private String budget;//예산
+	private String genres;//장르
+	private String director;//감독
+	private String runtime;//영화길이
+	private String overview;//영화 설명
+	private double vote_score;//영화 점수
+	private int vote_count;//영화 점수를 준 참여자 수
 	
 	@Override
 	public String toString() {

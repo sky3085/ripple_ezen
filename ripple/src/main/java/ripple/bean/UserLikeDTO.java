@@ -1,8 +1,9 @@
 package ripple.bean;
 
+//영화 좋아요에 필요한 DTO
 public class UserLikeDTO {
-	private int titleid;
-	private String userid;
+	private int titleid;//영화 고유 번호
+	private String userid;//사용자
 	
 	public int getTitleid() {
 		return titleid;

@@ -13,13 +13,9 @@ public class AccusationService {
 
 	@Autowired
 	private AccusationRepository accusationRepository;
-	
-	public List<AccusationDTO> accusationSelect() {
-		return null;
-	}
 
-	public int commentsInsert(AccusationDTO dto) {
-		return accusationRepository.commentsInsert(dto);
+	public int accusationInsert(AccusationDTO dto) {
+		return accusationRepository.accusationInsert(dto);
 	}
 	
 	public List<AccusationDTO> accusationSelectCK(AccusationDTO dto) {

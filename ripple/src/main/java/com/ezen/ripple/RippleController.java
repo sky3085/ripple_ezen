@@ -48,16 +48,19 @@ public class RippleController {
 	@Autowired
 	private MypageService mypageService;
 	
+	//메인페이지 호출
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
 	}
 	
+	//영화관 지도페이지 호출
 	@RequestMapping(value = "/map")
 	public String map() {
 		return "map";
 	}
 	
+	//카카오 로그인시 호출
 	@RequestMapping(value = "/kakaoLogin")
 	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest request) {
 		String access_Token = kakao.getAccessToken(code);
@@ -71,6 +74,7 @@ public class RippleController {
 		return "index";
 	}
 	
+	//영화 좋아요 버튼을 누를 때 호출
 	@RequestMapping(value = "/userLikeAction")
 	public ModelAndView userLikeAction(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
@@ -89,6 +93,7 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	//영화 좋아요(취소)버튼을 누를 때 호출
 	@RequestMapping(value = "/userLikeDeleteAction")
 	public ModelAndView userLikeDeleteAction(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
@@ -108,6 +113,7 @@ public class RippleController {
 	}
 	
 	
+	//신고 댓글을 누를 때 호출
 	@RequestMapping(value = "/accusationAction")
 	public ModelAndView accusationAction(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
@@ -124,7 +130,7 @@ public class RippleController {
 		dto.setAccuser(accuser);
 		//if accusationService.select 널이면 실행
 		if(accusationService.accusationSelectCK(dto).size()==0) {
-			accusationService.commentsInsert(dto);//기존에 없을때만 신고를 추가
+			accusationService.accusationInsert(dto);//기존에 없을때만 신고를 추가
 		}
 		
 		modelAndView.addObject("titleid", titleid);
@@ -133,6 +139,7 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	//댓글 작성 시 호출
 	@RequestMapping(value = "/commentAction")
 	public ModelAndView commentAction(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
@@ -171,6 +178,7 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	//영화 정보 상세페이지 호출
 	@RequestMapping(value = "/detail")
 	public ModelAndView detail(HttpServletRequest request) {
 		boolean likeTrue = false;
@@ -202,11 +210,13 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	//회원가입 페이지 호출
 	@RequestMapping(value = "/join")
 	public String join() {
 		return "join";
 	}
 	
+	//영화 리스트 페이지 호출 - 최신순, 영화 흥행 예측순 가능
 	@RequestMapping(value = "/list")
 	public ModelAndView list(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -272,11 +282,13 @@ public class RippleController {
 		return modelAndView;
 	}
 	
+	//로그인 페이지 호출
 	@RequestMapping(value = "/login")
 	public String login() {
 		return "login";
 	}
 	
+	//로그인 버튼 누를 때 호출
 	@RequestMapping(value = "/loginAction")
 	public String loginAction(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -302,6 +314,7 @@ public class RippleController {
 		return view;
 	}
 	
+	//로그아웃시 호출(카카오 로그아웃 포함)
 	@RequestMapping(value = "/logout")
 	public String logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -313,6 +326,7 @@ public class RippleController {
 		return "index";
 	}
 	
+	//회원가입시 호출
 	@RequestMapping(value = "/joinAction")
 	public String joinAction(HttpServletRequest request) {
 		String id =  request.getParameter("id");
@@ -330,6 +344,7 @@ public class RippleController {
 		return view;
 	}
 	
+	//마이페이지 호출
 	@RequestMapping(value = "/mypage")
 	public ModelAndView mypage(HttpServletRequest request) {
 		HttpSession session = request.getSession();

@@ -1,5 +1,6 @@
 package ripple.bean;
 
+//
 public class MoviePreDTO {
 	private String titleid;
 	private int vote_weight;

@@ -13,14 +13,9 @@ public class AccusationRepositoryImpl implements AccusationRepository{
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
-	@Override
-	public List<AccusationDTO> accusationSelect() {
-		return null;
-	}
 
 	@Override
-	public int commentsInsert(AccusationDTO dto) {
+	public int accusationInsert(AccusationDTO dto) {
 		return sqlSession.insert("mybatis.accusationMapper.accusationInsert", dto);
 	}
 

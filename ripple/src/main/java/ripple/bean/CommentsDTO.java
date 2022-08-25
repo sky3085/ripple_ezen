@@ -1,13 +1,14 @@
 package ripple.bean;
 
+//댓글 테이블
 public class CommentsDTO {
-    private int seq;
-    private String id;
-    private int titleid;
-    private String contents;
-    private int score;
-    private int level;
-    private int original_seq;
+    private int seq;//고유 번호
+    private String id;//로그인 된 ID
+    private int titleid;//영화 고유번호
+    private String contents;//댓글 내용
+    private int score;//점수
+    private int level;//레벨 1이면 점수를 포함한 원댓글, 2이면 원댓글의 댓글
+    private int original_seq;//level2이면 원댓글의 고유 번호
     
     
 	public int getSeq() {

@@ -26,7 +26,6 @@ public class AdminController {
 
 	@RequestMapping(value = "/admin/adminReply.do")
 	public ModelAndView deleteList(HttpServletRequest request) {
-
 		int pg = 1;
 		if (request.getParameter("pg") != null) {
 			pg = Integer.parseInt(request.getParameter("pg"));
@@ -60,15 +59,16 @@ public class AdminController {
 		return modelAndView;
 	}
 	
+	//../admin/adminMain?req=adminMovie을 호출하여 지도를 페이지를 가져옵니다.
 	@RequestMapping(value = "/admin/adminMain")
 	public ModelAndView adminMain(HttpServletRequest request) {
-		
 		ModelAndView modelAndView= new ModelAndView();
 		modelAndView.setViewName("admin/adminMain");
 		
 		return modelAndView;
 	}
 	
+	//신고댓글 삭제시 호출되는 메소드 입니다.
 	@RequestMapping(value="/admin/replyDelete.do")
 	public ModelAndView replyDelete(HttpServletRequest request) {
 		int seq = Integer.parseInt(request.getParameter("seq"));
@@ -86,7 +86,6 @@ public class AdminController {
 		modelAndView.setViewName("admin/replyDelete");
 		
 		return modelAndView;
-		
 	}
 	
 	@RequestMapping(value="/admin/adminMap.do")

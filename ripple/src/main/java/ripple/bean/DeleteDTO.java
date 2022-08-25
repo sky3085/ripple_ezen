@@ -1,5 +1,6 @@
 package ripple.bean;
 
+// 댓글 삭제를 위한 DTO -CommentsDTO를 사용해도 되지만 협업 과정에서 중복됨
 public class DeleteDTO {
 	private int seq;		//글번호
 	private String id;		//아이디
@@ -7,7 +8,7 @@ public class DeleteDTO {
 	private String contents;//댓글 내용
 	private int score;		//영화 점수
 	private int level;		//댓글 레벨
-	private int original_seq;//
+	private int original_seq;//댓글의 댓글이라면 원댓글
 	
 	public int getSeq() {
 		return seq;
