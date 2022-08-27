@@ -1,14 +1,15 @@
 package ripple.bean;
 
+//개봉예정 영화 - 관리자 페이지의 영화 흥행 예측페이지
 public class PremovieDTO {
-	private String poster_path;
-	private String genres;
-	private String director;
-	private String maincharactor;
-	private String introduction;
-	private int maincharactorID;
-	private int directorID;
-	private double predict;
+	private String poster_path;//포스터 링크
+	private String genres;//장르
+	private String director;//감독
+	private String maincharactor;//출연진
+	private String introduction;//설명
+	private int maincharactorID;//출연진 ID - 머신러닝에서 사용하기 위한 값
+	private int directorID;//감독 ID - 머신러닝에서 사용하기 위한 값
+	private double predict;//머신러닝으로 예상한 영화 흥행 예측 값
 	@Override
 	public String toString() {
 		return "premovieDTO [poster_path=" + poster_path + ", genres=" + genres + ", director=" + director

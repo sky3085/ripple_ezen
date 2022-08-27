@@ -10,7 +10,6 @@ public class CommentsDTO {
     private int level;//레벨 1이면 점수를 포함한 원댓글, 2이면 원댓글의 댓글
     private int original_seq;//level2이면 원댓글의 고유 번호
     
-    
 	public int getSeq() {
 		return seq;
 	}

@@ -8,7 +8,7 @@ public interface MovieRepository {
 	//영화 상세 정보를 보기 위한 메소드
 	public MovieDTO movieView(String titleid);
 	
-	//영화 최순으로 가져오기 위한 메소드
+	//영화 최신순으로 가져오기 위한 메소드
 	public List<MovieDTO> movieList(int startNum, int endNum);
 	
 	//영화 흥행 예측 순으로 정렬하기 위한 메소드
@@ -20,7 +20,7 @@ public interface MovieRepository {
 	//영화 전체수를 알기위한 메소드
 	public int getTotalA();
 	
-	//??
+	//영화 정보 상세페이지(detail.jsp)에서 영화 흥행 예측 값(퍼센트)를 가져오는 메소드 
 	public MoviePreDTO moviepredict(String titleid);
 	
 	//영화 점수에 참여자수 업데이트

@@ -1,10 +1,11 @@
 package ripple.bean;
 
-//
+//MoviePre Table - 
 public class MoviePreDTO {
-	private String titleid;
-	private int vote_weight;
-	private double predict;
+	private String titleid;//영화 id값
+	private int vote_weight;//투표 가중치 - 영화정보로 흥행 예측에 쓰이는 값
+	private double predict;//머신러닝으로 예상한 영화 흥행 예측 값
+	
 	@Override
 	public String toString() {
 		return "MoviePreDTO [titleid=" + titleid + ", vote_weight=" + vote_weight + ", predict=" + predict + "]";

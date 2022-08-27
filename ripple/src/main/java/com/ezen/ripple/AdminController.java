@@ -24,6 +24,7 @@ public class AdminController {
 	@Autowired
 	private DeleteService deleteService;
 
+	//신고된 댓글 리스트 가져오는 컨트롤러
 	@RequestMapping(value = "/admin/adminReply.do")
 	public ModelAndView deleteList(HttpServletRequest request) {
 		int pg = 1;
@@ -88,25 +89,20 @@ public class AdminController {
 		return modelAndView;
 	}
 	
+	//관리자페이지 첫화면
 	@RequestMapping(value="/admin/adminMap.do")
 	public ModelAndView adminMap(HttpServletRequest request) {
-	
-		int pg=1;
-		if(request.getParameter("pg") != null) {
-			pg= Integer.parseInt(request.getParameter("pg"));
-		}
-		
 		int totalA = adminService.totalmember(); //총 회원수
 		int totalP = adminService.totalAccusation(); //총 신고리스트수
 		
 		ModelAndView modelAndView= new ModelAndView();
-		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("totalA",totalA);
 		modelAndView.addObject("totalP",totalP);
 		modelAndView.setViewName("admin/adminMain");	
 		return modelAndView;
 	}
 	
+	//회원 리스트 페이지(관리자 페이지)
 	@RequestMapping(value="/admin/adminMemberList.do")
 	public ModelAndView adminList(HttpServletRequest request) {
 		int pg=1;
@@ -142,7 +138,7 @@ public class AdminController {
 		return modelAndView;
 	}
 	
-	// movieListstart
+	// 관리자페이지의 영화리스트(개봉예정영화를 흥행예측순으로 정렬)
 	@RequestMapping(value="/admin/adminRank.do")
 	public ModelAndView adminRank(HttpServletRequest request) {
 		int pg=1;
