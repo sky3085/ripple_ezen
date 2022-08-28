@@ -1,6 +1,6 @@
 package ripple.bean;
 
-// 댓글 삭제를 위한 DTO -CommentsDTO를 사용해도 되지만 협업 과정에서 중복됨
+// 댓글 삭제를 위한 DTO - CommentsDTO를 사용해도 되지만 협업 과정에서 중복됨
 public class DeleteDTO {
 	private int seq;		//글번호
 	private String id;		//아이디

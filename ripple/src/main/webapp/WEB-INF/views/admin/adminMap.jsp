@@ -44,7 +44,7 @@ margin:20px;}
 	
 	
 	<div class="card" style="width:18rem;" id="card">
-		<a href="#"> <!-- 메인 화면으로 이동 -->
+		<a href="../index"> <!-- 메인 화면으로 이동 -->
 		<img height="200" width="100" src="../resources/img/adminmainpage.jpg" class="card-img-top" alt="메인 ripple로 이동"
 		></a>
 		<div class="card-body" >

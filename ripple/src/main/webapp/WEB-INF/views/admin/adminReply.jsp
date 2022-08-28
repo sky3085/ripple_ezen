@@ -47,7 +47,10 @@ font-family: 'Noto Sans KR', sans-serif;}
          	<td>${dto.getAccuser()}</td>
          	<td>${dto.getWriter()}</td>
          	<td align="left"><a href="#">${dto.getContents()}</a></td> <!-- 댓글 클릭 -> 작성 페이지로 이동 -->
-         	<td>${dto.getScore()}</td>
+         	<td>
+         	<c:if test="${dto.getScore() eq -1}"></c:if>
+         	<c:if test="${dto.getScore() ne -1}">${dto.getScore()}</c:if>
+         	</td>
          	<td><button type="button" class="btn btn-outline-danger" 
          	onclick="location.href='replyDelete.do?seq=${dto.getSeq()}&pg=${pg}'">삭제</button></td>
 		</tr>
@@ -82,7 +85,6 @@ font-family: 'Noto Sans KR', sans-serif;}
 		</tr> 
    </table>
    </div>
-	<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
- 
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
 </body>
 </html>
