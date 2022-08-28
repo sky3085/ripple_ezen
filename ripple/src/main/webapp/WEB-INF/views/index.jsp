@@ -30,6 +30,15 @@
 <link href="resources/css/index_styles.css" rel="stylesheet" />
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- 구글 폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style type="text/css">
+.googleFont{
+	font-family: 'Noto Serif KR', serif;
+}
+</style>
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp" />
@@ -56,11 +65,9 @@
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<div class="p-5">
-						<h2 class="display-4">For those about to rock...</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Quod aliquid, mollitia odio veniam sit iste esse assumenda amet
-							aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-							voluptatum molestiae adipisci, beatae obcaecati.</p>
+						<h2 class="display-4 googleFont" style="font-weight: bold;">재미있는 영화만 모아서 보세요!</h2>
+						<p class="googleFont" style="font-size: 1.3em">재미있는 영화들을 쉽게 찾기 위해 TMDB 영화들 정보들을 수집해 
+						머신러닝으로 흥행을 예측하였습니다. 높은 점수를 받은 영화들을 확인해보세요.</p>
 					</div>
 				</div>
 			</div>
@@ -77,11 +84,10 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="p-5">
-						<h2 class="display-4">We salute you!</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Quod aliquid, mollitia odio veniam sit iste esse assumenda amet
-							aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-							voluptatum molestiae adipisci, beatae obcaecati.</p>
+						<h2 class="display-4 googleFont" style="font-weight: bold;">모든 영화의 정보를 확인해보세요!</h2>
+						<p class="googleFont" style="font-size: 1.3em">2000년 이전의 오래된 영화부터 앞으로 개봉예정 영화까지 모든 정보를 확인해보세요.
+						감독, 짧은 영화소개, 평점, 흥행 예측 가능성까지 확인할 수 있습니다.
+						또한 댓글을 통해 직접 평점에 참여할 수 있으니, 많은 이용 부탁드립니다!</p>
 					</div>
 				</div>
 			</div>
@@ -93,16 +99,15 @@
 				<div class="col-lg-6 order-lg-2">
 					<div class="p-5">
 						<img class="img-fluid rounded-circle" src="resources/img/map.png"
-							alt="..." />
+							alt="이미지가 없습니다." />
 					</div>
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<div class="p-5">
-						<h2 class="display-4">Let there be rock!</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Quod aliquid, mollitia odio veniam sit iste esse assumenda amet
-							aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-							voluptatum molestiae adipisci, beatae obcaecati.</p>
+						<h2 class="display-4 googleFont" style="font-weight: bold;">서울 영화관 위치를 파악 해보세요!</h2>
+						<p class="googleFont" style="font-size: 1.3em">서울시에 있는 메가박스, CGV, 롯데시네마, 소영화관까지 모든 영화관 위치를 찾아보세요. 영화관 이름 뿐만 
+						아니라, 클릭시 주소까지 확인하실 수 있습니다. 친구, 연인, 가족들과 함께 영화관에 추억을 쌓고 
+						영화를 감상하세요!</p>
 					</div>
 				</div>
 			</div>
