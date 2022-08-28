@@ -298,7 +298,7 @@ public class RippleController {
 
 		MemberDTO dto = memberService.login(id, pwd);
 		
-		if(dto.getId() != null) {
+		if(dto != null) {
 			session.setAttribute("id", id);
 			if(dto.getManager().equals("1")) {
 				session.setAttribute("manager", 1);
@@ -329,18 +329,21 @@ public class RippleController {
 	//회원가입시 호출
 	@RequestMapping(value = "/joinAction")
 	public String joinAction(HttpServletRequest request) {
-		String id =  request.getParameter("id");
+		String view = "";
+		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String email = request.getParameter("email");
-		int result = memberService.join(id, pwd, email);
-		String view = "";
-		
-		if(result>0) {
-			view = "login";
-		}else {
+		if(id == "" || pwd == "" || email == "") {
 			view = "join";
+		}else {
+			int result = memberService.join(id, pwd, email);
+			
+			if(result>0) {
+				view = "login";
+			}else {
+				view = "join";
+			}
 		}
-		
 		return view;
 	}
 	
