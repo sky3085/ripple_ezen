@@ -47,7 +47,10 @@ font-family: 'Noto Sans KR', sans-serif;}
          	<td>${dto.getAccuser()}</td>
          	<td>${dto.getWriter()}</td>
          	<td align="left"><a href="#">${dto.getContents()}</a></td> <!-- 댓글 클릭 -> 작성 페이지로 이동 -->
-         	<td>${dto.getScore()}</td>
+         	<td>
+         	<c:if test="${dto.getScore() eq -1}"></c:if>
+         	<c:if test="${dto.getScore() ne -1}">${dto.getScore()}</c:if>
+         	</td>
          	<td><button type="button" class="btn btn-outline-danger" 
          	onclick="location.href='replyDelete.do?seq=${dto.getSeq()}&pg=${pg}'">삭제</button></td>
 		</tr>
